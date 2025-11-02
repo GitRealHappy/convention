@@ -1,0 +1,19 @@
+# GitHub Pages Jekyll Configuration for Clean URLs
+title: "Creator Economy Convention"
+description: "You are not a machine. Three days in Vancouver to rediscover what makes you human — and build a brand around it."
+
+# Clean URLs
+permalink: /:title/
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files
+exclude:
+  - .htaccess
+  - README.md
+
+# Include files
+include:
+  - _pages
