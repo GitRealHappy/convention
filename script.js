@@ -15,23 +15,59 @@ document.addEventListener('click', e=>{
         top: offsetTop,
         behavior: 'smooth'
       });
+      
+      // Force visibility check after scroll - important for mobile devices
+      setTimeout(() => {
+        const targetEl = document.getElementById(id);
+        if (targetEl && targetEl.classList.contains('fadein') && !targetEl.classList.contains('visible')) {
+          // Check if element is now in viewport
+          const rect = targetEl.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isVisible) {
+            targetEl.classList.add('visible');
+          }
+        }
+      }, 100);
     }
   });
   
   // Fade-in on scroll
   const faders=document.querySelectorAll('.fadein');
+  
+  // Helper function to check if element is visible
+  const checkVisibility = (element) => {
+    const rect = element.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    const threshold = 0.15;
+    const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+    return visibleHeight > 0 && (visibleHeight / rect.height) >= threshold;
+  };
+  
+  // Check initial visibility for elements already in viewport
+  faders.forEach(f => {
+    if (checkVisibility(f)) {
+      f.classList.add('visible');
+    }
+  });
+  
   const io=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
     });
-  },{threshold:.15});
-  faders.forEach(f=>io.observe(f));
+  },{threshold:.15, rootMargin:'50px'}); // Added rootMargin for better mobile detection
+  faders.forEach(f=>{
+    if(!f.classList.contains('visible')) {
+      io.observe(f);
+    }
+  });
   
   // Sticky CTA show/hide logic
   const sticky=document.querySelector('.sticky-cta');
   const hero=document.querySelector('.hero');
-  const faq=document.querySelector('#faq');
-  if(sticky&&hero&&faq){
+  const speakersSection=document.querySelector('#speakers');
+  if(sticky&&hero&&speakersSection){
+    let hasReachedSpeakers = false;
+    
     const watchHero=new IntersectionObserver(entries=>{
       entries.forEach(en=>{
         if(en.isIntersecting){sticky.classList.remove('show');}
@@ -40,18 +76,21 @@ document.addEventListener('click', e=>{
     },{threshold:0});
     watchHero.observe(hero);
   
-    const watchFAQ=new IntersectionObserver(entries=>{
+    const watchSpeakers=new IntersectionObserver(entries=>{
       entries.forEach(en=>{
         if(en.isIntersecting){
+          hasReachedSpeakers = true;
           sticky.style.opacity='0';
           sticky.style.pointerEvents='none';
-        }else{
+        }else if(!hasReachedSpeakers){
+          // Only show CTA again if we haven't reached speakers section yet
           sticky.style.opacity='1';
           sticky.style.pointerEvents='auto';
         }
+        // If hasReachedSpeakers is true, don't change anything - keep it hidden
       });
     },{threshold:0});
-    watchFAQ.observe(faq);
+    watchSpeakers.observe(speakersSection);
   }
 
   // Hamburger menu toggle
