@@ -81,21 +81,25 @@
         <a class="btn ghost" href="#story">The Origin Story?</a>
       </div>
 
-      <!-- Speaker Icons (two neat rows, circular) -->
-      <div class="speaker-grid fadein" aria-label="Featured Speakers">
-        <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" />
-        <img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" />
-        <img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" />
-        <img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" />
-        <img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" />
-        <img src="assets/speaker-icons/speaker6.jpg" alt="Nathalie Agnes" />
-        <img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" />
-        <img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" />
-        <img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" />
-        <img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" />
-        <img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" />
-        <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" />
-        <img src="assets/speaker-icons/speaker14.jpg" alt="David Morin" />
+      <!-- Speaker Icons (staggered rows) -->
+      <div class="speaker-rows fadein" aria-label="Featured Speakers">
+        <div class="speaker-row top-row">
+          <a href="#dan-koe"><img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" /></a>
+          <a href="#brian-maierhofer"><img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" /></a>
+          <a href="#dan-goldfield"><img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" /></a>
+          <a href="#hussain-ibarra"><img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" /></a>
+          <a href="#logan-quinn"><img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" /></a>
+          <a href="#nathalie-agnes"><img src="assets/speaker-icons/speaker6.jpg" alt="Nathalie Agnes" /></a>
+          <a href="#taylin-simmonds"><img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" /></a>
+        </div>
+        <div class="speaker-row bottom-row">
+          <img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" />
+          <img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" />
+          <img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" />
+          <img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" />
+          <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" />
+          <img src="assets/speaker-icons/speaker14.jpg" alt="David Morin" />
+        </div>
       </div>
     </section>
 
@@ -177,7 +181,7 @@
       <div class="speakers-list">
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="dan-koe">
             <h3>Dan Koe</h3>
             <p class="speaker-tagline">"Work less. Earn More. Enjoy Life."</p>
             <p>Dan Koe. The philosopher of the one-person business model, and the flow scientist behind the 4-hour workday.</p>
@@ -188,7 +192,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="brian-maierhofer">
             <h3>Brian Maierhofer</h3>
             <p>Somatic & biomechanical therapy for anxiety, sensory overload, and emotional resilience.</p>
             <p class="speaker-social">77.7K Followers on X: <a href="https://x.com/iamprohuman" target="_blank"><strong>@IAmProHuman</strong></a></p>
@@ -197,7 +201,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="jack-moses">
             <h3>Jack Moses</h3>
             <p>Personal Transformation Coach. Writer. Creator. Quarterback. Podcaster.</p>
             <p>Founder of Transcendence, and the Sovereign Creators Skool.</p>
@@ -207,7 +211,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="jesse-james-carver">
             <h3>Jesse James Carver</h3>
             <p>Host of the podcast Unblocked Creators.</p>
             <p>"I guide blocked creators through the underworld, out the other side as sovereign creators with profitable offers."</p>
@@ -218,7 +222,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="dan-goldfield">
             <h3>Dan Goldfield</h3>
             <p>"Studied with a monk for 5 years, married a hot psychologist, built a 6-figure business. Mission: help 1 billion people realize peace as their Default Mode."</p>
             <p class="speaker-social">29.1K Followers on X: <a href="https://x.com/itsdangoldfield" target="_blank"><strong>@itsdangoldfield</strong></a></p>
@@ -227,7 +231,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="kieran-drew">
             <h3>Kieran Drew</h3>
             <p>On a mission to become a better writer, thinker, and entrepreneur • Ex-dentist, now building an internet business (at ~$500k/year).</p>
             <p class="speaker-social">230.3K Followers on X: <a href="https://x.com/ItsKieranDrew" target="_blank"><strong>@ItsKieranDrew</strong></a></p>
@@ -236,7 +240,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="hussain-ibarra">
             <h3>Hussain Ibarra</h3>
             <p>Engineer turned writer. Building my writing business to $120k/year. Helped 20+ clients build and monetize their audience.</p>
             <p class="speaker-social">22.6K Followers on X: <a href="https://x.com/HussainIbarra" target="_blank"><strong>@HussainIbarra</strong></a></p>
@@ -245,7 +249,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="valentin-sounds">
             <h3>Valentin Sounds</h3>
             <p>Artist & Brand Advisor. Helping creatives build autonomy through branding, AI, and emotional intelligence. Create work you love and explore the world.</p>
             <p class="speaker-social">Find him on X: <a href="https://x.com/valentinmakes" target="_blank"><strong>@valentinmakes</strong></a></p>
@@ -254,7 +258,7 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="kimia-nora">
             <h3>Kimia Nora</h3>
             <p>Applied Neuroscience | Self-directed Neuroplasticity | Brain Homeostasis | MindBody Medicine for healing chronic conditions.</p>
             <p class="speaker-social">36.7K Followers on X: <a href="https://x.com/iamkimianora" target="_blank"><strong>@iamkimianora</strong></a></p>
@@ -263,10 +267,11 @@
 
         <div class="speaker-card">
           <img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" class="speaker-photo" />
-          <div class="speaker-bio">
+          <div class="speaker-bio" id="taylin-simmonds">
             <h3>Taylin Simmonds</h3>
-            <p>College teacher turned ghostwriter. Helping writers earn on the internet. Writing to build wealth and better self.</p>
+            <p>College teacher turned AI assisted ghostwriter | Helping writers & creatives earn on the internet | 2B impressions | $4M+ revenue | All in on Substack</p>
             <p class="speaker-social">97.5K Followers on X: <a href="https://x.com/TaylinSimmonds" target="_blank"><strong>@TaylinSimmonds</strong></a></p>
+            <p>#9 Rising in Education on Substack: <a href="https://taylinsimmonds.substack.com/" target="_blank"><strong>The Simmonds Signal</strong></a></p>
           </div>
         </div>
 
@@ -429,7 +434,7 @@
     <!-- FINAL CTA -->
     <section class="section card-wrap fadein center" id="final-cta" aria-labelledby="cta-title">
       <h2 id="cta-title">Don’t let another season scroll past.</h2>
-      <p class="lead">There are future millionaires will look back on this weekend as the moment it all began.</p>
+      <p class="lead">There are future millionaires who will look back on this weekend as the moment it all began.</p>
       <stripe-buy-button
         buy-button-id="buy_btn_1SIkpr4zBgvudDjixL33F98G"
         publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"

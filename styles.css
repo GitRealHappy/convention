@@ -20,6 +20,10 @@
   .site-header{
     position:fixed;top:0;left:0;right:0;z-index:100;
     background:#000;border-bottom:1px solid rgba(255,255,255,.1);
+    transition:transform 0.3s ease;
+  }
+  .site-header.hidden{
+    transform:translateY(-100%);
   }
   .header-wrap{
     display:flex;align-items:center;justify-content:space-between;
@@ -103,25 +107,34 @@
   .bullets li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
   .quote{border-left:3px solid var(--fire);padding-left:1rem;margin:1rem 0;color:#fff}
   
-  /* speaker grid (featured speakers) */
-  .speaker-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
-    gap:10px;max-width:600px;margin:30px auto 0;
-    justify-items:center;
+  /* Speaker rows container */
+  .speaker-rows{
+    max-width:650px;margin:30px auto 0;
   }
-  .speaker-grid img{
+
+  /* Speaker rows */
+  .speaker-row{
+    display:grid;gap:10px;margin-bottom:10px;
+  }
+
+  /* Top row: 7 icons, full width */
+  .top-row{
+    grid-template-columns:repeat(7,1fr);
+  }
+
+  /* Bottom row: 6 icons, centered */
+  .bottom-row{
+    grid-template-columns:repeat(6,90px);
+    justify-content:center;
+  }
+
+  /* Speaker images */
+  .speaker-row img{
     width:90px;height:90px;object-fit:cover;border-radius:50%;
     box-shadow:0 0 0 2px rgba(255,255,255,.15);
     transition:.3s ease;
   }
-  .speaker-grid img:hover{box-shadow:0 0 0 3px var(--fire)}
-
-  /* Center speaker grid rows on larger screens */
-  @media (min-width: 600px) {
-    .speaker-grid{
-      grid-template-columns:repeat(7,1fr);
-    }
-  }
+  .speaker-row img:hover{box-shadow:0 0 0 2px var(--fire)}
 
   /* speakers list (detailed bios) */
   .speakers-list{

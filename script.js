@@ -1,10 +1,18 @@
-// Smooth scroll
+// Smooth scroll with header offset
 document.addEventListener('click', e=>{
     const a=e.target.closest('a[href^="#"]');
     if(!a)return;
     const id=a.getAttribute('href').slice(1);
     const el=document.getElementById(id);
-    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
+    if(el){
+      e.preventDefault();
+      const headerHeight = document.querySelector('.site-header').offsetHeight;
+      const offsetTop = el.offsetTop - headerHeight - 20; // 20px extra padding
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
   });
   
   // Fade-in on scroll
@@ -68,4 +76,22 @@ document.addEventListener('click', e=>{
       }
     });
   }
+
+  // Header hide/show on scroll
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector('.site-header');
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down and past 100px
+      header.classList.add('hidden');
+    } else if (currentScrollY < lastScrollY) {
+      // Scrolling up
+      header.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  });
   
