@@ -6,8 +6,11 @@ document.addEventListener('click', e=>{
     const el=document.getElementById(id);
     if(el){
       e.preventDefault();
+      // More reliable position calculation using getBoundingClientRect
+      const rect = el.getBoundingClientRect();
+      const absoluteTop = rect.top + window.pageYOffset;
       const headerHeight = document.querySelector('.site-header').offsetHeight;
-      const offsetTop = el.offsetTop - headerHeight - 20; // 20px extra padding
+      const offsetTop = absoluteTop - headerHeight - 20; // 20px extra padding
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
