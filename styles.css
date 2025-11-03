@@ -81,6 +81,7 @@
   }
   .card-wrap-top{
     margin-top: 100px;
+    padding: 32px 22px !important;
     background:rgba(14, 9, 15, 0.668);
     border:4px solid rgba(255,255,255,.1);
     border-radius:5px;
