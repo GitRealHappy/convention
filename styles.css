@@ -79,6 +79,15 @@
     border-radius:5px;
     box-shadow:0 6px 24px rgba(0,0,0,.4);
   }
+  /* Compact variant for smaller sections */
+  .card-wrap-compact{
+    background:rgba(20, 14, 22, 0.32);
+    backdrop-filter:blur(9px);
+    border:4px solid rgba(255,255,255,.1);
+    border-radius:5px;
+    box-shadow:0 6px 24px rgba(0,0,0,.35);
+    padding:32px 22px;
+  }
   .card-wrap-top{
     margin-top: 100px;
     padding: 32px 22px !important;
@@ -254,6 +263,9 @@
   .topic-list{list-style:none;padding:0;margin:0;border-top:1px solid rgba(255,255,255,.08);overflow:hidden;max-height:0;transition:max-height .35s ease;order:1;font-size:.8rem;line-height:1.2}
   .topic-list li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
   .topic-list li:last-child{border-bottom:none}
+
+  /* Organizers compact sizing */
+  #organizers{max-width:880px;margin:2rem auto}
   .topic.open .topic-controls{order:2;margin-top:.25rem}
   
   /* FAQ */
@@ -422,4 +434,60 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/* Organizers mini gallery */
+#organizers { padding: 24px 18px; }
+#organizers h2 { margin-top: 0; font-size: 1.75rem; }
+
+.organizers-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:.75rem;
+}
+
+@media (max-width: 960px){
+  .organizers-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 560px){
+  .organizers-grid{ grid-template-columns:1fr; }
+}
+
+.organizer-card{
+  background:rgba(31,22,34,.55);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:6px;
+  padding:.5rem;
+  text-align:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+  transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.organizer-photo{
+  width:55px;height:55px;object-fit:cover;border-radius:6px;
+  margin:0 auto .35rem;
+  box-shadow:0 0 0 2px rgba(255,255,255,.12);
+}
+
+.organizer-name{
+  margin:.15rem 0 .08rem;
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.organizer-role{
+  margin:0;
+  font-size:.75rem;
+  color:var(--muted);
+}
+
+/* Subtle unique standouts per card */
+.standout-1{ box-shadow:0 8px 20px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.06); }
+.standout-2{ box-shadow:0 10px 22px rgba(0,0,0,.5), 0 8px 24px rgba(70,59,106,.25); }
+.standout-3{ box-shadow:0 10px 22px rgba(0,0,0,.5), 0 8px 24px rgba(230,115,40,.18); }
+.standout-4{ box-shadow:0 10px 22px rgba(0,0,0,.5), 0 8px 24px rgba(95, 77, 58, .22); }
+
+.organizer-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(0,0,0,.55);
 }
