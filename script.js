@@ -136,4 +136,49 @@ document.addEventListener('click', e=>{
 
     lastScrollY = currentScrollY;
   });
+
+  // Topics dropdown toggles
+  const topicContainers = document.querySelectorAll('.topic');
+  topicContainers.forEach(topic => {
+    const toggle = topic.querySelector('.topic-toggle');
+    const list = topic.querySelector('.topic-list');
+    if(!toggle || !list) return;
+
+    // Ensure collapsed state
+    list.style.maxHeight = '0px';
+
+    const closeList = () => {
+      topic.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      list.style.maxHeight = '0px';
+      // Hide after transition for accessibility
+      const onEnd = () => {
+        list.hidden = true;
+        list.removeEventListener('transitionend', onEnd);
+      };
+      list.addEventListener('transitionend', onEnd);
+    };
+
+    const openList = () => {
+      topic.classList.add('open');
+      toggle.setAttribute('aria-expanded','true');
+      list.hidden = false;
+      // Force reflow then expand to natural height
+      list.style.maxHeight = '0px';
+      // Next frame for transition to apply
+      requestAnimationFrame(() => {
+        list.style.maxHeight = list.scrollHeight + 'px';
+      });
+    };
+
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      if(expanded){
+        closeList();
+      }else{
+        openList();
+      }
+    });
+  });
   
