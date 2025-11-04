@@ -64,7 +64,7 @@ document.addEventListener('click', e=>{
   // Sticky CTA show/hide logic
   const sticky=document.querySelector('.sticky-cta');
   const hero=document.querySelector('.hero');
-  const speakersSection=document.querySelector('#offer');
+  const speakersSection=document.querySelector('#speakers');
   if(sticky&&hero&&speakersSection){
     let hasReachedSpeakers = false;
     
