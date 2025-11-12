@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>After-Party — The Living Internet Alliance</title>
+  <meta name="description" content="Join us for the after-party celebration." />
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <meta name="theme-color" content="#040105" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      cursor: pointer;
+    }
+
+    .nightclub-entrance {
+      position: fixed;
+      inset: 0;
+      background-image: url('assets/party-photos/dance5.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    .captcha-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(20, 14, 22, 0.95);
+      backdrop-filter: blur(12px);
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 10;
+      display: none;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+    }
+
+    .captcha-modal.show {
+      display: block;
+      animation: fadeInScale 0.4s ease-out;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .captcha-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .captcha-instructions {
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .captcha-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .captcha-image-wrapper {
+      position: relative;
+      aspect-ratio: 1;
+      cursor: pointer;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .captcha-image-wrapper:hover {
+      transform: scale(1.02);
+    }
+
+    .captcha-image-wrapper.selected {
+      border-color: var(--fire);
+    }
+
+    .captcha-image-wrapper.selected::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .captcha-image-wrapper.selected::before {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--fire);
+      font-size: 2rem;
+      font-weight: 800;
+      z-index: 2;
+    }
+
+    .captcha-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .captcha-submit {
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+      background: linear-gradient(180deg, #ff8a3a, var(--fire));
+      color: #130b04;
+      font-weight: 800;
+      font-size: 1rem;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: filter 0.2s ease, transform 0.1s ease;
+      box-shadow: 0 8px 22px rgba(230, 115, 40, 0.35);
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 0.06em;
+    }
+
+    .captcha-submit:hover:not(:disabled) {
+      filter: brightness(0.95);
+      transform: translateY(-1px);
+    }
+
+    .captcha-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .captcha-submit.loading {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+    }
+
+    .captcha-submit.confirmed {
+      background: rgba(76, 175, 80, 0.8);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .captcha-modal {
+        padding: 1.5rem;
+        max-width: 95%;
+      }
+
+      .captcha-title {
+        font-size: 1.25rem;
+      }
+
+      .captcha-instructions {
+        font-size: 0.85rem;
+      }
+
+      .captcha-grid {
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nightclub-entrance" id="entrance"></div>
+
+  <div class="captcha-modal" id="captchaModal">
+    <h2 class="captcha-title">Are you a human?</h2>
+    <p class="captcha-instructions">Click on all of the images containing disco balls</p>
+    
+    <div class="captcha-grid" id="captchaGrid">
+      <!-- Images will be inserted here by JavaScript -->
+    </div>
+
+    <button class="captcha-submit" id="submitBtn">Submit</button>
+  </div>
+
+  <script>
+    const entrance = document.getElementById('entrance');
+    const captchaModal = document.getElementById('captchaModal');
+    const captchaGrid = document.getElementById('captchaGrid');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    const selectedImages = new Set();
+    const totalImages = 9;
+
+    // Create image grid
+    for (let i = 1; i <= totalImages; i++) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'captcha-image-wrapper';
+      wrapper.dataset.index = i;
+      
+      const img = document.createElement('img');
+      img.src = `assets/party-photos/cap${i}.png`;
+      img.alt = `Captcha image ${i}`;
+      img.className = 'captcha-image';
+      
+      wrapper.appendChild(img);
+      captchaGrid.appendChild(wrapper);
+
+      // Add click handler
+      wrapper.addEventListener('click', () => {
+        if (wrapper.classList.contains('selected')) {
+          wrapper.classList.remove('selected');
+          selectedImages.delete(i);
+        } else {
+          wrapper.classList.add('selected');
+          selectedImages.add(i);
+        }
+        updateSubmitButton();
+      });
+    }
+
+    function updateSubmitButton() {
+      if (selectedImages.size === totalImages) {
+        submitBtn.disabled = false;
+      } else {
+        submitBtn.disabled = true;
+      }
+    }
+
+    // Click anywhere on entrance to show captcha
+    entrance.addEventListener('click', () => {
+      if (!captchaModal.classList.contains('show')) {
+        captchaModal.classList.add('show');
+        entrance.style.cursor = 'default';
+      }
+    });
+
+    // Submit handler
+    submitBtn.addEventListener('click', () => {
+      if (selectedImages.size !== totalImages) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Loading...';
+      submitBtn.classList.add('loading');
+
+      setTimeout(() => {
+        submitBtn.textContent = 'Human confirmed';
+        submitBtn.classList.remove('loading');
+        submitBtn.classList.add('confirmed');
+
+        setTimeout(() => {
+          window.location.href = 'party.html';
+        }, 1000);
+      }, 1500);
+    });
+
+    // Initialize submit button state
+    updateSubmitButton();
+  </script>
+</body>
+</html>
+

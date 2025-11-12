@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>After-Party Tickets — The Living Internet Alliance</title>
+  <meta name="description" content="Secure your ticket for the Creator Economy Convention After-Party." />
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <meta name="theme-color" content="#040105" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Stripe Buy Button Script -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .party-background {
+      position: fixed;
+      inset: 0;
+      background-image: url('assets/party-photos/dance3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .party-background::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(4, 1, 5, 0.7);
+      z-index: 1;
+    }
+
+    .party-content {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .party-card {
+      background: rgba(20, 14, 22, 0.92);
+      backdrop-filter: blur(12px);
+      border: 4px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+    }
+
+    .party-title {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .party-subtitle {
+      font-size: 1.1rem;
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .party-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+
+    .party-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .party-features li:last-child {
+      border-bottom: none;
+    }
+
+    .party-features li strong {
+      color: var(--fire);
+      font-weight: 700;
+    }
+
+    .party-cta {
+      text-align: center;
+    }
+
+    .party-cta .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 1rem 2rem;
+      margin: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: 0.25s ease;
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(180deg, #ff8a3a, var(--fire));
+      color: #130b04;
+      box-shadow: 0 8px 22px rgba(230, 115, 40, 0.35);
+    }
+
+    .party-cta .btn:hover {
+      filter: brightness(0.95);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(230, 115, 40, 0.45);
+    }
+
+    @media (max-width: 768px) {
+      .party-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .party-title {
+        font-size: 1.75rem;
+      }
+
+      .party-subtitle {
+        font-size: 1rem;
+      }
+
+      .party-features li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="party-background"></div>
+
+  <main class="party-content">
+    <div class="party-card">
+      <h1 class="party-title">After-Party</h1>
+      <p class="party-subtitle">Sunday, June 7, 2026 • 8:00 PM</p>
+
+      <ul class="party-features">
+        <li><strong>Secret Venue:</strong> A private location with DJs ready to score a grand finale</li>
+        <li><strong>Celebrate:</strong> Close out the weekend with new friends and collaborators</li>
+        <li><strong>Music & Dancing:</strong> Let loose after three days of deep work</li>
+        <li><strong>VIP Included:</strong> VIP ticket holders receive complimentary access</li>
+      </ul>
+
+      <div class="party-cta">
+        <!-- Stripe buy button will be inserted here -->
+        <!-- Replace the href below with your Stripe buy button component -->
+        <a class="btn cta btn-lg" href="#">
+          Secure Your Ticket
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+
