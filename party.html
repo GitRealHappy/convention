@@ -152,22 +152,32 @@
 
   <main class="party-content">
     <div class="party-card">
-      <h1 class="party-title">After-Party</h1>
+        <h2 class="party-subtitle">The After-Party</h2>
+
+      <h1 class="party-title">777 Club</h1>
       <p class="party-subtitle">Sunday, June 7, 2026 • 8:00 PM</p>
 
+
       <ul class="party-features">
-        <li><strong>Secret Venue:</strong> A private location with DJs ready to score a grand finale</li>
+        <li><strong>Secret Venue:</strong> A groovy location with DJs, drinks, a dance floor, and karaoke!</li>
         <li><strong>Celebrate:</strong> Close out the weekend with new friends and collaborators</li>
         <li><strong>Music & Dancing:</strong> Let loose after three days of deep work</li>
-        <li><strong>VIP Included:</strong> VIP ticket holders receive complimentary access</li>
       </ul>
+      <p>Tickets are $80 USD. <br>
+        VIP ticket holders to the Creator Economy Convention receive complimentary after-partytickets.</p>
 
       <div class="party-cta">
         <!-- Stripe buy button will be inserted here -->
         <!-- Replace the href below with your Stripe buy button component -->
-        <a class="btn cta btn-lg" href="#">
-          Secure Your Ticket
-        </a>
+        <script async
+        src="https://js.stripe.com/v3/buy-button.js">
+      </script>
+      
+      <stripe-buy-button
+        buy-button-id="buy_btn_1SJqnk4zBgvudDjivySrH8lS"
+        publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"
+      >
+      </stripe-buy-button>
       </div>
     </div>
   </main>
