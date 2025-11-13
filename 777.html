@@ -269,6 +269,8 @@
         submitBtn.classList.add('confirmed');
 
         setTimeout(() => {
+          // Set access token before redirect
+          sessionStorage.setItem('partyAccess', 'verified');
           window.location.href = 'party.html';
         }, 1000);
       }, 1500);
