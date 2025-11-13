@@ -18,17 +18,37 @@
       padding: 0;
       overflow: hidden;
       height: 100vh;
-      cursor: pointer;
     }
 
     .nightclub-entrance {
       position: fixed;
       inset: 0;
-      background-image: url('assets/party-photos/club.png');
+      background-image: url('assets/party-photos/777.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       z-index: 1;
+    }
+
+    .door-number {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(4rem, 15vw, 12rem);
+      font-weight: 800;
+      font-family: "Montserrat", sans-serif;
+      color: #0a8dce;
+      z-index: 5;
+      cursor: pointer;
+      user-select: none;
+      pointer-events: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .door-number.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .captcha-modal {
@@ -192,9 +212,11 @@
 <body>
   <div class="nightclub-entrance" id="entrance"></div>
 
+  <div class="door-number" id="doorNumber">777</div>
+
   <div class="captcha-modal" id="captchaModal">
     <h2 class="captcha-title">Are you a human?</h2>
-    <p class="captcha-instructions">Click on all of the images containing disco balls</p>
+    <p class="captcha-instructions">Click on all of the images with the correct numbers</p>
     
     <div class="captcha-grid" id="captchaGrid">
       <!-- Images will be inserted here by JavaScript -->
@@ -205,22 +227,35 @@
 
   <script>
     const entrance = document.getElementById('entrance');
+    const doorNumber = document.getElementById('doorNumber');
     const captchaModal = document.getElementById('captchaModal');
     const captchaGrid = document.getElementById('captchaGrid');
     const submitBtn = document.getElementById('submitBtn');
     
     const selectedImages = new Set();
-    const totalImages = 9;
+    const displayedImages = []; // Array to track which images are displayed
+    const invalidImages = [1, 2, 3, 4]; // cap1-cap4 are invalid
+    const validImages = [5, 6, 7, 8, 9, 10, 11]; // cap5-cap11 are valid
 
-    // Create image grid
-    for (let i = 1; i <= totalImages; i++) {
+    // Function to randomly select 9 images from 11
+    function getRandomImages() {
+      const allImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+      const shuffled = [...allImages].sort(() => Math.random() - 0.5);
+      return shuffled.slice(0, 9);
+    }
+
+    // Create image grid with random 9 images
+    const randomImageSet = getRandomImages();
+    randomImageSet.forEach((imageNum) => {
+      displayedImages.push(imageNum);
+      
       const wrapper = document.createElement('div');
       wrapper.className = 'captcha-image-wrapper';
-      wrapper.dataset.index = i;
+      wrapper.dataset.imageNum = imageNum;
       
       const img = document.createElement('img');
-      img.src = `assets/party-photos/cap${i}.png`;
-      img.alt = `Captcha image ${i}`;
+      img.src = `assets/party-photos/cap${imageNum}.png`;
+      img.alt = `Captcha image ${imageNum}`;
       img.className = 'captcha-image';
       
       wrapper.appendChild(img);
@@ -230,34 +265,50 @@
       wrapper.addEventListener('click', () => {
         if (wrapper.classList.contains('selected')) {
           wrapper.classList.remove('selected');
-          selectedImages.delete(i);
+          selectedImages.delete(imageNum);
         } else {
           wrapper.classList.add('selected');
-          selectedImages.add(i);
+          selectedImages.add(imageNum);
         }
         updateSubmitButton();
       });
-    }
+    });
 
     function updateSubmitButton() {
-      if (selectedImages.size === totalImages) {
+      // Get displayed valid and invalid images
+      const displayedValid = displayedImages.filter(num => validImages.includes(num));
+      const displayedInvalid = displayedImages.filter(num => invalidImages.includes(num));
+      
+      // Check if all valid images are selected and no invalid images are selected
+      const allValidSelected = displayedValid.every(num => selectedImages.has(num));
+      const noInvalidSelected = displayedInvalid.every(num => !selectedImages.has(num));
+      
+      if (allValidSelected && noInvalidSelected && displayedValid.length > 0) {
         submitBtn.disabled = false;
       } else {
         submitBtn.disabled = true;
       }
     }
 
-    // Click anywhere on entrance to show captcha
-    entrance.addEventListener('click', () => {
+    // Click on 777 to show captcha
+    doorNumber.addEventListener('click', () => {
       if (!captchaModal.classList.contains('show')) {
         captchaModal.classList.add('show');
-        entrance.style.cursor = 'default';
+        doorNumber.classList.add('hidden');
       }
     });
 
     // Submit handler
     submitBtn.addEventListener('click', () => {
-      if (selectedImages.size !== totalImages) return;
+      // Get displayed valid and invalid images
+      const displayedValid = displayedImages.filter(num => validImages.includes(num));
+      const displayedInvalid = displayedImages.filter(num => invalidImages.includes(num));
+      
+      // Validate selection
+      const allValidSelected = displayedValid.every(num => selectedImages.has(num));
+      const noInvalidSelected = displayedInvalid.every(num => !selectedImages.has(num));
+      
+      if (!allValidSelected || !noInvalidSelected) return;
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Loading...';

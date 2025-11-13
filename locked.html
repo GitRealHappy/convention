@@ -24,7 +24,7 @@
     .locked-background {
       position: fixed;
       inset: 0;
-      background-image: url('assets/party-photos/locked-door.png');
+      background-image: url('assets/village2.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -35,7 +35,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(4, 1, 5, 0.75);
+      background: rgba(4, 1, 5, 0.202);
       z-index: 1;
     }
 
@@ -51,7 +51,7 @@
     }
 
     .locked-card {
-      background: rgba(20, 14, 22, 0.92);
+      background: rgba(20, 14, 22, 0.08);
       backdrop-filter: blur(12px);
       border: 4px solid rgba(255, 255, 255, 0.15);
       border-radius: 12px;
@@ -66,6 +66,9 @@
       font-size: 4rem;
       margin-bottom: 1rem;
       opacity: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .locked-title {
@@ -133,7 +136,9 @@
 
   <main class="locked-content">
     <div class="locked-card">
-      <div class="locked-icon">🔒</div>
+      <div class="locked-icon">
+        <img src="assets/party-photos/lock.png" alt="Locked" style="height: 3.6rem; width: 3.6rem;" />
+      </div>
       <h1 class="locked-title">Access Required</h1>
       <p class="locked-message">
         If you do not yet have a ticket to the Creator Economy Convention, please start here:
