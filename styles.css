@@ -195,10 +195,10 @@
   }
   .section-compact{padding:48px 26px;margin:1.2rem auto;max-width:650px}
   .card-wrap-different{
-    background:var(--fire);
+    background:rgba(230, 166, 121, 0.754); /* less opaque fire color */
     color:#000;
-    font-weight:500;
-    backdrop-filter:blur(8px);
+    font-weight:700;
+    backdrop-filter:blur(9px);
     border:4px solid rgba(255,255,255,.15);
     border-radius:5px;
     box-shadow:0 6px 24px rgba(0,0,0,.4);
