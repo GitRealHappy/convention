@@ -62,35 +62,37 @@ document.addEventListener('click', e=>{
   });
   
   // Sticky CTA show/hide logic
-  const sticky=document.querySelector('.sticky-cta');
-  const hero=document.querySelector('.hero');
-  const speakersSection=document.querySelector('#offer');
-  if(sticky&&hero&&speakersSection){
-    let hasReachedSpeakers = false;
-    
-    const watchHero=new IntersectionObserver(entries=>{
-      entries.forEach(en=>{
-        if(en.isIntersecting){sticky.classList.remove('show');}
-        else{sticky.classList.add('show');}
-      });
-    },{threshold:0});
-    watchHero.observe(hero);
+  const sticky = document.querySelector('.sticky-cta');
+  const startSection = document.querySelector('#different');
+  const speakersSection = document.querySelector('#offer');
   
-    const watchSpeakers=new IntersectionObserver(entries=>{
-      entries.forEach(en=>{
-        if(en.isIntersecting){
-          hasReachedSpeakers = true;
-          sticky.style.opacity='0';
-          sticky.style.pointerEvents='none';
-        }else if(!hasReachedSpeakers){
-          // Only show CTA again if we haven't reached speakers section yet
-          sticky.style.opacity='1';
-          sticky.style.pointerEvents='auto';
-        }
-        // If hasReachedSpeakers is true, don't change anything - keep it hidden
-      });
-    },{threshold:0});
-    watchSpeakers.observe(speakersSection);
+  if (sticky && startSection && speakersSection) {
+    // Function to check visibility on scroll
+    const checkStickyVisibility = () => {
+      const startRect = startSection.getBoundingClientRect();
+      const offerRect = speakersSection.getBoundingClientRect();
+      
+      // Show if start section top has passed the viewport top (scrolled past start of it)
+      // AND if we haven't reached the offer section yet
+      const passedStart = startRect.top < window.innerHeight / 2; 
+      const reachedOffer = offerRect.top < window.innerHeight;
+      
+      if (passedStart && !reachedOffer) {
+        sticky.classList.add('show');
+        sticky.style.opacity = '1';
+        sticky.style.pointerEvents = 'auto';
+      } else {
+        sticky.classList.remove('show');
+        sticky.style.opacity = '0';
+        sticky.style.pointerEvents = 'none';
+      }
+    };
+
+    // Initial check
+    checkStickyVisibility();
+
+    // Check on scroll
+    window.addEventListener('scroll', checkStickyVisibility);
   }
 
   // Hamburger menu toggle
