@@ -695,3 +695,19 @@
   transform:translateY(-2px);
   box-shadow:0 12px 28px rgba(0,0,0,.55);
 }
+
+/* Pricing Updates */
+.old-price {
+  text-decoration: line-through;
+  color: var(--muted);
+  font-size: 1em;
+  margin-right: 0.5rem;
+}
+
+.sale-price {
+  color: var(--fire);
+  font-weight: 800;
+  font-size: 1.2em;
+  font-style: italic;
+  text-shadow: 0 0 10px rgba(230, 115, 40, 0.3);
+}

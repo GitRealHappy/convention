@@ -381,9 +381,8 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       
       <!-- Black Friday Announcement -->
       <div class="offer-announcement">
-        <h3>We're opening the Black Friday sale up in one hour!</h3>
-        <p>50 Tickets (General, VIP, or Virtual) will be made available at 50% off until the end of Cyber Monday!</p>
-        <div id="bf-timer"></div>
+        <h3>Happy Thanksgiving, and Black Friday!</h3>
+        <p>All tickets are 50% off until the end of Monday, Dec. 1st.</p>
       </div>
 
       <h2 id="offer-title">Join us in Vancouver</h2>
@@ -391,7 +390,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       <div class="tiers" style="margin-top:1rem">
         <article class="tier">
           <h3 class="tier-name">General Admission</h3>
-          <p class="seats">$1,000 USD.</p>
+          <p class="seats"><span class="old-price">$1,000 USD</span> <span class="sale-price">$500 USD</span></p>
 
           <ul class="tier-points">
             <li>Access to all talks, workshops, and live (in person!) podcasts</li>
@@ -408,7 +407,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
 
         <article class="tier highlight">
           <h3 class="tier-name">VIP <span class="seats">  ( 32 spots remaining )</span></h3>
-          <p class="seats">$2,500 USD</p>
+          <p class="seats"><span class="old-price">$2,500 USD</span> <span class="sale-price">$1,250 USD</span></p>
           <ul class="tier-points">
             <li>Everything in General Admission</li>
             <li>Exclusive dinner with speakers on Saturday night (priceless)</li>
@@ -420,6 +419,22 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
           </ul>
           <stripe-buy-button
             buy-button-id="buy_btn_1SIl7a4zBgvudDjiGNOT665y"
+            publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"
+          >
+          </stripe-buy-button>
+        </article>
+
+        <article class="tier">
+          <h3 class="tier-name">Virtual</h3>
+          <p class="seats"><span class="old-price">$300 USD</span> <span class="sale-price">$150 USD</span></p>
+          <ul class="tier-points">
+            <li>Access to all keynote talks and live podcasts via livestream</li>
+            <li>Access to the private Circle community</li>
+            <li>Dedicated virtual networking section to connect with online attendees</li>
+            <li>Be part of the event from anywhere in the world</li>
+          </ul>
+          <stripe-buy-button
+            buy-button-id="buy_btn_1SYD4I4zBgvudDjiroedS4lF"
             publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"
           >
           </stripe-buy-button>
