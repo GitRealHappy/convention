@@ -276,6 +276,59 @@
   }
   .speaker-row img:hover{box-shadow:0 0 0 2px var(--fire)}
 
+  /* Black Friday Announcement */
+  .offer-announcement {
+    background: linear-gradient(135deg, var(--violet-black), #2a1a2e);
+    border: 2px solid var(--fire);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(230, 115, 40, 0.2);
+  }
+
+  .offer-announcement h3 {
+    color: var(--fire);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  .offer-announcement p {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  #bf-timer {
+    font-family: "Courier New", monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media (max-width: 600px) {
+    .offer-announcement {
+      padding: 1rem;
+    }
+    .offer-announcement h3 {
+      font-size: 1.2rem;
+    }
+    .offer-announcement p {
+      font-size: 1rem;
+    }
+    #bf-timer {
+      font-size: 1.8rem;
+      padding: 0.4rem 1rem;
+    }
+  }
+
   /* Mobile responsive speaker rows */
 
   /* Tablet: Reduce size sooner (768px - 960px) */

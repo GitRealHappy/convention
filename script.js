@@ -183,4 +183,40 @@ document.addEventListener('click', e=>{
       }
     });
   });
-  
+
+  // Black Friday Countdown Timer
+  const timerElement = document.getElementById('bf-timer');
+  if(timerElement) {
+    // Set target date to today (Nov 27, 2025) at 2:00 PM PST
+    // PST is UTC-8
+    const targetDate = new Date("2025-11-27T14:00:00-08:00").getTime();
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        // Time's up
+        timerElement.innerHTML = "SALE IS LIVE!";
+        return;
+      }
+
+      // Time calculations
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Format with leading zeros
+      const formattedHours = hours < 10 ? "0" + hours : hours;
+      const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+      const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+      timerElement.innerHTML = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+    };
+
+    // Initial call
+    updateTimer();
+    
+    // Update every second
+    setInterval(updateTimer, 1000);
+  }
