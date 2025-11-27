@@ -108,28 +108,17 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
           <div class="hero-overlay"></div>
         </div>
       </div>
-
-      <!-- Speaker Icons (staggered rows) -->
-      <div class="speaker-rows fadein" aria-label="Featured Speakers">
-        <div class="speaker-row top-row">
-          <a href="#dan-koe"><img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" /></a>
-          <a href="#kieran-drew"><img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" /></a>
-          <a href="#taylin-simmonds"><img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" /></a>
-          <a href="#brian-maierhofer"><img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" /></a>
-          <a href="#kimia-nora"><img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" /></a>
-          <a href="#dan-goldfield"><img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" /></a>
-          <a href="#jack-moses"><img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" /></a>
+      <blockquote class="hero-quote">
+        <div class="quote-layout">
+          <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" class="quote-icon">
+          <div class="quote-content">
+            "Now that technical work and intelligence are on tap thanks to AI, what is left is taste, agency, and coherence." — Dan Koe
+          </div>
         </div>
-        <div class="speaker-row bottom-row">
-          <a href="#hussain-ibarra"><img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" /></a>
-          <a href="#valentin-sounds"><img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" /></a>
-          <a href="#nathalie-agnes"><img src="assets/speaker-icons/speaker6.jpg" alt="Nathalie Agnes" /></a>
-          <a href="#logan-quinn"><img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" /></a>
-          <a href="#jesse-james-carver"><img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" /></a>
-          <a href="#david-morin"><img src="assets/speaker-icons/speaker14.jpg" alt="David Morin" /></a>
-        </div>
-      </div>
+      </blockquote>
     </section>
+
+
 
     <!-- PROBLEM -->
     <section class="section card-wrap fadein" id="problem" aria-labelledby="problem-title">
@@ -157,7 +146,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
 
     <!-- EXPERIENCE -->
     <section class="section card-wrap fadein" id="experience" aria-labelledby="exp-title">
-      <h2 id="exp-title">What you’ll experience</h2>
+      <h2 id="exp-title">The experience</h2>
       <ul class="bullets">
         <li><strong>13+ Headline Speakers:</strong> Writers, designers, marketers, and builders who walk the talk.</li>
         <li><strong>Hundreds of Ambitious Creators:</strong> Meet collaborators, mentors, clients, and friends who speak your language.</li>
@@ -172,70 +161,234 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       </ul>
     </section>
 
-    <!-- TOPICS -->
-    <section class="section card-wrap fadein" id="topics" aria-labelledby="topics-title">
-      <h2 id="topics-title">High Leverage Skills For The Future:</h2>
-      <div class="topic-cols">
-        <div class="topic">
-          <h3>Creative Agency</h3>
-          <h4>The power to direct your attention and imagination to invent, iterate, and express purposefully.</h4>
-          <div class="topic-controls">
-            <button class="topic-toggle" aria-expanded="false" aria-controls="topic-list-creative">
-              <img src="assets/button.png" alt="Toggle Creative Agency topics" />
-            </button>
+    <!-- ITINERARY -->
+    <section class="section card-wrap fadein" id="itinerary" aria-labelledby="itinerary-title">
+      <h2 id="itinerary-title">The Weekend Itinerary</h2>
+      <div class="itinerary-container">
+        
+        <!-- Friday -->
+        <div class="day-module">
+          <button class="day-header" aria-expanded="false" aria-controls="day-list-fri">
+            <h3>Friday June 5th</h3>
+            <span class="toggle-icon">+</span>
+          </button>
+          <div class="day-content" id="day-list-fri" hidden>
+            <div class="schedule-item">
+              <span class="time">1:00pm</span>
+              <div class="event-info">Check-in</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">1:30pm</span>
+              <div class="event-info">Welcome address (15 minutes)</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">1:45pm</span>
+              <div class="event-info">Guided networking ice-breaker</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">2:00pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" class="speaker-mini">
+                <div><strong>Opening keynote: Taylin Simmonds</strong> — The future of social media ghostwriting (60 minutes + 15 minute Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">3:20pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" class="speaker-mini">
+                <div><strong>Keynote #2: Hussain Ibarra</strong> — The Key to writing high quality content and building an audience (45 min talk, 15 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">4:25pm</span>
+              <div class="event-info">Leg stretch, mingle, bathroom break (30 minutes)</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">4:50pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" class="speaker-mini">
+                <div><strong>Keynote #3: Dan Goldfield</strong> — The spiritual dimension of business (30 min talk, 30 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">6:00pm</span>
+              <div class="event-info">Dinner is served! Catered dinner with live entertainment…</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">8:00pm</span>
+              <div class="event-info">The Secrets of Social Networking: A panel discussion (60 min)</div>
+            </div>
           </div>
-          <ul class="topic-list" id="topic-list-creative" hidden>
-            <li>Lateral thinking &amp; idea generation</li>
-            <li>High-impact writing; developing/freeing your voice</li>
-            <li>Copywriting &amp; ghostwriting (clarity, narrative, offers)</li>
-            <li>Visual brand design &amp; creative direction</li>
-            <li>Product development &amp; rapid prototyping</li>
-            <li>Optimizing for flow and deep focus</li>
-            <li>Identity-level change; creative self-concept work</li>
-            <li>Somatic release tools for unlocking expression</li>
-            <li>Tech, AI &amp; “the tools” for faster iteration</li>
-            <li>Content systems: formats, cadences, creative pipelines</li>
-          </ul>
         </div>
-        <div class="topic">
-          <h3>Social Agency</h3>
-          <h4>Freedom to create compounding win-wins with the people you’re most excited to connect and work with.</h4>
-          <div class="topic-controls">
-            <button class="topic-toggle" aria-expanded="false" aria-controls="topic-list-social">
-              <img src="assets/button.png" alt="Toggle Social Agency topics" />
-            </button>
+
+        <!-- Saturday -->
+        <div class="day-module">
+          <button class="day-header" aria-expanded="false" aria-controls="day-list-sat">
+            <h3>Saturday June 6th</h3>
+            <span class="toggle-icon">+</span>
+          </button>
+          <div class="day-content" id="day-list-sat" hidden>
+            <div class="schedule-item has-speaker">
+              <span class="time">9:00am</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="JJ Carver" class="speaker-mini">
+                <div><strong>JJ Carver</strong> — Goodmorning: what to expect out of the day (5 minutes)</div>
+              </div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">9:05am</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" class="speaker-mini">
+                <div><strong>Keynote #4: Logan Quinn</strong> — Holistic Health Coaching, and Training Practitioners Online (30 min)</div>
+              </div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">9:40am</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" class="speaker-mini">
+                <div><strong>Keynote #5: Dan Koe</strong> — Master AI Prompting to focus your time and attention on your craft (60 min + 30 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">11:10am</span>
+              <div class="event-info">15 minute break</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">11:25am</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" class="speaker-mini">
+                <div><strong>Keynote #6: Brian Maierhofer</strong> — Entrepreneurship from a healed nervous system (45 min + 15 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">12:25pm</span>
+              <div class="event-info">Lunch is served! Catered lunch and with a social networking game/challenge. (90 minutes)</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">1:55pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" class="speaker-mini">
+                <div><strong>Keynote #6: Jack Moses</strong> — Energy, Frequency, Vibration: The Metaphysics of Business and Reality Creation (45 min workshop) [Jack will be quite available for questions at other times]</div>
+              </div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">2:40pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" class="speaker-mini">
+                <div><strong>Keynote #7: Valentin Sounds</strong> — Visionary Brand Identity: Expressing a clear feeling and message (45 min talk + 15 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">3:40pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" class="speaker-mini">
+                <div><strong>Keynote #8: Kimia Nora</strong> — Neuroplasticity, the Future of Success and Health (45 min talk + 15 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">4:40pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" class="speaker-mini">
+                <div><strong>Keynote #9: Kieran Drew</strong> — How to Grow Your Business With Magnetic Writing (60 min)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">5:45pm</span>
+              <div class="event-info">Facilitated networking exercise before we part ways for dinner.. (30 minutes)</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">6:15pm</span>
+              <div class="event-info">Goodnight/goodbye for now</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">7:00pm</span>
+              <div class="event-info"><strong>VIP Dinner & Games Night</strong></div>
+            </div>
           </div>
-          <ul class="topic-list" id="topic-list-social" hidden>
-            <li>Non-needy networking &amp; relationship building</li>
-            <li>Practitioner/guidance business models (sessions, cohorts, communities)</li>
-            <li>Honest persuasion &amp; psychology of sales</li>
-            <li>Nervous system regulation for entrepreneurs (rejection resilience)</li>
-            <li>The Art of The Interview: crafting potent questions, listening and improvisational skills</li>
-            <li>Audience building: email list growth, community stewardship</li>
-            <li>Email marketing &amp; nurture sequencing</li>
-            <li>Collaboration design: partnerships, referrals, co-creation</li>
-          </ul>
         </div>
-        <div class="topic">
-          <h3>Economic Agency</h3>
-          <h4>The ability to create, price, and exchange value deliberately to fund a sovereign, sustainable life.</h4>
-          <div class="topic-controls">
-            <button class="topic-toggle" aria-expanded="false" aria-controls="topic-list-economic">
-              <img src="assets/button.png" alt="Toggle Economic Agency topics" />
-            </button>
+
+        <!-- Sunday -->
+        <div class="day-module">
+          <button class="day-header" aria-expanded="false" aria-controls="day-list-sun">
+            <h3>Sunday June 7th</h3>
+            <span class="toggle-icon">+</span>
+          </button>
+          <div class="day-content" id="day-list-sun" hidden>
+            <div class="schedule-item">
+              <span class="time">9:00am</span>
+              <div class="event-info">Goodmorning, and a 5 minute meditation</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">9:10am</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" class="speaker-mini">
+                <div><strong>Keynote #10: Dan Goldfield (round 2)</strong> — Letting it all go! ( Being in Nonduality ) (30 min + 15 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">9:55am</span>
+              <div class="event-info">15 minute break</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">10:10am</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker6.jpg" alt="Nathalie Agnes" class="speaker-mini">
+                <div><strong>Nathalie Agnes: Sales is Spiritual</strong> [and a preview from her book: Beyond the Lens of Limitation] (45 min +15 min Q&A)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">11:10am</span>
+              <div class="event-info">Guided movement while team sets up for podcast (5 min)</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">11:15am</span>
+              <div class="event-info">
+                <div class="speaker-pair">
+                    <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" class="speaker-mini">
+                </div>
+                <div><strong>Live podcast: Jesse James Carver interviews Ish Hasan</strong>: Rites of Passage, Leadership, Being Human</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">12:15pm</span>
+              <div class="event-info">Lunch is served! Catered lunch with continuation of networking game/challenge</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">1:15pm</span>
+              <div class="event-info">Panel Q&A: Several of the keynote speakers will answer questions from the audience, and from each other (60 min)</div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">2:20pm</span>
+              <div class="event-info">
+                <img src="assets/speaker-icons/speaker14.jpg" alt="David Morin" class="speaker-mini">
+                <div><strong>Keynote #11: David Morin</strong> — Uncovering Your True Voice [& a closing poem] (30 min + poem)</div>
+              </div>
+            </div>
+            <div class="schedule-item has-speaker">
+              <span class="time">3:05pm</span>
+              <div class="event-info">
+                <div class="speaker-pair">
+                    <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" class="speaker-mini">
+                    <img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" class="speaker-mini" style="margin-left:-15px">
+                </div>
+                <div><strong>Jesse & Logan</strong> — Integrating an intense weekend: How to take it home with you (30 minutes)</div>
+              </div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">3:35pm</span>
+              <div class="event-info">Closing ceremony (acknowledgements, final announcements, and farewells)</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">4:00pm</span>
+              <div class="event-info">Final 30 minute opportunity for goodbyes in the ballroom</div>
+            </div>
+            <div class="schedule-item">
+              <span class="time">8:00pm</span>
+              <div class="event-info"><strong>After-party:</strong> (tickets sold separately)<br><br>At a special venue easy to get to from the Sheraton hotel. Party ends at 2:00AM on Monday June 8th.</div>
+            </div>
           </div>
-          <ul class="topic-list" id="topic-list-economic" hidden>
-            <li>Offer architecture &amp; price testing</li>
-            <li>Value psychology; demand mapping; customer research</li>
-            <li>Conversion copy &amp; offer pages</li>
-            <li>(How to actually get people to pay you)</li>
-            <li>Sales conversations &amp; lightweight funnels</li>
-            <li>Empowered employment/contracting (win-win terms, intrapreneurship)</li>
-            <li>Monetization models: subscriptions, courses, services, licensing</li>
-            <li>Distribution: email, partnerships, affiliate, owned channels</li>
-            <li>Tech, AI &amp; automation for leverage</li>
-          </ul>
-          </div>
+        </div>
+
       </div>
     </section>
 

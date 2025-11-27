@@ -139,7 +139,7 @@
   .section-hero .hero-cta .btn { margin-left: 0; }
 
   /* Mobile Hero Styling */
-  @media (max-width: 900px) {
+  @media (max-width: 768px) { /* Changed from 900px to 768px */
     .section-hero {
       /* Keep padding and container styles */
       padding: 32px 18px !important;
@@ -711,3 +711,198 @@
   font-style: italic;
   text-shadow: 0 0 10px rgba(230, 115, 40, 0.3);
 }
+
+  /* Itinerary Section */
+  .itinerary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .day-module {
+    background: rgba(31, 22, 34, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .day-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: left;
+    color: var(--text);
+  }
+
+  .day-header:hover {
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .day-module.open .day-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .day-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--fire);
+  }
+
+  .toggle-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--muted);
+    transition: transform 0.3s ease;
+  }
+
+  .day-module.open .toggle-icon {
+    transform: rotate(45deg);
+    color: var(--fire);
+  }
+
+  .day-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease;
+  }
+
+  .day-module.open .day-content {
+    padding: 1rem 1.5rem 1.5rem;
+    /* max-height will be set by JS */
+  }
+
+  .schedule-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    align-items: start;
+  }
+
+  .schedule-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .time {
+    font-family: "Courier New", monospace;
+    font-weight: 700;
+    color: var(--muted);
+    font-size: 0.95rem;
+    padding-top: 0.2rem; /* Align with text */
+  }
+
+  .event-info {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  /* Special styling for items with speakers */
+  .has-speaker .event-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .speaker-mini {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.15);
+    flex-shrink: 0;
+  }
+
+  .speaker-pair {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  /* Mobile Itinerary */
+  @media (max-width: 600px) {
+    .schedule-item {
+      grid-template-columns: 1fr; /* Stack vertically */
+      gap: 0.5rem;
+      padding: 1.2rem 0;
+    }
+
+    .time {
+      color: var(--fire);
+      font-size: 0.9rem;
+    }
+    
+    .has-speaker .event-info {
+      flex-direction: row; /* Keep icon next to text on mobile usually looks ok, or stack if very narrow */
+      align-items: flex-start;
+    }
+  }
+
+  /* Hero Quote Styles */
+  .hero-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem; /* Increased from 1.22rem */
+    font-weight: 600;
+    /* Semi-transparent eggshell white background */
+    background: rgba(240, 234, 214, 0.15); 
+    color: var(--text);
+    max-width: 950px; /* Slightly wider to accommodate larger text/icon */
+    margin: 2.4rem auto 1.5rem auto;
+    padding: 2rem 2rem;
+    position: relative;
+    border-radius: 13px;
+    box-shadow: 0 8px 38px rgba(50,30,10,0.08);
+  }
+
+  .quote-layout {
+    display: flex;
+    align-items: center; /* Vertically center align */
+    gap: 2rem;
+  }
+
+  .quote-icon {
+    width: 120px; /* 2x size (was 60px) */
+    height: 120px; /* 2x size */
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.15);
+  }
+
+  .quote-content {
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  /* Removed toggle btn and arrow label styles as they are no longer used */
+  
+  /* Mobile styling for quote */
+  @media (max-width: 600px) {
+    .hero-quote {
+      padding: 1.5rem;
+      font-size: 1.0rem;
+    }
+    .quote-layout {
+      gap: 1.2rem;
+      flex-direction: column; /* Stack on mobile for better space usage */
+      text-align: center;
+    }
+    .quote-icon {
+      width: 90px; /* Slightly smaller on mobile but still prominent */
+      height: 90px;
+    }
+  }

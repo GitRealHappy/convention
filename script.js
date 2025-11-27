@@ -63,7 +63,7 @@ document.addEventListener('click', e=>{
   
   // Sticky CTA show/hide logic
   const sticky = document.querySelector('.sticky-cta');
-  const startSection = document.querySelector('#different');
+  const startSection = document.querySelector('#problem');
   const speakersSection = document.querySelector('#offer');
   
   if (sticky && startSection && speakersSection) {
@@ -139,47 +139,61 @@ document.addEventListener('click', e=>{
     lastScrollY = currentScrollY;
   });
 
-  // Topics dropdown toggles
-  const topicContainers = document.querySelectorAll('.topic');
-  topicContainers.forEach(topic => {
-    const toggle = topic.querySelector('.topic-toggle');
-    const list = topic.querySelector('.topic-list');
-    if(!toggle || !list) return;
+  // Itinerary Accordion
+  const dayModules = document.querySelectorAll('.day-module');
+  
+  dayModules.forEach(module => {
+    const header = module.querySelector('.day-header');
+    const content = module.querySelector('.day-content');
+    
+    if(!header || !content) return;
 
-    // Ensure collapsed state
-    list.style.maxHeight = '0px';
+    // Ensure collapsed state initially
+    content.style.maxHeight = '0px';
 
-    const closeList = () => {
-      topic.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-      list.style.maxHeight = '0px';
-      // Hide after transition for accessibility
+    const closeDay = () => {
+      module.classList.remove('open');
+      header.setAttribute('aria-expanded', 'false');
+      content.style.maxHeight = '0px';
+      
+      // Hide after transition
       const onEnd = () => {
-        list.hidden = true;
-        list.removeEventListener('transitionend', onEnd);
+        content.hidden = true;
+        content.removeEventListener('transitionend', onEnd);
       };
-      list.addEventListener('transitionend', onEnd);
+      content.addEventListener('transitionend', onEnd);
     };
 
-    const openList = () => {
-      topic.classList.add('open');
-      toggle.setAttribute('aria-expanded','true');
-      list.hidden = false;
-      // Force reflow then expand to natural height
-      list.style.maxHeight = '0px';
-      // Next frame for transition to apply
+    const openDay = () => {
+      module.classList.add('open');
+      header.setAttribute('aria-expanded', 'true');
+      content.hidden = false;
+      
+      // Force reflow
+      content.style.maxHeight = '0px';
+      
       requestAnimationFrame(() => {
-        list.style.maxHeight = list.scrollHeight + 'px';
+        // Calculate full height including padding
+        content.style.maxHeight = content.scrollHeight + 40 + 'px'; // +40 for padding buffer
       });
     };
 
-    toggle.addEventListener('click', (e) => {
+    header.addEventListener('click', (e) => {
       e.preventDefault();
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      if(expanded){
-        closeList();
-      }else{
-        openList();
+      const isOpen = module.classList.contains('open');
+      
+      // Optional: Close others if we want strict accordion behavior
+      // dayModules.forEach(m => {
+      //   if(m !== module && m.classList.contains('open')) {
+      //      // close logic...
+      //   }
+      // });
+
+      if(isOpen) {
+        closeDay();
+      } else {
+        openDay();
       }
     });
   });
+
