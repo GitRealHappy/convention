@@ -37,6 +37,15 @@
     font-weight:800;font-size:1.1rem;
   }
   .brand-mark{width:62px;height:62px}
+  
+  /* Stack brand text below logo on narrow tablets */
+  @media (min-width: 769px) and (max-width: 849px) {
+    .brand {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+  }
   .nav{display:flex;gap:2rem}
   .nav a{
     color:var(--muted);font-weight:500;
@@ -46,6 +55,13 @@
     border: 1px solid #ea813b84;
   }
   .nav a:hover{color:var(--text)}
+  
+  /* Tablet spacing */
+  @media (min-width: 769px) and (max-width: 1124px) {
+    .nav {
+      margin-right: 1.0rem;
+    }
+  }
 
   /* Hamburger menu */
   .hamburger{
@@ -71,6 +87,12 @@
     .hamburger{display:flex}
     .nav{display:none}
     .site-header .btn.cta:not(.mobile-cta){display:none}
+    .header-wrap {
+      padding: 0.5rem 1rem;
+    }
+    .brand-text {
+      font-size: 0.9rem;
+    }
   }
   
   .bg, .bg-video{
@@ -97,6 +119,13 @@
     padding:32px 22px;
   }
   .section-hero{padding:48px;margin:3.2rem auto;max-width:1250px;background-image:none;position:relative;}
+  
+  /* Community page section adjustments */
+  .section-hero.card-wrap-top {
+    max-width: 900px !important;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
   .card-wrap-top{
     margin-top: 100px;
     padding: 32px 18px !important;
@@ -233,11 +262,11 @@
   }
   .btn{
     display:inline-flex;align-items:center;justify-content:center;
-    border-radius:999px;padding:.7rem 1.3rem;margin:.3rem;
+    border-radius:4px;padding:.5rem 1rem;margin:.3rem;
     border:1px solid rgba(255,255,255,.15);transition:.25s ease;
   }
   .btn.cta{
-    background:linear-gradient(180deg,#ff8a3a,var(--fire));
+    background:linear-gradient(180deg,rgba(255,138,58,0.85),rgba(230,115,40,0.85));
     color:#130b04;font-weight:800;box-shadow:0 8px 22px rgba(230,115,40,.35);
     margin: 1rem auto;
   }
@@ -936,7 +965,7 @@
   .sponsor-conveyor {
     width: 100%;
     max-width: 950px; /* Matches hero width */
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
     padding: 1.5rem 0;
     background: rgba(20, 20, 20, 0.85); /* Dark charcoal semi-transparent */
     backdrop-filter: blur(8px);
@@ -968,7 +997,7 @@
     display: flex;
     gap: 6rem;
     width: max-content;
-    animation: scroll 40s linear infinite;
+    animation: scroll 35s linear infinite;
     padding-left: 2rem;
   }
 
@@ -983,6 +1012,9 @@
   .sponsor-logo img[alt="Oakmoss"] {
     height: 112px; /* 75px * 1.5 = 112.5px */
     width: auto;
+    background: rgba(222, 209, 197, 0.271);
+    padding: 0.2rem;
+    border-radius: 4px;
   }
 
   /* Decrease Medicine of Mankind by 30% */
@@ -1026,6 +1058,9 @@
     /* Oakmoss: 50px * 1.5 = 75px */
     .sponsor-logo img[alt="Oakmoss"] {
       height: 75px;
+      background: rgba(220, 220, 220, 0.3);
+      padding: 0.4rem;
+      border-radius: 4px;
     }
     
     /* Medicine: 50px * 0.7 = 35px */
