@@ -38,7 +38,7 @@ document.addEventListener('click', e=>{
   const checkVisibility = (element) => {
     const rect = element.getBoundingClientRect();
     const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    const threshold = 0.15;
+    const threshold = 0.05; // Reduced from 0.15 to trigger sooner
     const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
     return visibleHeight > 0 && (visibleHeight / rect.height) >= threshold;
   };
@@ -54,7 +54,7 @@ document.addEventListener('click', e=>{
     entries.forEach(e=>{
       if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
     });
-  },{threshold:.15, rootMargin:'50px'}); // Added rootMargin for better mobile detection
+  },{threshold:0.05, rootMargin:'0px'}); // Reduced threshold and adjusted rootMargin for earlier detection
   faders.forEach(f=>{
     if(!f.classList.contains('visible')) {
       io.observe(f);
