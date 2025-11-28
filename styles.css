@@ -78,16 +78,6 @@
     width:100%;height:100%;object-fit:cover;
   }
 
-  .lead,
-  .section .lead,
-  .card-wrap .lead,
-  p.lead {
-    background: rgba(180, 180, 180, 0.4) !important;
-    padding: 0.4rem 0.8rem !important;
-    display: inline-block !important;
-    border-radius: 4px !important;
-    margin: 0.5rem 0 !important;
-  }
 
   .section{padding:64px 36px;margin:2.5rem auto;max-width:770px}
   .card-wrap{
