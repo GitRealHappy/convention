@@ -154,12 +154,21 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    display: grid;
+    grid-template-areas: "stack";
+  }
+  .hero-visual > * {
+    grid-area: stack;
   }
   .hero-visual img {
     width: 100%;
-    opacity: 0.8;
     height: auto;
     display: block;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .hero-visual img.active {
+    opacity: 0.8;
   }
   .hero-overlay { display: none; }
 

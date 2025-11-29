@@ -197,3 +197,20 @@ document.addEventListener('click', e=>{
     });
   });
 
+  // Hero Image Rotation
+  const heroImages = document.querySelectorAll('.hero-bg');
+  if (heroImages.length > 1) {
+    let currentIndex = 0;
+    const intervalTime = 4000; // 4 seconds
+
+    setInterval(() => {
+      // Remove active from current
+      heroImages[currentIndex].classList.remove('active');
+      
+      // Move to next
+      currentIndex = (currentIndex + 1) % heroImages.length;
+      
+      // Add active to next
+      heroImages[currentIndex].classList.add('active');
+    }, intervalTime);
+  }
