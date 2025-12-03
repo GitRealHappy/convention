@@ -1009,25 +1009,39 @@
   .sponsor-logo img[alt="Oakmoss"] {
     height: 112px; /* 75px * 1.5 = 112.5px */
     width: auto;
-    background: rgba(222, 209, 197, 0.271);
-    padding: 0.2rem;
     border-radius: 4px;
   }
 
   /* Decrease Medicine of Mankind by 30% */
   .sponsor-logo img[alt="Medicine"] {
-    height: 52px; /* 75px * 0.7 = 52.5px */
+    height: 90px; /* 75px * 0.7 = 52.5px */
     width: auto;
   }
 
-  /* Decrease Kortex by 10% */
-  .sponsor-logo img[alt="Kortex"] {
-    height: 67px; /* 75px * 0.9 = 67.5px */
+  /* Eden Logo & Text */
+  .sponsor-logo img[alt="Eden"] {
+    max-width: 55px;
+    height: auto;
+    border-radius: 12px;
+  }
+  .sponsor-logo {
+    gap: 0.8rem; /* Gap between eden1 and eden2 */
+  }
+  .eden-text-img {
+    height: 50px;
     width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  .sponsor-logo:hover .eden-text-img {
+    opacity: 1;
+  }
+  .sponsor-logo:hover .eden-text {
+    opacity: 1;
   }
 
   .sponsor-logo img {
-    opacity: 0.8;
+    opacity: 0.9;
     transition: opacity 0.3s ease, filter 0.3s ease;
     filter: grayscale(0%);
   }
@@ -1055,19 +1069,23 @@
     /* Oakmoss: 50px * 1.5 = 75px */
     .sponsor-logo img[alt="Oakmoss"] {
       height: 75px;
-      background: rgba(220, 220, 220, 0.3);
-      padding: 0.4rem;
       border-radius: 4px;
     }
     
     /* Medicine: 50px * 0.7 = 35px */
     .sponsor-logo img[alt="Medicine"] {
-      height: 35px;
+      height: 52px;
     }
 
-    /* Kortex: 50px * 0.9 = 45px */
-    .sponsor-logo img[alt="Kortex"] {
-      height: 45px;
+    /* Eden Mobile */
+    .sponsor-logo img[alt="Eden"] {
+      max-width: 40px;
+    }
+    .sponsor-logo {
+      gap: 0.5rem; /* Gap between eden1 and eden2 */
+    }
+    .eden-text-img {
+      height: 35px; /* Scaled down from 75px */
     }
 
     .conveyor-track {
