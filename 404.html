@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages clean URL routing
+    // This handles URLs without .html extensions
+    const path = window.location.pathname;
+    const cleanPath = path.replace(/\/$/, ''); // Remove trailing slash
+    
+    // Map of clean URLs to actual HTML files
+    const routes = {
+      '/community': '/community.html',
+      '/party': '/party.html',
+      '/locked': '/locked.html',
+      '/777': '/777.html',
+      '': '/index.html',
+      '/': '/index.html'
+    };
+    
+    // Check if we have a route for this path
+    if (routes[cleanPath]) {
+      window.location.replace(routes[cleanPath]);
+    } else if (cleanPath && !cleanPath.includes('.')) {
+      // Try appending .html if no extension exists
+      window.location.replace(cleanPath + '.html');
+    } else {
+      // If no route found, redirect to home
+      window.location.replace('/index.html');
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>

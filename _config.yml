@@ -2,8 +2,8 @@
 title: "Creator Economy Convention"
 description: "You are not a machine. Three days in Vancouver to rediscover what makes you human — and build a brand around it."
 
-# Clean URLs
-permalink: /:title/
+# Clean URLs - GitHub Pages will serve files without .html extension automatically
+# For custom routing, see 404.html
 
 # Build settings
 markdown: kramdown
