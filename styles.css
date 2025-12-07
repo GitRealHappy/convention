@@ -173,7 +173,7 @@
   .hero-overlay { display: none; }
 
   /* Override text alignments for desktop */
-  .section-hero .hero-title { text-align: left; margin-top: 0.5rem; font-size: clamp(1.7rem, 1.3rem + 2vw, 2.8rem); }
+  .section-hero .hero-title { text-align: left; margin-top: 0.5rem; font-size: clamp(1.5rem, 1.1rem + 2vw, 2.4rem); }
   .section-hero .hero-sub { text-align: left; margin: 0 0 1.5rem; }
   .section-hero .eyebrow { text-align: left; }
   .section-hero .hero-cta { text-align: left; }
@@ -228,7 +228,7 @@
       text-align: center;
       order: 1;
     }
-    .section-hero .hero-title { text-align: center; margin-top: 0; font-size: 1.8rem; } /* Reduced mobile font size */
+    .section-hero .hero-title { text-align: center; margin-top: 0; font-size: 1.6rem; } /* Reduced mobile font size */
     .section-hero .hero-sub { text-align: center; margin: 0 auto 1.5rem; }
     .section-hero .eyebrow { text-align: center; margin-bottom: 1rem; }
     .section-hero .hero-cta { text-align: center; }
@@ -287,6 +287,71 @@
   .bullets{list-style:none;padding:0}
   .bullets li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
   .quote{border-left:3px solid var(--fire);padding-left:1rem;margin:1rem 0;color:#dde1e7}
+  
+  /* Intro Problems Section */
+  .intro-problems {
+    margin: 2rem 0 2.5rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .intro-problems-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  
+  .problems-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .problems-list li {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .problems-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .problems-list li em {
+    font-style: italic;
+    color: var(--text);
+  }
+  
+  .intro-problems-resolution {
+    margin: 1.5rem 0 0 0;
+    font-size: 1.1rem;
+    text-align: center;
+    color: var(--text);
+  }
+  
+  .intro-problems-resolution strong {
+    color: var(--fire);
+    font-weight: 800;
+  }
+  
+  @media (max-width: 768px) {
+    .intro-problems-title {
+      font-size: 1.2rem;
+    }
+    
+    .problems-list li {
+      font-size: 0.95rem;
+    }
+    
+    .intro-problems-resolution {
+      font-size: 1rem;
+    }
+  }
   
   /* Speaker rows container */
   .speaker-rows{
@@ -621,6 +686,115 @@
 
   /* VIP seats remaining */
   .seats{color:var(--fire);font-size:1.0rem;font-weight:400}
+
+  /* TICKET TIERS */
+  .tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .tier {
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    background: rgba(18, 13, 20, 0.4);
+    backdrop-filter: blur(4px);
+  }
+
+  .tier.highlight {
+    border-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .tier-name {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .tier-subtitle {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .tier-plus-header {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .tier-intro {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .tier-points {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .tier-points li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+  }
+
+  .tier-points li:last-child {
+    border-bottom: none;
+  }
+
+  .tier-value-summary {
+    margin: 1.5rem 0 1rem 0;
+    padding: 1rem;
+    background: rgba(230, 115, 40, 0.1);
+    border: 1px solid rgba(230, 115, 40, 0.3);
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .tier-value-summary p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .tier-value-summary strong {
+    color: var(--fire);
+    font-weight: 800;
+  }
+
+  .tier-closing {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+    text-align: center;
+  }
+
+  .tier-closing strong {
+    color: var(--fire);
+    font-weight: 700;
+  }
+
+  .tier-points li strong {
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .tier {
+      padding: 1.5rem;
+    }
+  }
 
   /* STRIPE BUY BUTTON */
   .stripe-buy-button
