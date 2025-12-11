@@ -715,11 +715,7 @@
   }
 
   .tier-subtitle {
-    margin: 0 0 1.5rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--muted);
-    font-style: italic;
+    display:none;
   }
 
   .tier-plus-header {
@@ -790,9 +786,56 @@
     color: var(--text);
   }
 
+  /* Stripe buy button shell to prevent overflow on mobile */
+  .buy-button-shell{
+    position:relative;
+    display:block;
+    max-width:100%;
+    overflow:hidden;
+    padding:0;
+  }
+  .buy-button-shell stripe-buy-button{
+    display:block;
+    width:calc(100% + 40px); /* extend width so label centers after shift */
+    max-width:none;
+    margin-left:-40px;       /* shift visible center left */
+    margin-right:0;
+    position:relative;
+    z-index:1;
+  }
+  .buy-button-shell::before,
+  .buy-button-shell::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:32px;
+    height:100%;
+    pointer-events:none;
+    z-index:2;
+  }
+  .buy-button-shell::before{
+    left:0;
+    background:linear-gradient(270deg, rgba(18,13,20,1) 0%, rgba(18,13,20,0.65) 50%, rgba(18,13,20,0) 100%);
+  }
+  .buy-button-shell::after{
+    right:0;
+    background:linear-gradient(90deg, rgba(18,13,20,1) 0%, rgba(18,13,20,0.65) 50%, rgba(18,13,20,0) 100%);
+  }
+  @media (max-width: 640px) {
+    .buy-button-shell stripe-buy-button{
+      width:calc(100% + 50px);
+      margin-left:-50px;
+    }
+    .buy-button-shell::after,
+    .buy-button-shell::before{
+      width:28px;
+    }
+  }
+
   @media (max-width: 768px) {
     .tier {
-      padding: 1.5rem;
+      padding: 1.1rem;
+      margin: 0 -6px;
     }
   }
 
