@@ -135,6 +135,43 @@
     box-shadow:0 6px 24px rgba(0, 0, 0, 0.191);
   }
 
+  /* Hero Title */
+  .section-hero .hero-main-title{
+    margin: 0 0 0.75rem;
+    font-size: clamp(2.6rem, 1.5rem + 3vw, 4.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    line-height: 0.98;
+    text-align: center;
+    color: #fff;
+    text-shadow:
+      0 12px 32px rgba(0,0,0,0.55),
+      0 0 24px rgba(230,115,40,0.45);
+    position: relative;
+  }
+  .section-hero .hero-main-title::before,
+  .section-hero .hero-main-title::after{
+    content:"";
+    display:block;
+    width: 100%;
+    max-width: 540px;
+    height: 2px;
+    margin: 0.9rem auto;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.65) 25%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.65) 75%, transparent 100%);
+  }
+  .section-hero .hero-main-title::before{ margin-bottom: 0.9rem; }
+  .section-hero .hero-main-title::after{ margin-top: 0.9rem; }
+
+  @media (max-width: 768px) {
+    .section-hero .hero-main-title{
+      font-size: clamp(2.1rem, 7vw, 3rem);
+      letter-spacing: 0.08em;
+      line-height: 1.02;
+      margin-bottom: 1rem;
+    }
+  }
+
 
   /* Hero Layout - Desktop */
   .hero-layout {
@@ -176,8 +213,13 @@
   .section-hero .hero-title { text-align: left; margin-top: 0.5rem; font-size: clamp(1.5rem, 1.1rem + 2vw, 2.4rem); }
   .section-hero .hero-sub { text-align: left; margin: 0 0 1.5rem; }
   .section-hero .eyebrow { text-align: left; }
-  .section-hero .hero-cta { text-align: left; }
-  .section-hero .hero-cta .btn { margin-left: 0; }
+  .section-hero .hero-cta {
+    text-align: center;
+  }
+  .section-hero .hero-cta .btn {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   /* Mobile Hero Styling */
   @media (max-width: 768px) { /* Changed from 900px to 768px */
@@ -264,7 +306,7 @@
   .eyebrow{
     color:var(--muted);
     letter-spacing:.3px;
-    background: rgba(180, 180, 180, 0.167);
+    background: rgba(180, 180, 180, 0.122);
     padding: 0.3rem 0.5rem;
     display: inline-block;
     border-radius: 4px;
