@@ -214,3 +214,53 @@ document.addEventListener('click', e=>{
       heroImages[currentIndex].classList.add('active');
     }, intervalTime);
   }
+
+  // =====================================================
+  // HOLIDAY SALE COUNTDOWN TIMER
+  // Countdown to midnight NYE (Pacific Time)
+  // To deactivate sale: remove sale banner HTML and .offer-sale-banner from index.html
+  // =====================================================
+  (function initHolidaySale() {
+    // Countdown target: Midnight Jan 1, 2026 Pacific Time
+    const saleEnd = new Date('2026-01-01T00:00:00-08:00');
+    
+    // Update countdown every second
+    function updateCountdown() {
+      const now = new Date();
+      const timeLeft = saleEnd - now;
+      
+      // If countdown finished, show zeros
+      const days = timeLeft > 0 ? Math.floor(timeLeft / (1000 * 60 * 60 * 24)) : 0;
+      const hours = timeLeft > 0 ? Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) : 0;
+      const mins = timeLeft > 0 ? Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)) : 0;
+      const secs = timeLeft > 0 ? Math.floor((timeLeft % (1000 * 60)) / 1000) : 0;
+      
+      // Update banner countdown
+      const bannerDays = document.getElementById('banner-days');
+      const bannerHours = document.getElementById('banner-hours');
+      const bannerMins = document.getElementById('banner-mins');
+      const bannerSecs = document.getElementById('banner-secs');
+      
+      if (bannerDays) bannerDays.textContent = String(days).padStart(2, '0');
+      if (bannerHours) bannerHours.textContent = String(hours).padStart(2, '0');
+      if (bannerMins) bannerMins.textContent = String(mins).padStart(2, '0');
+      if (bannerSecs) bannerSecs.textContent = String(secs).padStart(2, '0');
+      
+      // Update offer section countdown
+      const offerDays = document.getElementById('offer-days');
+      const offerHours = document.getElementById('offer-hours');
+      const offerMins = document.getElementById('offer-mins');
+      const offerSecs = document.getElementById('offer-secs');
+      
+      if (offerDays) offerDays.textContent = String(days).padStart(2, '0');
+      if (offerHours) offerHours.textContent = String(hours).padStart(2, '0');
+      if (offerMins) offerMins.textContent = String(mins).padStart(2, '0');
+      if (offerSecs) offerSecs.textContent = String(secs).padStart(2, '0');
+    }
+    
+    // Initial update
+    updateCountdown();
+    
+    // Update every second
+    setInterval(updateCountdown, 1000);
+  })();
