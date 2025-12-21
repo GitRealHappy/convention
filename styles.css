@@ -1147,26 +1147,44 @@
 
 @media (max-width: 768px) {
   .sale-banner {
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
   }
   
   .sale-banner-content {
-    gap: 0.8rem;
+    gap: 0.6rem;
     flex-direction: column;
   }
   
+  .sale-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
   .sale-text {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-align: center;
+    line-height: 1.3;
+  }
+  
+  .sale-countdown {
+    gap: 0.35rem;
   }
   
   .countdown-unit {
-    min-width: 40px;
-    padding: 0.25rem 0.4rem;
+    min-width: 42px;
+    padding: 0.3rem 0.35rem;
+    border-radius: 4px;
   }
   
   .countdown-unit span {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  
+  .countdown-unit small {
+    font-size: 0.55rem;
   }
 }
 

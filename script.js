@@ -217,17 +217,18 @@ document.addEventListener('click', e=>{
 
   // =====================================================
   // HOLIDAY SALE COUNTDOWN TIMER
-  // Countdown to midnight NYE (Pacific Time)
+  // Countdown to midnight NYE (Pacific Time = UTC-8)
   // To deactivate sale: remove sale banner HTML and .offer-sale-banner from index.html
   // =====================================================
   (function initHolidaySale() {
-    // Countdown target: Midnight Jan 1, 2026 Pacific Time
-    const saleEnd = new Date('2026-01-01T00:00:00-08:00');
+    // Countdown target: Midnight Jan 1, 2026 Pacific Time (8 AM UTC)
+    // Using UTC for cross-browser compatibility (Safari/iOS)
+    const saleEnd = new Date(Date.UTC(2026, 0, 1, 8, 0, 0)); // Jan 1, 2026 at 8:00 AM UTC = Midnight PST
     
     // Update countdown every second
     function updateCountdown() {
       const now = new Date();
-      const timeLeft = saleEnd - now;
+      const timeLeft = saleEnd.getTime() - now.getTime();
       
       // If countdown finished, show zeros
       const days = timeLeft > 0 ? Math.floor(timeLeft / (1000 * 60 * 60 * 24)) : 0;
