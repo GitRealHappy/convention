@@ -664,6 +664,63 @@
     }
   }
 
+  /* WHO YOU'LL MEET SECTION */
+  .attendee-types {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .attendee-type {
+    background: rgba(31, 22, 34, 0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .attendee-type h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--fire);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .attendee-type p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .meet-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text);
+    text-align: center;
+    margin: 2rem auto 0;
+    max-width: 600px;
+    padding: 0;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .attendee-types {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .attendee-type {
+      padding: 1.25rem;
+    }
+
+    .meet-quote {
+      font-size: 1rem;
+    }
+  }
+
   
   /* Jesse intro card */
   .jesse-card{
