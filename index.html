@@ -98,10 +98,10 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
 
       <h2 class="hero-title">Three Days In-Person With Leading Creators.</h2>
       <p class="hero-subtitle">Future-proof Your Brand, Audience, and Income.</p>
-      
-      <div class="hero-cta">
+        
+          <div class="hero-cta">
         <a class="btn cta btn-lg" href="#offer">Claim Your Seat</a>
-      </div>
+          </div>
       
       <blockquote class="hero-quote">
         <div class="quote-layout">
@@ -521,7 +521,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       <li><strong>Exclusive Online Community Access:</strong> Keep yourself connected so the momentum continues after Vancouver.</li>
       <li><strong>AFTERPARTY (tickets sold separately):</strong> A secret venue with DJs waiting to score the grand finale.</li>
     </ul>
-    </section>
+  </section>
 
     <!-- VENUE -->
     <section class="venue-section fadein" id="venue" aria-labelledby="venue-title">
@@ -532,7 +532,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
         <img src="assets/richmond-con1.jpeg" alt="Sheraton Vancouver Airport Hotel" />
         <img src="assets/richmond-con2.jpeg" alt="Sheraton Vancouver Airport Hotel" />
         <img src="assets/richmond-con3.jpeg" alt="Sheraton Vancouver Airport Hotel" />
-      </div>
+          </div>
       <ul class="venue-highlights">
         <li>24-hour gym & heated pool</li>
         <li>Free airport shuttle</li>
@@ -731,7 +731,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
           <div class="sponsor-logo">
             <img src="assets/sponsors/eden.png" alt="Eden" />
             <img src="assets/sponsors/eden2.png" alt="Eden Text" class="eden-text-img" />
-          </div>
+            </div>
           <div class="sponsor-logo">
             <img src="assets/sponsors/medicine.png" alt="Medicine" />
           </div>
@@ -823,6 +823,19 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
   <!-- Sticky bottom CTA (auto-fades and disables past speakers) -->
   <div class="sticky-cta" role="region" aria-label="Quick action">
     <a class="btn cta btn-wide" href="#offer">Get Tickets</a>
+  </div>
+
+  <!-- Speaker Modal -->
+  <div class="speaker-modal" id="speaker-modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-labelledby="modal-name">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <img class="modal-photo" src="" alt="" />
+      <h3 class="modal-name" id="modal-name"></h3>
+      <p class="modal-tagline"></p>
+      <div class="modal-bio"></div>
+      <div class="modal-links"></div>
+    </div>
   </div>
 
   <script src="script.js" defer></script>
