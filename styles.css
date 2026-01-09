@@ -492,12 +492,17 @@
     display: flex;
     gap: 2rem;
     width: max-content;
-    animation: speakerScroll 60s linear infinite;
     padding-left: 1rem;
+    animation: speakerScroll 25s linear infinite;
   }
 
   .speaker-track:hover {
     animation-play-state: paused;
+  }
+
+  @keyframes speakerScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   .speaker-item {
@@ -549,10 +554,6 @@
     overflow: hidden;
   }
 
-  @keyframes speakerScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
 
   @media (max-width: 768px) {
     .speaker-conveyor {
@@ -1197,6 +1198,18 @@
       flex-direction: row; /* Keep icon next to text on mobile usually looks ok, or stack if very narrow */
       align-items: flex-start;
     }
+  }
+
+  /* Headliner Label */
+  .headliner-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--fire);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   /* Hero Quote Styles */
