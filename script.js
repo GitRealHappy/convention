@@ -205,9 +205,9 @@ document.addEventListener('click', e=>{
       name: 'Dan Koe',
       photo: 'assets/speaker-icons/speaker1.jpg',
       tagline: '"Work less. Earn More. Enjoy Life."',
-      bio: '<p>Dan Koe. The philosopher of the one-person business model, and the flow scientist behind the 4-hour workday.</p>',
+      bio: '<p>Dan Koe. The philosopher of the one-person business model, and the flow scientist behind the 4-hour workday.</p><p>Founder of Eden: One Place For All Your Creative Work.</p>',
       links: [
-        { text: 'Building Eden', url: 'https://eden.so/' },
+        { text: 'Eden', url: 'https://eden.so/' },
         { text: '1.22M Subscribers on Youtube', url: 'https://www.youtube.com/@DanKoeTalks' },
         { text: 'Author of The Future/Proof Letters', url: 'https://letters.thedankoe.com/' }
       ]
@@ -333,7 +333,7 @@ document.addEventListener('click', e=>{
       tagline: 'Author & men\'s work facilitator',
       bio: '<p>Published author, mountain guide, intimacy coach, and men\'s work facilitator.</p><p>Ish writes about shadow work, conscious relationships, and purpose.</p>',
       links: [
-        { text: 'Find him on Substack: Radicaleros', url: 'https://substack.com/@radicaleros' }
+        { text: 'Find him on Substack: RadicalEros', url: 'https://substack.com/@radicaleros' }
       ]
     }
   };
