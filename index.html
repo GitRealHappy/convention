@@ -60,13 +60,6 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
 </head>
 <body>
 
-  <!-- Dynamic background video -->
-  <div class="bg">
-    <video class="bg-video" autoplay muted playsinline loop preload="auto" poster="assets/bg-fallback.jpg">
-      <source src="assets/bg.mp4" type="video/mp4" />
-    </video>
-  </div>
-
   <!-- Header -->
   <header class="site-header">
     <div class="wrap header-wrap">
@@ -77,14 +70,14 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       <nav class="nav" aria-label="Primary">
         <a href="https://livinginternet.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
         <a href="#speakers">Speakers</a>
-        <a href="community">Community</a>
+        <a href="#community-cta">Community</a>
         <a href="#faq">FAQ</a>
       </nav>
       <nav class="nav mobile" aria-label="Primary">
         <a href="https://livinginternet.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
         <a href="#speakers">Speakers</a>
         <a href="#faq">FAQ</a>
-        <a href="community">The Community</a>
+        <a href="#community-cta">The Community</a>
         <a class="btn cta mobile-cta" href="#offer">Get Tickets</a>
       </nav>
       <div class="hamburger" aria-label="Toggle menu">
@@ -103,23 +96,13 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       <h1 class="hero-main-title">THE CREATOR ECONOMY CONVENTION</h1>
       <p class="eyebrow">June 5–7, 2026 • Sheraton Vancouver Airport Hotel • 600 Seats</p>
 
-      <div class="hero-layout">
-        
-        <div class="hero-text">
-          <h2 class="hero-title">Three-Days In-Person With Leading Creators.</h2>
-          <h1>Future-proof Your Brand, Audience, and Income.</h1>
-          <div class="hero-cta">
-            <a class="btn cta btn-lg mobile-cta" href="#offer">Claim Your Seat</a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <img src="assets/richmond-con.jpeg" class="hero-bg active" alt="Richmond Convention Center" />
-          <img src="assets/richmond-con1.jpeg" class="hero-bg" alt="Richmond Convention Center" />
-          <img src="assets/richmond-con2.jpeg" class="hero-bg" alt="Richmond Convention Center" />
-          <img src="assets/richmond-con3.jpeg" class="hero-bg" alt="Richmond Convention Center" />
-          <div class="hero-overlay"></div>
-        </div>
+      <h2 class="hero-title">Three-Days In-Person With Leading Creators.</h2>
+      <p class="hero-subtitle">Future-proof Your Brand, Audience, and Income.</p>
+      
+      <div class="hero-cta">
+        <a class="btn cta btn-lg" href="#offer">Claim Your Seat</a>
       </div>
+      
       <blockquote class="hero-quote">
         <div class="quote-layout">
           <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" class="quote-icon">
@@ -130,54 +113,152 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       </blockquote>
     </section>
 
-    <!-- SPONSORS -->
-    <section class="sponsor-conveyor fadein" id="sponsors">
-      <div class="sponsor-header">With much thanks to our sponsors:</div>
-      <div class="conveyor-track-wrapper">
-        <div class="conveyor-track">
+    <!-- SPEAKERS -->
+    <section class="speaker-conveyor fadein" id="speakers" aria-labelledby="speakers-title">
+      <h2 id="speakers-title">Keynote Speakers</h2>
+      <div class="speaker-track-wrapper">
+        <div class="speaker-track">
           <!-- Set 1 -->
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/eden.png" alt="Eden" />
-            <img src="assets/sponsors/eden2.png" alt="Eden Text" class="eden-text-img" />
+          <div class="speaker-item" id="dan-koe">
+            <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" class="speaker-photo" />
+            <h3>Dan Koe</h3>
+            <p class="speaker-tagline">Work less. Earn More. Enjoy Life.</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/medicine.png" alt="Medicine" />
+          <div class="speaker-item" id="kieran-drew">
+            <img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" class="speaker-photo" />
+            <h3>Kieran Drew</h3>
+            <p class="speaker-tagline">Ex-dentist building a $500k/year internet business</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/oakmoss.png" alt="Oakmoss" />
+          <div class="speaker-item" id="taylin-simmonds">
+            <img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" class="speaker-photo" />
+            <h3>Taylin Simmonds</h3>
+            <p class="speaker-tagline">AI-assisted ghostwriter • 2B impressions</p>
           </div>
-          <!-- Set 2 -->
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/eden.png" alt="Eden" />
-            <img src="assets/sponsors/eden2.png" alt="Eden Text" class="eden-text-img" />
+          <div class="speaker-item" id="brian-maierhofer">
+            <img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" class="speaker-photo" />
+            <h3>Brian Maierhofer</h3>
+            <p class="speaker-tagline">Somatic therapist & carrier of stories</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/medicine.png" alt="Medicine" />
+          <div class="speaker-item" id="kimia-nora">
+            <img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" class="speaker-photo" />
+            <h3>Kimia Nora</h3>
+            <p class="speaker-tagline">Applied Neuroscience & Neuroplasticity</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/oakmoss.png" alt="Oakmoss" />
+          <div class="speaker-item" id="dan-goldfield">
+            <img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" class="speaker-photo" />
+            <h3>Dan Goldfield</h3>
+            <p class="speaker-tagline">Peace as your Default Mode</p>
           </div>
-          <!-- Set 3 -->
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/eden.png" alt="Eden" />
-            <img src="assets/sponsors/eden2.png" alt="Eden Text" class="eden-text-img" />
+          <div class="speaker-item" id="jack-moses">
+            <img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" class="speaker-photo" />
+            <h3>Jack Moses</h3>
+            <p class="speaker-tagline">Transformation Coach & Podcaster</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/medicine.png" alt="Medicine" />
+          <div class="speaker-item" id="hussain-ibarra">
+            <img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" class="speaker-photo" />
+            <h3>Hussain Ibarra</h3>
+            <p class="speaker-tagline">Engineer turned writer</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/oakmoss.png" alt="Oakmoss" />
+          <div class="speaker-item" id="valentin-sounds">
+            <img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" class="speaker-photo" />
+            <h3>Valentin Sounds</h3>
+            <p class="speaker-tagline">Artist & Brand Advisor</p>
           </div>
-          <!-- Set 4 -->
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/eden.png" alt="Eden" />
-            <img src="assets/sponsors/eden2.png" alt="Eden Text" class="eden-text-img" />
+          <div class="speaker-item" id="nathalie-agnes">
+            <img src="assets/speaker-icons/speaker6.jpg" alt="Nathalie Agnes" class="speaker-photo" />
+            <h3>Nathalie Agnes</h3>
+            <p class="speaker-tagline">Business, spirituality & creativity</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/medicine.png" alt="Medicine" />
+          <div class="speaker-item" id="david-morin">
+            <img src="assets/speaker-icons/speaker14.jpg" alt="David Morin" class="speaker-photo" />
+            <h3>David Morin</h3>
+            <p class="speaker-tagline">Poet & Existential Guide</p>
           </div>
-          <div class="sponsor-logo">
-            <img src="assets/sponsors/oakmoss.png" alt="Oakmoss" />
+          <div class="speaker-item" id="logan-quinn">
+            <img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" class="speaker-photo" />
+            <h3>Logan Quinn</h3>
+            <p class="speaker-tagline">Holistic health practitioner</p>
+          </div>
+          <div class="speaker-item" id="jesse-james-carver">
+            <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" class="speaker-photo" />
+            <h3>Jesse James Carver</h3>
+            <p class="speaker-tagline">Host of Unblocked Creators</p>
+          </div>
+          <div class="speaker-item" id="ish-hasan">
+            <img src="assets/speaker-icons/speaker15.jpg" alt="Ish Hasan" class="speaker-photo" />
+            <h3>Ish Hasan</h3>
+            <p class="speaker-tagline">Author & men's work facilitator</p>
+          </div>
+          <!-- Set 2 (duplicate for seamless loop) -->
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" class="speaker-photo" />
+            <h3>Dan Koe</h3>
+            <p class="speaker-tagline">Work less. Earn More. Enjoy Life.</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" class="speaker-photo" />
+            <h3>Kieran Drew</h3>
+            <p class="speaker-tagline">Ex-dentist building a $500k/year internet business</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" class="speaker-photo" />
+            <h3>Taylin Simmonds</h3>
+            <p class="speaker-tagline">AI-assisted ghostwriter • 2B impressions</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" class="speaker-photo" />
+            <h3>Brian Maierhofer</h3>
+            <p class="speaker-tagline">Somatic therapist & carrier of stories</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" class="speaker-photo" />
+            <h3>Kimia Nora</h3>
+            <p class="speaker-tagline">Applied Neuroscience & Neuroplasticity</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" class="speaker-photo" />
+            <h3>Dan Goldfield</h3>
+            <p class="speaker-tagline">Peace as your Default Mode</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" class="speaker-photo" />
+            <h3>Jack Moses</h3>
+            <p class="speaker-tagline">Transformation Coach & Podcaster</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" class="speaker-photo" />
+            <h3>Hussain Ibarra</h3>
+            <p class="speaker-tagline">Engineer turned writer</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" class="speaker-photo" />
+            <h3>Valentin Sounds</h3>
+            <p class="speaker-tagline">Artist & Brand Advisor</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker6.jpg" alt="Nathalie Agnes" class="speaker-photo" />
+            <h3>Nathalie Agnes</h3>
+            <p class="speaker-tagline">Business, spirituality & creativity</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker14.jpg" alt="David Morin" class="speaker-photo" />
+            <h3>David Morin</h3>
+            <p class="speaker-tagline">Poet & Existential Guide</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" class="speaker-photo" />
+            <h3>Logan Quinn</h3>
+            <p class="speaker-tagline">Holistic health practitioner</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" class="speaker-photo" />
+            <h3>Jesse James Carver</h3>
+            <p class="speaker-tagline">Host of Unblocked Creators</p>
+          </div>
+          <div class="speaker-item">
+            <img src="assets/speaker-icons/speaker15.jpg" alt="Ish Hasan" class="speaker-photo" />
+            <h3>Ish Hasan</h3>
+            <p class="speaker-tagline">Author & men's work facilitator</p>
           </div>
         </div>
       </div>
@@ -440,161 +521,24 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       <li><strong>Exclusive Online Community Access:</strong> Keep yourself connected so the momentum continues after Vancouver.</li>
       <li><strong>AFTERPARTY (tickets sold separately):</strong> A secret venue with DJs waiting to score the grand finale.</li>
     </ul>
-  </section>
+    </section>
 
-
-    <!-- SPEAKERS -->
-    <section class="section speakers-section fadein" id="speakers" aria-labelledby="speakers-title">
-      <h1 id="speakers-title">Keynote Speakers:</h1>
-      <div class="speakers-grid">
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker1.jpg" alt="Dan Koe" class="speaker-photo" />
-          <div class="speaker-bio" id="dan-koe">
-            <h3>Dan Koe</h3>
-            <p class="speaker-tagline">"Work less. Earn More. Enjoy Life."</p>
-            <p>Dan Koe. The philosopher of the one-person business model, and the flow scientist behind the 4-hour workday.</p>
-            <p class="speaker-social">Building <a href="https://eden.so/" target="_blank"><strong>Eden</strong></a>, a creator platform for the future of the internet.</p>
-            <p class="speaker-social">1.22M Subscribers on <a href="https://www.youtube.com/@DanKoeTalks" target="_blank"><strong>Youtube</strong></a></p>
-            <p class="speaker-social"><a href="https://letters.thedankoe.com/" target="_blank"><strong>Author of The Future/Proof Letters</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker12.jpg" alt="Kieran Drew" class="speaker-photo" />
-          <div class="speaker-bio" id="kieran-drew">
-            <h3>Kieran Drew</h3>
-            <p>On a mission to become a better writer, thinker, and entrepreneur • Ex-dentist, now building an internet business (at ~$500k/year).</p>
-            <p class="speaker-social">230.3K Followers on X: <a href="https://x.com/ItsKieranDrew" target="_blank"><strong>@ItsKieranDrew</strong></a></p>
-            <p class="speaker-social">Listen in on <a href="https://www.youtube.com/@kierandrewyoutube" target="_blank"><strong>Youtube</strong></a></p>
-            <p class="speaker-social">Get his copywriting framework:<strong><a href="https://sucks.kierandrew.com/?utm_source=x&utm_medium=bio&utm_campaign=default-campaign" target="_blank"> SUCKS</a></strong></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker7.jpg" alt="Taylin Simmonds" class="speaker-photo" />
-          <div class="speaker-bio" id="taylin-simmonds">
-            <h3>Taylin Simmonds</h3>
-            <p>College teacher turned AI assisted ghostwriter | Helping writers & creatives earn on the internet • 2B impressions • $4M+ revenue • All in on Substack</p>
-            <p class="speaker-social">97.5K Followers on X: <a href="https://x.com/TaylinSimmonds" target="_blank"><strong>@TaylinSimmonds</strong></a></p>
-            <p>Read <a href="https://taylinsimmonds.substack.com/" target="_blank"><strong>The Simmonds Signal</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker2.jpg" alt="Brian Maierhofer" class="speaker-photo" />
-          <div class="speaker-bio" id="brian-maierhofer">
-            <h3>Brian Maierhofer</h3>
-            <p>Associate marriage and family therapist and specializing in somatic & biomechanical therapy for anxiety, sensory overload, and emotional resilience.</p>
-            <p>He is a carrier of stories who, through his online work, helps countless more people than he could through 1:1 therapy alone.</p>
-            <p class="speaker-social">80K Followers on X: <a href="https://x.com/iamprohuman" target="_blank"><strong>@IAmProHuman</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker10.jpg" alt="Kimia Nora" class="speaker-photo" />
-          <div class="speaker-bio" id="kimia-nora">
-            <h3>Kimia Nora</h3>
-            <p>Applied Neuroscience | Self-directed Neuroplasticity | Brain Homeostasis | MindBody Medicine for healing chronic conditions.</p>
-            <p>"Everybody deserves to know the science of change."</p>
-            <p class="speaker-social">40.5K Followers on X: <a href="https://x.com/iamkimianora" target="_blank"><strong>@iamkimianora</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker3.jpg" alt="Dan Goldfield" class="speaker-photo" />
-          <div class="speaker-bio" id="dan-goldfield">
-            <h3>Dan Goldfield</h3>
-            <p>"Studied with a monk for 5 years, married a hot psychologist, built a 6-figure business. Mission: help 1 billion people realize peace as their Default Mode."</p>
-            <p class="speaker-social">29.1K Followers on X: <a href="https://x.com/itsdangoldfield" target="_blank"><strong>@itsdangoldfield</strong></a></p>
-            <p class="speaker-social">Debug Your Human Operating System (Realize Effortless Peace):<a href="https://www.youtube.com/watch?v=RWLCH0ZhfIo" target="_blank"><strong> Youtube</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker11.jpg" alt="Jack Moses" class="speaker-photo" />
-          <div class="speaker-bio" id="jack-moses">
-            <h3>Jack Moses</h3>
-            <p>Personal Transformation Coach. Writer. Creator. Quarterback. Podcaster.</p>
-            <p>Founder of Transcendence, and the Sovereign Creators Skool.</p>
-            <p class="speaker-social">28K Followers on X: <a href="https://x.com/jackmoses0" target="_blank"><strong>@jackmoses0</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker4.jpg" alt="Hussain Ibarra" class="speaker-photo" />
-          <div class="speaker-bio" id="hussain-ibarra">
-            <h3>Hussain Ibarra</h3>
-            <p>Engineer turned writer. Building a writing business to $120k/year. Helped 20+ clients build and monetize their audience.</p>
-            <p class="speaker-social">22.6K Followers on X: <a href="https://x.com/HussainIbarra" target="_blank"><strong>@HussainIbarra</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker8.jpg" alt="Valentin Sounds" class="speaker-photo" />
-          <div class="speaker-bio" id="valentin-sounds">
-            <h3>Valentin Sounds</h3>
-            <p>Artist & Brand Advisor. Helping creatives build autonomy through branding, AI, and emotional intelligence. Create work you love and explore the world.</p>
-            <p class="speaker-social">Find him on X: <a href="https://x.com/valentinmakes" target="_blank"><strong>@valentinmakes</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker6.jpg" alt="Nathalie Agnes" class="speaker-photo" />
-          <div class="speaker-bio" id="nathalie-agnes">
-            <h3>Nathalie Agnes</h3>
-            <p>"I used to help people see more clearly through glasses. Now I write to help them see themselves and their future more clearly. Perspectives on business, spirituality & creativity."</p>
-            <p>Writing articles for <a href="https://livinginternet.substack.com/?utm_campaign=profile_chips" target="_blank"><strong>The Living Internet Alliance Newsletter</strong></a></p>
-            <p class="speaker-social">Find her on X: <a href="https://x.com/NathalieAgnesk" target="_blank"><strong>@NathalieAgnesk</strong></a></p>
-            <p>Host of the podcast <strong><a href="https://youtube.com/playlist?list=PLq8mioblqLPCy5-rjI6dyQKAy2Q2X1VW6&si=yQRFWCETZD6Xe7gR" target="_blank">20/20 Vision</a></strong></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker14.jpg" alt="David Morin" class="speaker-photo" />
-          <div class="speaker-bio" id="david-morin">
-            <h3>David Morin</h3>
-            <p>"Poet, Existential Guide, & Life Transition Coach. Turn existential dread into meaningful living."</p>
-            <p>David's work is to guide you in reclaiming your true voice.</p>
-            <p class="speaker-social">Find him on IG: <a href="https://www.instagram.com/mor.intune/" target="_blank"><strong>@mor.intune</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker5.jpg" alt="Logan Quinn" class="speaker-photo" />
-          <div class="speaker-bio" id="logan-quinn">
-            <h3>Logan Quinn</h3>
-            <p>Holistic health care practictioner with a background in kinesiology and body-centered psychotherapy.</p>
-            <p>Logan runs <a href="https://www.medicineofmankind.com/" target="_blank"><strong>Medicine of Mankind</strong></a> in Vancouver, Canada, and internationally online, where he helps clients wake up to their soul's calling by rehabitilitating the body, mind, and soul through applied spirituality, psychotherapy, and kinesiology based principles.</p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" class="speaker-photo" />
-          <div class="speaker-bio" id="jesse-james-carver">
-            <h3>Jesse James Carver</h3>
-            <p>Host of the podcast <a href="https://youtube.com/playlist?list=PLdQ91meMfIHldnc6T57Y-A6AH1auy6-vE&si=-UHTVw5p8vfhDuqw" target="_blank"><strong>Unblocked Creators.</strong></a></p>
-            <p>"Helping creators unblock their freedom, creativity, and personal agency through depth psychology, digital skills, and community."</p>
-            <p>Creator of The Living Internet Alliance.</p>
-            <p class="speaker-social">Find him on X: <a href="https://x.com/UnblockedCarver" target="_blank"><strong>@UnblockedCarver</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card">
-          <img src="assets/speaker-icons/speaker15.jpg" alt="Ish Hasan" class="speaker-photo" />
-          <div class="speaker-bio" id="ish-hasan">
-            <h3>Ish Hasan</h3>
-            <p>Published author, mountain guide, intimacy coach, and men's work facilitator.</p>
-            <p>Ish writes about shadow work, conscious relationships, and purpose.</p>
-            <p class="speaker-social">Find him on Substack: <a href="https://substack.com/@radicaleros?utm_source=global-search" target="_blank"><strong>Radicaleros</strong></a></p>
-          </div>
-        </div>
-
-        <div class="speaker-card placeholder">
-          <div class="placeholder-inner">
-            <div class="placeholder-mark">?</div>
-          </div>
-        </div>
-
+    <!-- VENUE -->
+    <section class="venue-section fadein" id="venue" aria-labelledby="venue-title">
+      <h2 id="venue-title">The Venue</h2>
+      <p class="venue-subtitle">Sheraton Vancouver Airport Hotel</p>
+      <div class="venue-gallery">
+        <img src="assets/richmond-con.jpeg" alt="Sheraton Vancouver Airport Hotel" />
+        <img src="assets/richmond-con1.jpeg" alt="Sheraton Vancouver Airport Hotel" />
+        <img src="assets/richmond-con2.jpeg" alt="Sheraton Vancouver Airport Hotel" />
+        <img src="assets/richmond-con3.jpeg" alt="Sheraton Vancouver Airport Hotel" />
+      </div>
+      <ul class="venue-highlights">
+        <li>24-hour gym & heated pool</li>
+        <li>Free airport shuttle</li>
+        <li>7-min walk to skytrain</li>
+        <li>Special rates for attendees</li>
+      </ul>
     </section>
 
     <!-- OFFER / TICKETS -->
@@ -778,31 +722,43 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       </section>
     </section>
 
-        <!-- DESERT STORY + JESSE INTRO -->
-        <section class="section card-wrap fadein" id="story" aria-labelledby="story-title">
-          <div class="jesse-card">
-            <img src="assets/speaker-icons/speaker13-jessejames.jpg" alt="Jesse James Carver" class="jesse-avatar" />
-            <div class="jesse-text">
-              <h3>Hi, I’m Jesse James Carver ("The Unblocked Carver")</h3>
-              <p>Wood carver, web designer, and founder of <strong>The Living Internet Alliance</strong>. I launched this convention to help creators reclaim their humanity and build profitable brands around it.</p>
-            </div>
+    <!-- SPONSORS -->
+    <section class="sponsor-conveyor fadein" id="sponsors">
+      <div class="sponsor-header">With much thanks to our sponsors:</div>
+      <div class="conveyor-track-wrapper">
+        <div class="conveyor-track">
+          <!-- Set 1 -->
+          <div class="sponsor-logo">
+            <img src="assets/sponsors/eden.png" alt="Eden" />
+            <img src="assets/sponsors/eden2.png" alt="Eden Text" class="eden-text-img" />
           </div>
-    
-          <h2 id="story-title">The desert quest that started it all</h2>
-          <p>Last December I fled from the Canadian winter and was living out of a tent in the Mojave Desert, carving blocks of cedar and chasing clarity. One night I joined a live call with the team at Kortex (now Eden), the creator platform built by <strong>Dan Koe</strong> and his team. A few weeks later, Dan and I were standing together on a rocky viewpoint in Arizona talking about consciousness, creativity, and human relevance.</p>
-          <blockquote class="quote">"Now that technical work and intelligence are on tap thanks to AI, what is left is taste, agency, and coherence." — Dan Koe</blockquote>
-          <p>I had an epiphany about human creativity and the future of the internet. On our desert hike, Mr. Koe dropped a clue that stuck with me. To succeed in the social media landscape, you've got to inject yourself into a tribe.</p>
-          <p>That realization eventually led myself, <a href="#nick-serpico">Nicholas Serpico</a>, <a href="#nathalie-agnes">Nathalie Agnes</a>, <a href="#jack-moses">Jack Moses</a>, and <a href="#valentin-sounds">Valentin Sounds</a> to launch the <strong>Creator Economy Convention:</strong> a weekend to rediscover your unique humanity, align with your tribe, and build a brand that unblocks your life of freedom and purpose.</p>
-          <p>I'm looking forward to seeing you in Vancouver.</p>
+          <div class="sponsor-logo">
+            <img src="assets/sponsors/medicine.png" alt="Medicine" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="assets/sponsors/oakmoss.png" alt="Oakmoss" />
+          </div>
+          <!-- Set 2 -->
+          <div class="sponsor-logo">
+            <img src="assets/sponsors/eden.png" alt="Eden" />
+            <img src="assets/sponsors/eden2.png" alt="Eden Text" class="eden-text-img" />
+          </div>
+          <div class="sponsor-logo">
+            <img src="assets/sponsors/medicine.png" alt="Medicine" />
+            </div>
+          <div class="sponsor-logo">
+            <img src="assets/sponsors/oakmoss.png" alt="Oakmoss" />
+          </div>
+        </div>
+      </div>
         </section>
-
 
     <!-- COMMUNITY-->
     <section class="section card-wrap fadein center" id="community-cta">
       <h2>Not Ready to Commit? Start Here.</h2>
       <p class="lead">
         Join our <strong>free Circle community</strong> first. Attend free challenges, live podcasts, and networking sessions. Experience the vibe and meet future attendees.</p>
-      <a class="btn cta btn-lg" href="community">Join the Free Community</a>
+      <a class="btn cta btn-lg" href="#community-cta">Join the Free Community</a>
     </section>
     
 
