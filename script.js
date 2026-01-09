@@ -390,6 +390,19 @@ document.addEventListener('click', e=>{
     }
   });
 
+  // Click handler for quote icons with data-speaker attribute
+  document.querySelectorAll('.quote-icon[data-speaker]').forEach(icon => {
+    const speakerId = icon.dataset.speaker;
+    if (speakerId && speakerData[speakerId]) {
+      icon.style.cursor = 'pointer';
+      icon.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openSpeakerModal(speakerId);
+      });
+    }
+  });
+
   // Close modal handlers
   modalClose?.addEventListener('click', closeSpeakerModal);
   modalBackdrop?.addEventListener('click', closeSpeakerModal);

@@ -248,10 +248,7 @@
   .eyebrow{
     color:var(--muted);
     letter-spacing:.3px;
-    background: rgba(180, 180, 180, 0.122);
-    padding: 0.3rem 0.5rem;
-    display: inline-block;
-    border-radius: 4px;
+    font-size: 0.95rem;
   }
   .btn{
     display:inline-flex;align-items:center;justify-content:center;
@@ -553,6 +550,65 @@
   @media (max-width: 768px) {
     .speaker-conveyor {
       padding: 1.5rem 0;
+    }
+  }
+
+  /* Speaker quote (inside speaker section) */
+  .speaker-quote {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+    max-width: 650px;
+    margin: 2rem auto 0;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border: none;
+    background: transparent;
+  }
+
+  .speaker-quote .quote-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+
+  .speaker-quote .quote-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  }
+
+  .speaker-quote .quote-icon:hover {
+    box-shadow: 0 0 0 2px var(--fire);
+    transform: scale(1.05);
+  }
+
+  .speaker-quote .quote-content {
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  @media (max-width: 600px) {
+    .speaker-quote {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+
+    .speaker-quote .quote-layout {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .speaker-quote .quote-content {
+      text-align: center;
     }
     
     #speakers-title {
@@ -1252,16 +1308,25 @@
     }
   }
 
-  /* Headliner Label */
-  .headliner-label {
+  /* Headliner Featured (prominent in hero) */
+  .headliner-featured {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .headliner-featured strong {
     color: var(--fire);
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .headliner-featured {
+      font-size: 1.1rem;
+    }
   }
 
   /* Hero Quote Styles */
