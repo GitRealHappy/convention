@@ -265,8 +265,8 @@
   .btn-lg{font-size:1.05rem}
   .btn-wide{padding:1rem 1.6rem;font-weight:800}
   .small{font-size:.9rem;color:var(--muted)}
-  .bullets{list-style:none;padding:0}
-  .bullets li{padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+  .bullets{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem}
+  .bullets li{background:rgba(31,22,34,0.9);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1rem 1.25rem;line-height:1.6}
   .quote{border-left:3px solid var(--fire);padding-left:1rem;margin:1rem 0;color:#dde1e7}
   
   /* Intro Problems Section */
@@ -875,16 +875,17 @@
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .tier-points li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(31, 22, 34, 0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
     line-height: 1.6;
-  }
-
-  .tier-points li:last-child {
-    border-bottom: none;
   }
 
   .tier-value-summary {
