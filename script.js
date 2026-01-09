@@ -239,7 +239,7 @@ document.addEventListener('click', e=>{
       tagline: 'Somatic therapist & carrier of stories',
       bio: '<p>Associate marriage and family therapist specializing in somatic & biomechanical therapy for anxiety, sensory overload, and emotional resilience.</p><p>He is a carrier of stories who, through his online work, helps countless more people than he could through 1:1 therapy alone.</p>',
       links: [
-        { text: '80K Followers on X @IAmProHuman', url: 'https://x.com/iamprohuman' }
+        { text: 'Find him on X @LiminalMeans', url: 'https://x.com/LiminalMeans' }
       ]
     },
     'kimia-nora': {
@@ -377,12 +377,17 @@ document.addEventListener('click', e=>{
     document.body.style.overflow = '';
   }
 
-  // Click handlers for speaker items
-  document.querySelectorAll('.speaker-item[id]').forEach(item => {
-    item.style.cursor = 'pointer';
-    item.addEventListener('click', () => {
-      openSpeakerModal(item.id);
-    });
+  // Click handlers for speaker items (handles both id and data-speaker attributes)
+  document.querySelectorAll('.speaker-item').forEach(item => {
+    const speakerId = item.id || item.dataset.speaker;
+    if (speakerId && speakerData[speakerId]) {
+      item.style.cursor = 'pointer';
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openSpeakerModal(speakerId);
+      });
+    }
   });
 
   // Close modal handlers
