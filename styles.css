@@ -138,9 +138,10 @@
   /* Hero Title */
   .section-hero .hero-main-title{
     margin: 0 0 0.75rem;
+    font-family: "Inter", sans-serif;
     font-size: clamp(2.6rem, 1.5rem + 3vw, 4.6rem);
-    font-weight: 900;
-    text-transform: uppercase;
+    font-weight: 800;
+    text-transform: none;
     letter-spacing: 0.12em;
     line-height: 0.98;
     text-align: center;
