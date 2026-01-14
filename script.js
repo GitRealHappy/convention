@@ -63,7 +63,7 @@ document.addEventListener('click', e=>{
   
   // Sticky CTA show/hide logic
   const sticky = document.querySelector('.sticky-cta');
-  const startSection = document.querySelector('#experience');
+  const startSection = document.querySelector('#venue');
   const speakersSection = document.querySelector('#offer');
   
   if (sticky && startSection && speakersSection) {
@@ -239,7 +239,8 @@ document.addEventListener('click', e=>{
       tagline: 'Somatic therapist & carrier of stories',
       bio: '<p>Associate marriage and family therapist specializing in somatic & biomechanical therapy for anxiety, sensory overload, and emotional resilience.</p><p>He is a carrier of stories who, through his online work, helps countless more people than he could through 1:1 therapy alone.</p>',
       links: [
-        { text: 'Find him on X @LiminalMeans', url: 'https://x.com/LiminalMeans' }
+        { text: 'Find him on X @LiminalMeans', url: 'https://x.com/LiminalMeans' },
+        { text: 'Find him on Substack @brianmaierhofer', url: 'https://substack.com/@brianmaierhofer?utm_source=global-search' }
       ]
     },
     'kimia-nora': {
@@ -276,7 +277,8 @@ document.addEventListener('click', e=>{
       tagline: 'Engineer turned writer',
       bio: '<p>Engineer turned writer. Building a writing business to $120k/year. Helped 20+ clients build and monetize their audience.</p>',
       links: [
-        { text: '22.6K Followers on X', url: 'https://x.com/HussainIbarra' }
+        { text: '22.6K Followers on X', url: 'https://x.com/HussainIbarra' },
+        { text: 'Find him on Substack @hussainibarra', url: 'https://substack.com/@hussainibarra?utm_source=global-search' }
       ]
     },
     'valentin-sounds': {
@@ -305,7 +307,8 @@ document.addEventListener('click', e=>{
       tagline: 'Poet & Existential Guide',
       bio: '<p>"Poet, Existential Guide, & Life Transition Coach. Turn existential dread into meaningful living."</p><p>David\'s work is to guide you in reclaiming your true voice.</p>',
       links: [
-        { text: 'Find him on IG @mor.intune', url: 'https://www.instagram.com/mor.intune/' }
+        { text: 'Find him on IG @mor.intune', url: 'https://www.instagram.com/mor.intune/' },
+        { text: 'Find him on Substack @moreintune', url: 'https://substack.com/@moreintune?utm_source=global-search' }
       ]
     },
     'logan-quinn': {
