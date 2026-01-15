@@ -291,7 +291,6 @@ document.addEventListener('click', e=>{
       tagline: 'Business, spirituality & creativity',
       bio: '<p>"I used to help people see more clearly through glasses. Now I write to help them see themselves and their future more clearly. Perspectives on business, spirituality & creativity."</p>',
       links: [
-        { text: 'The Living Internet Alliance Newsletter', url: 'https://livinginternet.substack.com/' },
         { text: 'Find her on X', url: 'https://x.com/NathalieAgnesk' },
         { text: 'Host of the podcast 20/20 Vision', url: 'https://youtube.com/playlist?list=PLq8mioblqLPCy5-rjI6dyQKAy2Q2X1VW6' }
       ]
