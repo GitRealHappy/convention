@@ -121,22 +121,17 @@ document.addEventListener('click', e=>{
     });
   }
 
-  // Header hide/show on scroll
-  let lastScrollY = window.scrollY;
+  // Header shrink on scroll
   const header = document.querySelector('.site-header');
 
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      // Scrolling down and past 100px
-      header.classList.add('hidden');
-    } else if (currentScrollY < lastScrollY) {
-      // Scrolling up
-      header.classList.remove('hidden');
+    if (currentScrollY > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
     }
-
-    lastScrollY = currentScrollY;
   });
 
   // Itinerary Accordion
