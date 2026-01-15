@@ -1787,20 +1787,43 @@
 
   @media (max-width: 600px) {
     .modal-content {
-      padding: 1.5rem;
+      padding: 1.25rem;
       max-height: 90vh;
     }
 
     .modal-photo {
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1rem;
     }
 
     .modal-name {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
     }
 
     .modal-tagline {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-bio {
+      margin-bottom: 1rem;
+    }
+
+    .modal-bio p {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-links {
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+    }
+
+    .modal-links a {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
     }
   }
