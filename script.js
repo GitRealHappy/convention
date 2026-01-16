@@ -409,3 +409,86 @@ document.addEventListener('click', e=>{
     }
   });
 
+  // Speaker navigation arrows
+  (function() {
+    const speakerTrack = document.querySelector('.speaker-track');
+    const prevBtn = document.querySelector('.speaker-nav-prev');
+    const nextBtn = document.querySelector('.speaker-nav-next');
+    
+    if (!speakerTrack || !prevBtn || !nextBtn) return;
+    
+    let manualOffset = 0;
+    let isManualMode = false;
+    let resumeTimeout = null;
+    const speakerWidth = 160; // approximate width of speaker item + gap
+    const jumpAmount = speakerWidth * 2; // jump 2 speakers at a time
+    
+    // Get the total width of original speakers (half of track since it's duplicated)
+    const getMaxOffset = () => {
+      return speakerTrack.scrollWidth / 2;
+    };
+    
+    const pauseAutoScroll = () => {
+      speakerTrack.style.animation = 'none';
+      isManualMode = true;
+      
+      // Clear any existing resume timeout
+      if (resumeTimeout) {
+        clearTimeout(resumeTimeout);
+      }
+      
+      // Resume auto-scroll after 5 seconds of inactivity
+      resumeTimeout = setTimeout(() => {
+        resumeAutoScroll();
+      }, 5000);
+    };
+    
+    const resumeAutoScroll = () => {
+      isManualMode = false;
+      manualOffset = 0;
+      speakerTrack.style.transform = '';
+      speakerTrack.style.animation = '';
+    };
+    
+    const scrollSpeakers = (direction) => {
+      if (!isManualMode) {
+        // Get current computed transform to start from current position
+        const computedStyle = window.getComputedStyle(speakerTrack);
+        const matrix = new DOMMatrix(computedStyle.transform);
+        manualOffset = matrix.m41; // get current X translation
+      }
+      
+      pauseAutoScroll();
+      
+      const maxOffset = getMaxOffset();
+      
+      if (direction === 'next') {
+        manualOffset -= jumpAmount;
+      } else {
+        manualOffset += jumpAmount;
+      }
+      
+      speakerTrack.style.transition = 'transform 0.5s ease-out';
+      speakerTrack.style.transform = `translateX(${manualOffset}px)`;
+      
+      // After animation completes, check for seamless loop repositioning
+      setTimeout(() => {
+        speakerTrack.style.transition = 'none';
+        
+        // Seamless loop: silently reposition when crossing boundaries
+        if (Math.abs(manualOffset) >= maxOffset) {
+          // Gone past the end of Set 2, reset to equivalent position in Set 1
+          manualOffset = manualOffset + maxOffset;
+          speakerTrack.style.transform = `translateX(${manualOffset}px)`;
+        } else if (manualOffset > 0) {
+          // Gone past the start of Set 1, jump to equivalent position in Set 2
+          manualOffset = manualOffset - maxOffset;
+          speakerTrack.style.transform = `translateX(${manualOffset}px)`;
+        }
+      }, 500);
+    };
+    
+    prevBtn.addEventListener('click', () => scrollSpeakers('prev'));
+    nextBtn.addEventListener('click', () => scrollSpeakers('next'));
+  })();
+

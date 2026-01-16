@@ -590,10 +590,54 @@
     letter-spacing: 0.05em;
   }
 
+  /* Speaker navigation arrows */
+  .speaker-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .speaker-nav-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #efefef;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .speaker-nav-btn:hover {
+    background: rgba(8, 141, 206, 0.3);
+    border-color: rgba(8, 141, 206, 0.5);
+    transform: scale(1.05);
+  }
+
+  .speaker-nav-btn:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 480px) {
+    .speaker-nav-btn {
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+  }
+
   .speaker-track-wrapper {
     width: 100%;
     overflow: hidden;
     position: relative;
+    flex: 1;
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }
