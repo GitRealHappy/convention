@@ -421,7 +421,11 @@ document.addEventListener('click', e=>{
     let isManualMode = false;
     let resumeTimeout = null;
     const speakerWidth = 160; // approximate width of speaker item + gap
-    const jumpAmount = speakerWidth * 2; // jump 2 speakers at a time
+    
+    // Jump 2 speakers on desktop, 1 on mobile
+    const getJumpAmount = () => {
+      return window.innerWidth <= 768 ? speakerWidth : speakerWidth * 2;
+    };
     
     // Get the total width of original speakers (half of track since it's duplicated)
     const getMaxOffset = () => {
@@ -461,6 +465,8 @@ document.addEventListener('click', e=>{
       pauseAutoScroll();
       
       const maxOffset = getMaxOffset();
+      
+      const jumpAmount = getJumpAmount();
       
       if (direction === 'next') {
         manualOffset -= jumpAmount;
