@@ -944,14 +944,14 @@
   .tiers {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-top: 2rem;
   }
 
   .tier {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 1.25rem;
     background: rgba(239, 239, 239, 0.98);
     box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   }
@@ -961,8 +961,8 @@
   }
 
   .tier-name {
-    margin: 0 0 0.5rem 0;
-    font-size: 1.5rem;
+    margin: 0 0 0.25rem 0;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--text);
   }
@@ -972,37 +972,37 @@
   }
 
   .tier-plus-header {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.5rem 0;
     font-size: 1rem;
     font-weight: 600;
     color: var(--text);
   }
 
   .tier-intro {
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 0.75rem 0;
     font-size: 1rem;
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .tier-points {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0;
+    margin: 0.75rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.35rem;
   }
 
   .tier-points li {
     border-radius: 12px;
-    padding: 0.5rem 1rem;
-    line-height: 1.6;
+    padding: 0.3rem 0.5rem;
+    line-height: 1.5;
   }
 
   .tier-value-summary {
-    margin: 1.5rem 0 1rem 0;
-    padding: 1rem;
+    margin: 0.75rem 0 0.5rem 0;
+    padding: 0.6rem;
     background: rgba(8, 141, 206, 0.1);
     border: 1px solid rgba(8, 141, 206, 0.3);
     border-radius: 6px;
@@ -1021,9 +1021,9 @@
   }
 
   .tier-closing {
-    margin: 1rem 0 0.5rem 0;
+    margin: 0.5rem 0 0.25rem 0;
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--text);
     text-align: center;
   }
