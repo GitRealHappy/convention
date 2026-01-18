@@ -242,9 +242,10 @@ document.addEventListener('click', e=>{
       name: 'Kimia Nora',
       photo: 'assets/speaker-icons/speaker10.jpg',
       tagline: 'Applied Neuroscience & Neuroplasticity',
-      bio: '<p>Applied Neuroscience | Self-directed Neuroplasticity | Brain Homeostasis | MindBody Medicine for healing chronic conditions.</p><p>"Everybody deserves to know the science of change."</p>',
+      bio: '<p>Applied Neuroscience | Self-directed Neuroplasticity | Brain Homeostasis | MindBody Medicine for healing chronic conditions.</p><p>Building <em>The Paradigm of Wholeness.</em></p><p>"Everybody deserves to know the science of change."</p>',
       links: [
-        { text: '40.5K Followers on X', url: 'https://x.com/iamkimianora' }
+        { text: '40.5K Followers on X', url: 'https://x.com/iamkimianora' },
+        { text: 'Find her on Substack @kimianora', url: 'https://substack.com/@kimianora?utm_source=global-search' }
       ]
     },
     'dan-goldfield': {
