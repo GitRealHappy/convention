@@ -318,7 +318,7 @@ document.addEventListener('click', e=>{
       name: 'Jesse James Carver',
       photo: 'assets/speaker-icons/speaker13-jessejames.jpg',
       tagline: 'Host of Unblocked Creators',
-      bio: '<p>Host of the podcast Unblocked Creators.</p><p>"Helping creators unblock their freedom, creativity, and personal agency through depth psychology, digital skills, and community."</p><p>Creator of The Living Internet Alliance.</p>',
+      bio: '<p>Host of the podcast Unblocked Creators.</p><p>"Helping creators unblock their freedom, creativity, and personal agency through depth psychology, digital skills, and community."</p><p>Creator of The Living Internet University.</p>',
       links: [
         { text: 'Unblocked Creators Podcast', url: 'https://youtube.com/playlist?list=PLdQ91meMfIHldnc6T57Y-A6AH1auy6-vE' },
         { text: 'Find him on X', url: 'https://x.com/UnblockedCarver' }
