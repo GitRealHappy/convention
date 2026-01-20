@@ -303,7 +303,7 @@ document.addEventListener('click', e=>{
       bio: '<p>"Poet, Existential Guide, & Life Transition Coach. Turn existential dread into meaningful living."</p><p>David\'s work is to guide you in reclaiming your true voice.</p>',
       links: [
         { text: 'Find him on IG @mor.intune', url: 'https://www.instagram.com/mor.intune/' },
-        { text: 'Find him on Substack @moreintune', url: 'https://substack.com/@moreintune?utm_source=global-search' }
+        { text: 'Find him on Substack @moreintune', url: 'https://substack.com/@morintune' }
       ]
     },
     'logan-quinn': {
