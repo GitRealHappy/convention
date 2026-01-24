@@ -1182,7 +1182,7 @@
     .buy-button-shell{
       transform: scale(0.9);
       transform-origin: right center;
-      margin-left: -1rem;
+      margin-left: -1.5rem;
     }
   }
   @media (max-width: 380px) {
