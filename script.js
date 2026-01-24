@@ -499,3 +499,14 @@ document.addEventListener('click', e=>{
     nextBtn.addEventListener('click', () => scrollSpeakers('next'));
   })();
 
+  // Ticket tier toggle functionality
+  document.querySelectorAll('.tier-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tier = btn.closest('.tier');
+      tier.classList.toggle('open');
+      btn.textContent = tier.classList.contains('open') 
+        ? 'Show less' 
+        : 'See full details';
+    });
+  });
+
