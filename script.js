@@ -510,3 +510,65 @@ document.addEventListener('click', e=>{
     });
   });
 
+  // Venue gallery: dot indicators switch visible slide, auto-advance every 2.5s, swipe on mobile
+  (function() {
+    const gallery = document.querySelector('.venue-gallery');
+    if (!gallery) return;
+    const view = gallery.querySelector('.venue-gallery-view');
+    const slides = gallery.querySelectorAll('.venue-gallery-slide');
+    const dots = gallery.querySelectorAll('.venue-gallery-dot');
+    if (!slides.length || !dots.length) return;
+
+    let currentIndex = 0;
+    const delayMs = 2500;
+    let autoInterval = null;
+    let touchStartX = null;
+
+    function goTo(index) {
+      const i = Math.max(0, Math.min(index, slides.length - 1));
+      currentIndex = i;
+      slides.forEach((s, j) => s.classList.toggle('active', j === i));
+      dots.forEach((d, j) => {
+        d.classList.toggle('active', j === i);
+        d.setAttribute('aria-selected', j === i);
+      });
+    }
+
+    function next() {
+      goTo((currentIndex + 1) % slides.length);
+    }
+
+    function prev() {
+      goTo(currentIndex === 0 ? slides.length - 1 : currentIndex - 1);
+    }
+
+    function startAutoAdvance() {
+      if (autoInterval) clearInterval(autoInterval);
+      autoInterval = setInterval(next, delayMs);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        goTo(i);
+        startAutoAdvance();
+      });
+    });
+
+    if (view) {
+      view.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches ? e.changedTouches[0].clientX : e.touches[0].clientX;
+      }, { passive: true });
+      view.addEventListener('touchend', (e) => {
+        if (touchStartX == null) return;
+        const touchEndX = e.changedTouches[0].clientX;
+        const deltaX = touchStartX - touchEndX;
+        const minSwipe = 50;
+        if (deltaX > minSwipe) next();
+        else if (deltaX < -minSwipe) prev();
+        touchStartX = null;
+      }, { passive: true });
+    }
+
+    startAutoAdvance();
+  })();
+
