@@ -10,14 +10,23 @@
   <style>
     /* E-book overrides and layout */
     .ebook-root {
-      --ebook-bg: #0d1210;
+      --ebook-bg: #122820;
       --ebook-paper: #f5f0e8;
       --ebook-ink: #1a1a1a;
       --ebook-muted: #5a5a5a;
       --ebook-accent: #1a6b5c;
       --ebook-sidebar-width: 280px;
     }
-    .ebook-root body { background: var(--ebook-bg); margin: 0; min-height: 100vh; }
+    body.ebook-root {
+      background: var(--ebook-bg);
+      background-image: none;
+      margin: 0;
+      min-height: 100vh;
+    }
+    body.ebook-root::before,
+    body.ebook-root::after {
+      display: none !important;
+    }
     .ebook-layout {
       display: flex;
       min-height: 100vh;
@@ -270,7 +279,7 @@
   <script>
     (function() {
       var pages = [
-        { title: "Front cover", body: "<div class=\"ebook-cover\"><h1 class=\"ebook-cover-title\">The Introvert's Guide to the Creator Economy</h1><p class=\"ebook-cover-subtitle\">How to effortlessly connect with fellow creators for fun and profit</p><p class=\"ebook-cover-byline\">by Jesse James Carver</p></div>" },
+        { title: "Front cover", body: "<div class=\"ebook-cover\"><h1 class=\"ebook-cover-title\">The Introvert's Guide to Networking in the Creator Economy</h1><p class=\"ebook-cover-subtitle\">How to effortlessly connect with fellow creators for fun and profit</p><p class=\"ebook-cover-byline\">by Jesse James Carver</p></div>" },
         { title: "Part I, Rewriting the Story", body: "<p class=\"lead\"><strong>Part I, Rewriting the Story (Inner Game Foundations)</strong></p><p class=\"lead\"><strong>Chapter 1: Why Networking Feels Draining (and Why That's Not a Flaw)</strong></p><p>Networking doesn't drain introverts because they're socially incompetent. It drains them because they're paying attention.</p><p>Every interaction carries a cognitive load. Introverts feel this load acutely. They're monitoring tone, reading subcommunication, tracking conversational rhythm, noticing what's being said and what isn't. This is high-resolution social sensing. It's exhausting because it's real work.</p><p>Most networking advice ignores this. It assumes the problem is shyness or lack of confidence. It's not. The problem is that traditional networking is designed as a performance, and introverts are paying the emotional cost of that performance while simultaneously running a parallel analysis of what's actually happening in the room.</p><p>The hidden tax isn't social interaction itself. It's approval-seeking. When you're networking to prove something, to yourself or others, every interaction becomes weighted. You're not just talking; you're auditioning. That's what drains you.</p>" },
         { title: "Reframing the Exchange", body: "<p class=\"lead\"><strong>Reframing the Exchange</strong></p><p>Reframe networking as signal exchange, not performance. You're not there to impress. You're there to understand who someone is and let them understand who you are.</p><p>This shift is subtle but neurologically significant. When you stop performing, your cognitive load drops. You're no longer running two parallel processes, the interaction and the self-monitoring. You're just present.</p><p>Introverts excel at this. They naturally prefer depth over breadth, genuine exchange over surface-level collection. The problem isn't that they're bad at networking. It's that they've been told networking means something it doesn't.</p><p>The real cost of traditional networking isn't the introversion. It's the misalignment between how introverts naturally operate and what they've been told networking requires.</p>" },
         { title: "Chapter 2: The Real Reason Introverts Avoid Networking", body: "<p class=\"lead\"><strong>Chapter 2: The Real Reason Introverts Avoid Networking</strong></p><p>Three fears drive introvert avoidance of networking. Understanding them neutralizes them.</p><p><strong>Fear One: Social Debt.</strong> \"If I talk to this person, now I owe them something.\" This fear is rational. In many networking contexts, there's an implicit obligation. You exchange contact information, and now there's an expectation of follow-up, collaboration, or reciprocal promotion.</p><p>For introverts, this creates a commitment anxiety. You're not just deciding to talk to someone; you're potentially committing to an ongoing relationship you didn't fully consent to.</p><p><strong>Fear Two: Miscalibration.</strong> \"I'll either talk too much or too little, and I'll seem weird.\" This fear is also rational. Introverts are sensitive to social calibration. They notice when they've said too much or when silence has stretched too long. They're hyperaware of the gap between their internal experience and external presentation.</p>" },
