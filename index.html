@@ -69,17 +69,16 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#speaker-talks">Speakers</a>
-        <a href="#speaker-talks">Speaker Talks</a>
         <a href="./community.html">Community</a>
         <a href="#faq">FAQ</a>
         <a href="https://livinginternet.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
       </nav>
       <nav class="nav mobile" aria-label="Primary">
         <a href="#speaker-talks">Speakers</a>
-        <a href="#speaker-talks">Speaker Talks</a>
         <a href="#faq">FAQ</a>
-        <a href="./community.html">The Community</a>
+        <a href="./community.html">Community</a>
         <a href="https://livinginternet.substack.com/?utm_campaign=profile_chips" target="_blank">Newsletter</a>
+        <a class="btn cta-secondary mobile-cta free-guide-trigger" href="#" aria-haspopup="dialog">Free Guide</a>
         <a class="btn cta mobile-cta" href="#offer">Get Tickets</a>
       </nav>
       <div class="hamburger" aria-label="Toggle menu">
@@ -87,6 +86,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
         <span></span>
         <span></span>
       </div>
+      <a class="btn cta-secondary free-guide-trigger" href="#" aria-haspopup="dialog">Free Guide</a>
       <a class="btn cta" href="#offer">Get Tickets</a>
     </div>
   </header>
@@ -563,12 +563,19 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       </div>
         </section>
 
-    <!-- COMMUNITY-->
-    <section class="section card-wrap fadein center" id="community-cta">
-      <h2>Not Ready to Commit? Start Here.</h2>
+    <!-- FREE BOOK -->
+    <section class="section card-wrap fadein center free-book-wrap" id="free-book-cta">
+      <h2>Get Our Free E-Book: The Introvert's Guide to Networking in the Creator Economy</h2>
       <p class="lead">
-        Join the <strong>FREE Community of the Living Internet University</strong><br> Participate in challenges, live podcasts, and networking sessions. Start building your network and meet future attendees.</p>
-      <a class="btn cta btn-lg" href="community.html">The Community</a>
+        Networking doesn't have to drain you. Our free e-book reframes networking for introverts: inner game, high-signal DMs, event tactics, and why The Future-Proof Creator Summit is built for this. Join the <strong>Living Internet University</strong> (free) and we'll send you a welcome email with your link to the full guide.
+      </p>
+      <ul class="free-book-highlights">
+        <li>Reframe networking as signal exchange, not performance</li>
+        <li>High-signal DMs, comments, and follow-ups that feel human</li>
+        <li>In-person tactics: liminal spaces, micro-containers, clean exits</li>
+        <li>Why intentional, curated events beat mass networking</li>
+      </ul>
+      <a class="btn cta btn-lg" href="university.html">Get the Free E-Book</a>
     </section>
     
 
@@ -598,6 +605,17 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
   <!-- Sticky bottom CTA (auto-fades and disables past speakers) -->
   <div class="sticky-cta" role="region" aria-label="Quick action">
     <a class="btn cta btn-wide" href="#offer">Get Tickets</a>
+  </div>
+
+  <!-- Free Guide Modal -->
+  <div class="free-guide-modal" id="free-guide-modal" aria-hidden="true" aria-labelledby="free-guide-modal-title">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content free-guide-modal-content" role="dialog">
+      <button type="button" class="modal-close free-guide-modal-close" aria-label="Close">&times;</button>
+      <h2 id="free-guide-modal-title" class="free-guide-modal-title">Get the Free Guide</h2>
+      <p class="free-guide-modal-text">When you join the Living Internet University for free, we'll email you an in-depth guide: <strong>The Introvert's Guide to Networking in the Creator Economy.</strong></p>
+      <a class="btn cta btn-lg" href="university.html">Join the Living Internet University</a>
+    </div>
   </div>
 
   <!-- Speaker Modal -->

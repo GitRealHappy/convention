@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Introvert's Guide to Networking in the Creator Economy</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* E-book overrides and layout */
+    .ebook-root {
+      --ebook-bg: #0d1210;
+      --ebook-paper: #f5f0e8;
+      --ebook-ink: #1a1a1a;
+      --ebook-muted: #5a5a5a;
+      --ebook-accent: #1a6b5c;
+      --ebook-sidebar-width: 280px;
+    }
+    .ebook-root body { background: var(--ebook-bg); margin: 0; min-height: 100vh; }
+    .ebook-layout {
+      display: flex;
+      min-height: 100vh;
+    }
+    .ebook-sidebar {
+      width: var(--ebook-sidebar-width);
+      min-width: var(--ebook-sidebar-width);
+      background: rgba(6, 26, 20, 0.98);
+      border-right: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    .ebook-sidebar h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e8e4dc;
+      margin: 0 1rem 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .ebook-index {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .ebook-index a {
+      display: block;
+      padding: 0.4rem 1rem;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-left: 3px solid transparent;
+      transition: color 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .ebook-index a:hover { color: #fff; background: rgba(255,255,255,0.06); }
+    .ebook-index a.active { color: var(--ebook-accent); border-left-color: var(--ebook-accent); background: rgba(26,107,92,0.12); }
+    .ebook-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+    .ebook-viewer {
+      width: 100%;
+      max-width: 720px;
+      min-height: 70vh;
+    }
+    .ebook-page {
+      display: none;
+      animation: ebook-fade 0.25s ease;
+    }
+    .ebook-page.active { display: block; }
+    @keyframes ebook-fade { from { opacity: 0; } to { opacity: 1; } }
+    .ebook-page-inner {
+      background: var(--ebook-paper);
+      color: var(--ebook-ink);
+      padding: 2.5rem 3rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+    .ebook-page-inner p { margin: 0 0 1rem; }
+    .ebook-page-inner p:last-child { margin-bottom: 0; }
+    .ebook-page-inner strong { font-weight: 700; color: var(--ebook-ink); }
+    .ebook-page-inner em { font-style: italic; }
+    .ebook-page-inner .lead { font-size: 1.05em; margin-bottom: 1.25rem; }
+    .ebook-page-inner ul { margin: 0.5rem 0 1rem 1.25rem; }
+    .ebook-page-inner li { margin-bottom: 0.35rem; }
+    .ebook-page-inner .ebook-summit-cta { margin-top: 1.5rem; margin-bottom: 0; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.08); font-size: 0.95em; text-align: center; }
+    .ebook-page-inner .ebook-summit-cta a { color: var(--ebook-accent); font-weight: 600; }
+    .ebook-main { padding-bottom: 5.5rem; }
+    .ebook-nav {
+      position: fixed;
+      bottom: 0;
+      left: var(--ebook-sidebar-width);
+      right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 2rem;
+      max-width: none;
+      width: auto;
+      background: rgba(6, 26, 20, 0.98);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      min-height: 4rem;
+    }
+    .ebook-nav button {
+      font-family: "Roboto", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #e8e4dc;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .ebook-nav button:hover:not(:disabled) { background: rgba(255,255,255,0.14); color: #fff; }
+    .ebook-nav button:disabled { opacity: 0.4; cursor: not-allowed; }
+    .ebook-page-num { color: var(--ebook-muted); font-size: 0.95rem; font-weight: 500; }
+    @media (max-width: 900px) {
+      .ebook-sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 100; transform: translateX(-100%); transition: transform 0.2s; }
+      .ebook-sidebar.open { transform: translateX(0); }
+      .ebook-toggle { display: block !important; position: fixed; top: 12px; left: 12px; z-index: 101; }
+      .ebook-main { padding-left: 3rem; }
+      .ebook-nav { left: 0; }
+    }
+    .ebook-toggle { display: none; padding: 0.5rem 0.75rem; background: rgba(0,0,0,0.6); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; cursor: pointer; font-size: 0.9rem; }
+  </style>
+</head>
+<body class="ebook-root">
+  <button type="button" class="ebook-toggle" aria-label="Open index">Index</button>
+  <div class="ebook-layout">
+    <aside class="ebook-sidebar" id="ebook-sidebar">
+      <h2>The Introvert's Guide to Networking</h2>
+      <ol class="ebook-index" id="ebook-index"></ol>
+    </aside>
+    <main class="ebook-main">
+      <div class="ebook-viewer" id="ebook-viewer"></div>
+      <nav class="ebook-nav" aria-label="Page navigation">
+        <button type="button" id="ebook-prev" aria-label="Previous page">Previous</button>
+        <span class="ebook-page-num" id="ebook-page-num">Page 1 of 52</span>
+        <button type="button" id="ebook-next" aria-label="Next page">Next</button>
+      </nav>
+    </main>
+  </div>
+  <script>
+    (function() {
+      var pages = [
+        { title: "Part I, Rewriting the Story", body: "<p class=\"lead\"><strong>Part I, Rewriting the Story (Inner Game Foundations)</strong></p><p class=\"lead\"><strong>Chapter 1: Why Networking Feels Draining (and Why That's Not a Flaw)</strong></p><p>Networking doesn't drain introverts because they're socially incompetent. It drains them because they're paying attention.</p><p>Every interaction carries a cognitive load. Introverts feel this load acutely. They're monitoring tone, reading subcommunication, tracking conversational rhythm, noticing what's being said and what isn't. This is high-resolution social sensing. It's exhausting because it's real work.</p><p>Most networking advice ignores this. It assumes the problem is shyness or lack of confidence. It's not. The problem is that traditional networking is designed as a performance, and introverts are paying the emotional cost of that performance while simultaneously running a parallel analysis of what's actually happening in the room.</p><p>The hidden tax isn't social interaction itself. It's approval-seeking. When you're networking to prove something, to yourself or others, every interaction becomes weighted. You're not just talking; you're auditioning. That's what drains you.</p>" },
+        { title: "Reframing the Exchange", body: "<p class=\"lead\"><strong>Reframing the Exchange</strong></p><p>Reframe networking as signal exchange, not performance. You're not there to impress. You're there to understand who someone is and let them understand who you are.</p><p>This shift is subtle but neurologically significant. When you stop performing, your cognitive load drops. You're no longer running two parallel processes, the interaction and the self-monitoring. You're just present.</p><p>Introverts excel at this. They naturally prefer depth over breadth, genuine exchange over surface-level collection. The problem isn't that they're bad at networking. It's that they've been told networking means something it doesn't.</p><p>The real cost of traditional networking isn't the introversion. It's the misalignment between how introverts naturally operate and what they've been told networking requires.</p>" },
+        { title: "Chapter 2: The Real Reason Introverts Avoid Networking", body: "<p class=\"lead\"><strong>Chapter 2: The Real Reason Introverts Avoid Networking</strong></p><p>Three fears drive introvert avoidance of networking. Understanding them neutralizes them.</p><p><strong>Fear One: Social Debt.</strong> \"If I talk to this person, now I owe them something.\" This fear is rational. In many networking contexts, there's an implicit obligation. You exchange contact information, and now there's an expectation of follow-up, collaboration, or reciprocal promotion.</p><p>For introverts, this creates a commitment anxiety. You're not just deciding to talk to someone; you're potentially committing to an ongoing relationship you didn't fully consent to.</p><p><strong>Fear Two: Miscalibration.</strong> \"I'll either talk too much or too little, and I'll seem weird.\" This fear is also rational. Introverts are sensitive to social calibration. They notice when they've said too much or when silence has stretched too long. They're hyperaware of the gap between their internal experience and external presentation.</p>" },
+        { title: "Fear Three: Shallow Traps", body: "<p class=\"lead\"><strong>Fear Three: Shallow Traps.</strong></p><p>\"I'll get stuck in small talk with someone I have nothing in common with, and I won't know how to leave without being rude.\"</p><p>This is the most underrated fear. Introverts don't mind depth. They mind the <em>forced shallowness</em> of traditional networking. They mind being trapped in a conversation that isn't going anywhere, with no graceful exit.</p><p><strong>The Rationality of These Fears</strong></p><p>These fears aren't irrational. They're accurate observations about how most networking actually works. The solution isn't to overcome them through willpower. It's to change the game.</p><p>When you network with intention, seeking specific types of people, having genuine curiosity about their work, and being willing to walk away from misaligned conversations, all three fears dissolve. You're no longer playing a game designed for someone else.</p>" },
+        { title: "Chapter 3: Inner Game, From Outcome Dependence to Signal Awareness", body: "<p class=\"lead\"><strong>Chapter 3: Inner Game, From Outcome Dependence to Signal Awareness</strong></p><p>The real energy drain in networking isn't the interaction. It's outcome dependence.</p><p>Outcome dependence is the state of needing this specific interaction to go a certain way. You need them to like you. You need them to remember you. You need this to lead somewhere. When you're outcome-dependent, every word carries weight. Every pause feels dangerous. Your nervous system is in a state of low-grade threat.</p><p>This is what exhausts introverts. Not the talking. The stakes.</p><p><strong>The Shift</strong></p><p>The shift from outcome dependence to signal awareness is the most important move in introvert networking. Instead of \"Do they like me?\" the question becomes \"Is there mutual curiosity here?\"</p><p>This is a different neurological state. You're no longer performing. You're observing. You're asking: Do we have aligned interests? Is there genuine exchange happening? Is this person present, or are they performing?</p><p>When you're in signal awareness mode, you're calm. You're not trying to convince anyone of anything. You're just reading the room and deciding whether to invest further.</p>" },
+        { title: "Presence as Leverage", body: "<p class=\"lead\"><strong>Presence as Leverage</strong></p><p>Calm is more powerful than confidence in networking. Confidence can read as trying. Calm reads as knowing something others don't.</p><p>Presence, genuine attention to the person in front of you, is the highest-leverage move in any interaction. When you're truly present, you're not anxious. You're not performing. You're just there. And that presence is magnetic.</p><p>Most people are so caught in their own heads that genuine presence from another person is rare. When an introvert stops trying and just shows up, they stand out.</p><p>This is why introverts often build deeper relationships than extroverts, even though they network less. They're present. They're listening. They're not performing.</p>" },
+        { title: "Chapter 4: Introverts as High-Resolution Social Sensors", body: "<p class=\"lead\"><strong>Chapter 4: Introverts as High-Resolution Social Sensors</strong></p><p>Introverts read subcommunication better than most people. Subcommunication is everything that isn't words: tone, pacing, eye contact, the length of pauses, what someone chooses not to say.</p><p>Most people miss this layer entirely. They're focused on content, what's being said. Introverts are naturally attuned to the subtext. They notice when someone's words don't match their tone. They feel when a conversation is forced. They sense when someone's interested versus polite.</p><p>This is a massive advantage. It's also often invisible to the introvert themselves.</p><p><strong>Why Extroverts Override Signal</strong></p><p>Extroverts often override subcommunication with momentum. They talk more, move faster, create energy through volume. This can work in certain contexts. But it also means they miss nuance. They miss the person who's interested but quiet. They miss the signal that a conversation has run its course.</p><p>Introverts don't have this problem. They naturally respect signal. They notice when someone's engaged versus when they're looking for an exit. They adjust accordingly.</p>" },
+        { title: "Training Yourself to Trust What You're Picking Up", body: "<p class=\"lead\"><strong>Training Yourself to Trust What You're Picking Up</strong></p><p>Most introverts have learned to doubt their own signal reading. They've been told they're \"too quiet\" or \"overthinking.\" They've internalized the idea that their natural way of operating is a flaw.</p><p>It's not. Your ability to read a room is real. Your sense that a conversation is forced is accurate. Your instinct that someone's not genuinely interested is usually right.</p><p>The work isn't to become more extroverted. It's to trust what you're already sensing and act on it. When you feel that a conversation has run its course, it probably has. When you sense that someone's genuinely curious, they probably are.</p><p>This trust is what transforms networking from exhausting to energizing. You're no longer fighting your nature. You're leveraging it.</p>" },
+        { title: "Part II, The Mechanics of High-Leverage Networking", body: "<p class=\"lead\"><strong>Part II, The Mechanics of High-Leverage Networking</strong></p><p><strong>Chapter 5: Networking as Relationship Math (Not Social Gambling)</strong></p><p>Most connections fail to compound because they're built on misalignment.</p><p>You meet someone at an event. You exchange contact information. You follow up. But there's no actual reason for the relationship to continue. You have different goals, different audiences, different values. The connection was circumstantial, not structural.</p><p>This is why most networking feels like gambling. You're making bets on random connections and hoping something sticks.</p><p><strong>Weak Ties vs. Aligned Ties</strong></p><p>Weak ties are connections with no structural reason to continue. They're valuable for certain things, serendipity, exposure to new ideas, but they don't compound.</p><p>Aligned ties are different. These are connections where there's mutual benefit, shared values, or complementary goals. These relationships compound. They lead to collaboration, referrals, genuine partnership.</p>" },
+        { title: "Spotting Asymmetry Early", body: "<p class=\"lead\"><strong>Spotting Asymmetry Early</strong></p><p>The key to high-leverage networking is spotting asymmetry before you invest heavily.</p><p>Asymmetry shows up in several ways. Value mismatch: you have something to offer them, but they have nothing to offer you (or vice versa). Status chasing: you're interested in them because of their platform or credibility, not because of genuine alignment. Directional mismatch: you're moving toward something they're moving away from.</p><p>When you spot asymmetry, the move is clear: don't invest further. This isn't cold. It's honest. You're respecting both of your time by acknowledging that the relationship isn't structurally sound.</p><p>Introverts are naturally good at this. They don't network indiscriminately. They're selective. The problem is they often feel guilty about this selectivity. They shouldn't. Selectivity is how you build leverage.</p>" },
+        { title: "Chapter 6: The Three Types of Creator Relationships", body: "<p class=\"lead\"><strong>Chapter 6: The Three Types of Creator Relationships</strong></p><p>Not all relationships serve the same function. Understanding the three types helps you network with intention.</p><p><strong>Peers (Co-Evolution)</strong></p><p>Peers are creators at a similar stage, with similar audiences or complementary skills. The relationship is built on mutual growth. You're learning from each other, collaborating, pushing each other forward.</p><p>Peer relationships are the foundation of sustainable creator careers. They're where you get honest feedback, where you test ideas, where you find collaborators.</p><p><strong>Mentors (Directional Gravity)</strong></p><p>Mentors are people further along the path. They've solved problems you're facing. They have perspective you don't. The relationship is directional, they're pulling you forward.</p><p>Mentors aren't always formal. Sometimes it's someone you follow online, whose work you study, whose thinking shapes yours. Sometimes it's someone you've built a relationship with who's willing to advise you.</p>" },
+        { title: "Multipliers (Distribution, Platforms, Audiences)", body: "<p class=\"lead\"><strong>Multipliers (Distribution, Platforms, Audiences)</strong></p><p>Multipliers are people with access to distribution, platforms, or audiences that align with your work. They can amplify your reach. They can introduce you to opportunities.</p><p>Multiplier relationships are valuable, but they're often the ones introverts misidentify. They approach multipliers with a scarcity mindset, \"I need them more than they need me.\" This creates the neediness that kills the relationship.</p><p><strong>The Misidentification Problem</strong></p><p>Introverts often confuse these categories. They treat peers like mentors, creating an imbalanced dynamic. They treat multipliers like peers, creating neediness. They ignore mentors because they assume they're too busy.</p><p>The work is to identify which type of relationship you're building and adjust your approach accordingly. With peers, you're equals. With mentors, you're learning. With multipliers, you're offering something of value in exchange for their platform.</p>" },
+        { title: "Chapter 7: Conversational Frame Control (Without Dominating)", body: "<p class=\"lead\"><strong>Chapter 7: Conversational Frame Control (Without Dominating)</strong></p><p>Frame control is the ability to shape the direction and tone of a conversation without dominating it. Most people think this requires talking more. It doesn't.</p><p><strong>Leading with Curiosity</strong></p><p>The most powerful frame control move is asking questions that reveal worldview, not credentials.</p><p>Instead of \"What do you do?\" ask \"What problem are you trying to solve right now?\" Instead of \"How many followers do you have?\" ask \"What's the most interesting feedback you've gotten from your audience?\"</p><p>These questions do two things. They signal that you're interested in substance, not surface. And they give you real information about how someone thinks.</p><p>When you ask good questions, you control the frame without appearing to. The conversation naturally goes deeper. The other person feels heard. And you're gathering signal about whether this is an aligned relationship.</p>" },
+        { title: "Subtle Framing Techniques", body: "<p class=\"lead\"><strong>Subtle Framing Techniques</strong></p><p>Framing isn't manipulation. It's directing attention toward what matters.</p><p>When someone launches into self-promotion, you can gently reframe: \"That's interesting. What's the thinking behind that approach?\" This shifts from promotion to reasoning. You're asking them to go deeper.</p><p>When a conversation is surface-level, you can introduce nuance: \"I've noticed a lot of creators doing that. What's your take on why it works?\" This signals that you're thinking critically, not just accepting the obvious.</p><p>When someone's talking about themselves too much, you can redirect without being rude: \"That makes sense. How does that fit into what you're building long-term?\" You're not shutting them down. You're expanding the frame.</p>" },
+        { title: "Exiting Cleanly", body: "<p class=\"lead\"><strong>Exiting Cleanly</strong></p><p>The ability to exit a conversation without social damage is underrated.</p><p>You don't need to stay in every conversation until it's exhausted. You can say, \"I want to make sure I talk to a few other people tonight, but I'm really glad we connected. Let's stay in touch.\" This is honest and graceful.</p><p>You can also use the environment. \"I'm going to grab some water, but I'll find you later.\" You're not disappearing. You're creating space.</p><p>The key is to exit before resentment builds. If you're staying in a conversation out of obligation, it shows. If you exit when you're still genuinely engaged, you leave a positive impression.</p>" },
+        { title: "Chapter 8: The Anti-Pitch, How Real Opportunities Actually Emerge", body: "<p class=\"lead\"><strong>Chapter 8: The Anti-Pitch, How Real Opportunities Actually Emerge</strong></p><p>Pitching kills polarity. When you pitch, you're asking someone to do something for you. You're creating an imbalance. You're making them the decision-maker and yourself the supplicant.</p><p>Real opportunities don't emerge from pitches. They emerge from relevance.</p><p><strong>Letting Relevance Surface Naturally</strong></p><p>When you're genuinely interested in someone's work, when you're offering real value, when you're aligned on something that matters, opportunities emerge naturally. You don't have to ask.</p><p>The person recognizes that working with you would be valuable. They bring it up. Or they introduce you to someone who needs what you have.</p><p>This is the opposite of how most people network. Most people pitch constantly. They're always asking for something. They're always trying to create an opportunity.</p><p>Introverts often do the opposite. They wait for opportunities to come to them. The middle ground is to create conditions where opportunities are likely to emerge, without forcing them.</p>" },
+        { title: "Recognizing Green Lights", body: "<p class=\"lead\"><strong>Recognizing Green Lights</strong></p><p>A green light is a signal that someone's genuinely interested in deeper connection or collaboration.</p><p>Green lights show up as: specific questions about your work, offers to introduce you to someone, invitations to collaborate on something, follow-up after an initial conversation, genuine curiosity about your thinking.</p><p>Polite engagement looks different. It's generic compliments, surface-level questions, no follow-up, no specificity.</p><p>Most people miss green lights because they're not looking for them. They're too focused on whether they made a good impression. When you shift to signal awareness, you start noticing green lights. And when you see one, you can lean in.</p><p><strong>Inviting Collaboration Without Pressure</strong></p><p>When you sense a green light, the move is to invite collaboration in a way that gives the other person an easy out.</p><p>\"I'm working on something that might be interesting to you. No pressure, but I'd love your thoughts.\" This is different from a pitch. You're offering them the opportunity to engage, not asking them to do something for you.</p><p>If they're interested, they'll lean in. If they're not, they can politely decline without awkwardness. Either way, you've maintained the relationship.</p>" },
+        { title: "Part III, Digital-First Networking for Introverts", body: "<p class=\"lead\"><strong>Part III, Digital-First Networking for Introverts</strong></p><p><strong>Chapter 9: Asynchronous Advantage, Why Online Networking Favors Introverts</strong></p><p>Online networking is fundamentally different from in-person networking. It's asynchronous. You have time to think.</p><p>Time to think is an introvert's superpower. In real-time conversation, you're processing on the fly. Online, you can craft a response. You can think through what you want to say. You can be more articulate, more thoughtful, more yourself.</p><p><strong>Writing as Calibration</strong></p><p>Writing forces calibration. When you write, you have to be clear. You can't rely on tone of voice or body language to carry meaning. You have to say what you mean.</p><p>This is why introverts often sound more confident online. They're not fighting the real-time processing load. They're just writing what they think.</p><p>This is also why written communication builds stronger relationships. It's more intentional. It's more considered. It's less likely to be misunderstood.</p>" },
+        { title: "Why Introverts Sound More Confident Online", body: "<p class=\"lead\"><strong>Why Introverts Sound More Confident Online</strong></p><p>In real-time conversation, introverts are managing multiple cognitive loads: processing what's being said, formulating a response, monitoring their own delivery, reading the other person's reaction.</p><p>Online, the load is simpler. You're just writing. You're not performing. And when you're not performing, you sound more like yourself. More confident. More clear.</p><p>This is a massive advantage. Lean into it. Build your network online first. Establish relationships through writing, through comments, through thoughtful engagement. Then, when you meet in person, you're not starting from zero. You're continuing a conversation that's already established.</p>" },
+        { title: "Chapter 10: High-Signal DMs, Replies, and Follow-Ups", body: "<p class=\"lead\"><strong>Chapter 10: High-Signal DMs, Replies, and Follow-Ups</strong></p><p>The pathway from comment to collaboration is: comment, DM, call, collaboration.</p><p>Most people skip steps. They see someone's work, they DM asking for something, and they wonder why they get ignored. They skipped the comment phase. They skipped the signal-building phase.</p><p><strong>The Comment Phase</strong></p><p>Commenting is low-stakes outreach. You're engaging with someone's work publicly. You're showing that you pay attention. You're adding value to the conversation.</p><p>Good comments are specific. They reference something particular from the post. They add a new angle or perspective. They're not generic praise.</p><p>When you comment consistently on someone's work, you're building familiarity. You're signaling that you're genuinely interested, not just looking for something.</p>" },
+        { title: "The DM Phase", body: "<p class=\"lead\"><strong>The DM Phase</strong></p><p>After you've commented a few times, a DM feels natural. You're not a stranger. You're someone who's engaged with their work.</p><p>A high-signal DM is specific. It references something they've said. It offers something of value. It doesn't ask for anything.</p><p>\"I've been following your work on [specific topic]. Your recent post on [specific thing] made me think about [insight]. I thought you might find this interesting: [resource or perspective].\"</p><p>This is different from: \"Hey, I love your work. Would you be interested in collaborating?\"</p><p>One is offering value. One is asking for something. Guess which one gets responses.</p>" },
+        { title: "The Difference Between Resonance and Flattery", body: "<p class=\"lead\"><strong>The Difference Between Resonance and Flattery</strong></p><p>Resonance is when you genuinely connect with someone's work. You see something in it that matters to you. You want to engage with it.</p><p>Flattery is when you're complimenting someone to get something from them. It's performative. People can feel the difference.</p><p>When you're building relationships online, lead with resonance. Engage with work that actually matters to you. Comment on things you genuinely find interesting. DM people whose thinking shapes yours.</p><p>This isn't a tactic. It's just being honest about what you care about. And honesty builds relationships.</p>" },
+        { title: "Simple Message Frameworks That Feel Human", body: "<p class=\"lead\"><strong>Simple Message Frameworks That Feel Human</strong></p><p>Most DM templates feel robotic. They feel like templates. Here are frameworks that feel human:</p><p><strong>The Insight Share:</strong> \"I was thinking about [topic you discussed]. I came across [resource/perspective] that seems relevant. Thought you'd find it interesting.\"</p><p><strong>The Question:</strong> \"I've been wrestling with [problem]. Your work on [topic] suggests you've thought about this. What's your take on [specific question]?\"</p><p><strong>The Collaboration Seed:</strong> \"I'm working on [project]. Your perspective on [topic] would be valuable. Would you be open to a quick conversation?\"</p><p>Each of these offers something before asking for anything. Each is specific. Each feels like a real person reaching out, not a template.</p>" },
+        { title: "When Not to Follow Up", body: "<p class=\"lead\"><strong>When Not to Follow Up</strong></p><p>This is important: not every interaction deserves a follow-up.</p><p>If someone doesn't respond to your first message, they're not interested. A second message doesn't change that. It just signals neediness.</p><p>If a conversation felt forced or misaligned, let it go. Not every connection is meant to compound.</p><p>If someone's clearly busy or not in a place to engage, respect that. You can reconnect later, but pushing now just creates friction.</p><p>The ability to let things go is as important as the ability to follow up. It signals that you're not desperate. You're selective. You respect people's time and attention.</p>" },
+        { title: "Chapter 11: Turning Online Context Into Offline Trust", body: "<p class=\"lead\"><strong>Chapter 11: Turning Online Context Into Offline Trust</strong></p><p>The best in-person networking happens when you've already built context online.</p><p>When you meet someone in person and you've already engaged with their work, already had a DM conversation, already established some familiarity, the in-person interaction is different. It's not starting from zero. It's continuing something that's already begun.</p><p><strong>Priming Familiarity Before Meeting</strong></p><p>If you know you're going to see someone at an event, engage with their work beforehand. Comment on their recent posts. Send a thoughtful DM. Reference something specific they've said.</p><p>When you meet in person, you can say, \"I've been following your work on [topic]. I really appreciated your take on [specific thing].\" This immediately establishes that you're not a random person. You're someone who knows their work.</p><p>This shifts the entire dynamic. They're more open. The conversation goes deeper faster. There's already a foundation of mutual interest.</p>" },
+        { title: "How Light Online Touchpoints Lower In-Person Anxiety", body: "<p class=\"lead\"><strong>How Light Online Touchpoints Lower In-Person Anxiety</strong></p><p>In-person networking is anxiety-inducing for introverts partly because it's high-stakes. You're meeting someone for the first time. You don't know if you'll have anything to talk about. You don't know if they'll be interested in you.</p><p>When you've already established online context, the stakes are lower. You're not meeting for the first time. You're meeting someone you already know a little. The conversation has a starting point.</p><p>This dramatically reduces anxiety. You're not walking into the room as a stranger. You're walking in as someone who's already engaged with their work.</p><p><strong>Pre-Event Digital Warming Strategies</strong></p><p>Before an event, identify people you want to connect with. Engage with their work online. Send a thoughtful message. Reference something specific.</p><p>Then, at the event, you can approach them with genuine familiarity. \"Hey, I'm [name]. I sent you a message about [topic] before the event. I'd love to continue that conversation.\"</p><p>This is so much more effective than cold networking. You're not starting from scratch. You're building on something that's already there.</p>" },
+        { title: "Part IV, In-Person Networking Without Burnout", body: "<p class=\"lead\"><strong>Part IV, In-Person Networking Without Burnout</strong></p><p><strong>Chapter 12: The Inner Game of Walking Into the Room</strong></p><p>Your state before you walk into a room determines how the room responds to you.</p><p>State is your internal condition: your energy level, your sense of purpose, your emotional baseline. If you walk in anxious and trying to prove something, people feel that. If you walk in calm and clear about why you're there, people feel that too.</p><p><strong>State Before Strategy</strong></p><p>Most networking advice focuses on strategy: what to say, how to approach people, what questions to ask. Strategy matters, but state matters more.</p><p>You can have perfect strategy and terrible state, and you'll still have a bad networking experience. You can have mediocre strategy and excellent state, and you'll build real connections.</p><p>Excellent state comes from clarity. You know why you're at this event. You know what you're looking for. You're not trying to impress everyone. You're looking for specific types of people or conversations.</p>" },
+        { title: "Why Your First Interaction Doesn't Matter", body: "<p class=\"lead\"><strong>Why Your First Interaction Doesn't Matter</strong></p><p>Most people stress about their first interaction at an event. They think it sets the tone for everything else.</p><p>It doesn't. Your first interaction is often awkward. You're still calibrating. You're still getting into the room's energy. This is normal.</p><p>What matters is your second and third interaction. By then, you've warmed up. You're more present. You're more yourself.</p><p>This is liberating. You don't have to nail the first conversation. You just have to show up and let yourself warm up.</p>" },
+        { title: "Releasing the \"I Need to Make This Worth It\" Pressure", body: "<p class=\"lead\"><strong>Releasing the \"I Need to Make This Worth It\" Pressure</strong></p><p>Introverts often approach networking with a scarcity mindset. \"I'm here, so I need to make this count. I need to meet important people. I need to make this worth the energy I'm spending.\"</p><p>This pressure is what exhausts you. You're not just networking. You're trying to justify your presence.</p><p>Release this. You don't have to make it worth it. You're just here to have a few good conversations. If you meet one person you genuinely connect with, that's a win. If you have a few interesting conversations and leave, that's a win.</p><p>When you release the pressure to make it count, you relax. And when you relax, you're more present. And when you're more present, better things happen.</p>" },
+        { title: "Chapter 13: Event Networking for Introverts, A Field Manual", body: "<p class=\"lead\"><strong>Chapter 13: Event Networking for Introverts, A Field Manual</strong></p><p><strong>Entering Conversations Without Interrupting Energy</strong></p><p>The hardest part of event networking for introverts is entering a conversation that's already happening.</p><p>Most advice says to just jump in. But that's not how introverts operate. You don't want to interrupt. You want to enter smoothly.</p><p>Here's how: position yourself near the group. Make eye contact with someone in the group. Wait for a natural pause. Then add something relevant to what's being discussed.</p><p>You're not interrupting. You're joining. There's a difference.</p>" },
+        { title: "One-on-One Depth in Group Settings", body: "<p class=\"lead\"><strong>One-on-One Depth in Group Settings</strong></p><p>Group conversations are often surface-level. Everyone's performing a bit. Everyone's aware they're being observed.</p><p>One-on-one conversations are deeper. You can actually connect.</p><p>At events, create opportunities for one-on-one conversations. Pull someone aside. \"I want to hear more about what you're working on. Let's grab some space.\" Most people appreciate this. They're tired of group performance too.</p><p>Even five minutes of genuine one-on-one conversation is more valuable than thirty minutes of group small talk.</p>" },
+        { title: "Reading When to Stay, Deepen, or Move On", body: "<p class=\"lead\"><strong>Reading When to Stay, Deepen, or Move On</strong></p><p>This is where your high-resolution social sensing becomes an asset.</p><p>You can feel when a conversation has run its course. You can sense when someone's genuinely interested versus politely engaged. You can tell when deepening the conversation will lead somewhere versus when you're just prolonging the inevitable.</p><p>Trust these signals. When you feel that a conversation is complete, it probably is. When you sense genuine interest, lean in. When you feel polite disengagement, gracefully exit.</p><p>This ability to read the room and adjust is what makes introverts effective networkers. You're not forcing conversations. You're following the natural rhythm.</p>" },
+        { title: "Using Silence as a Tool, Not a Liability", body: "<p class=\"lead\"><strong>Using Silence as a Tool, Not a Liability</strong></p><p>Silence makes most people uncomfortable. They rush to fill it. They talk more. They get nervous.</p><p>Introverts are comfortable with silence. Use this.</p><p>In a conversation, after you ask a question, let there be silence. Give the other person time to think. Most people will fill the silence with a more thoughtful answer than they would have given if you'd rushed them.</p><p>Silence also signals confidence. When you're comfortable with silence, you seem like someone who knows what they're doing. You're not anxious. You're not trying to prove anything.</p><p>This is a massive advantage. Lean into it.</p>" },
+        { title: "Chapter 14: The Power of Liminal Spaces", body: "<p class=\"lead\"><strong>Chapter 14: The Power of Liminal Spaces</strong></p><p>Liminal spaces are the in-between places: hallways, meals, lounges, side conversations. They're not the main event. They're the margins.</p><p>Introverts dominate in liminal spaces. This is where real connection happens.</p><p><strong>Why Introverts Dominate Here</strong></p><p>In liminal spaces, there's less performance. There's no stage. There's no audience. People are more themselves.</p><p>Introverts naturally prefer this. They're not trying to be \"on.\" They're just having a conversation.</p><p>Also, liminal spaces are lower-energy. There's less stimulation. There's more space for genuine exchange. This is where introverts thrive.</p>" },
+        { title: "Creating Micro-Containers for Real Connection", body: "<p class=\"lead\"><strong>Creating Micro-Containers for Real Connection</strong></p><p>You don't need a formal setting to create connection. You just need a container.</p><p>A container is a defined space and time for conversation. \"Let's grab coffee after this.\" \"Want to take a walk?\" \"Let's sit over here for a minute.\"</p><p>These micro-containers create intimacy. They signal that you want to have a real conversation, not just exchange pleasantries.</p><p>Most people appreciate this. They're tired of surface-level networking too. When you create a container for depth, people lean in.</p>" },
+        { title: "Chapter 15: After the Event, Compounding the Signal", body: "<p class=\"lead\"><strong>Chapter 15: After the Event, Compounding the Signal</strong></p><p>The event is over. Most people do nothing. They collect business cards and move on.</p><p>This is where most networking fails to compound. The event was good, but there's no follow-through.</p><p><strong>Post-Event Follow-Ups That Feel Inevitable, Not Forced</strong></p><p>A good follow-up doesn't feel like a follow-up. It feels like a natural continuation of the conversation.</p><p>\"I was thinking about what you said about [specific thing]. I came across [resource] that seems relevant. Thought you'd find it interesting.\"</p><p>This is different from: \"Great meeting you at the event. Let's stay in touch.\"</p><p>One is offering value. One is generic. Guess which one builds relationships.</p>" },
+        { title: "Turning a Single Conversation Into a Long-Term Relationship", body: "<p class=\"lead\"><strong>Turning a Single Conversation Into a Long-Term Relationship</strong></p><p>A single conversation is just a data point. A long-term relationship is built through repeated, intentional touchpoints.</p><p>After the event, engage with their work online. Comment on their posts. Share their content. Send them relevant resources. Invite them to something relevant.</p><p>You're not asking for anything. You're just staying in their orbit. You're demonstrating that you're genuinely interested in their work.</p><p>Over time, this builds familiarity. It builds trust. It creates the foundation for real collaboration.</p>" },
+        { title: "Letting Time Do the Work", body: "<p class=\"lead\"><strong>Letting Time Do the Work</strong></p><p>This is the hardest part for people who are outcome-dependent. You want the relationship to compound immediately.</p><p>It doesn't. Real relationships take time.</p><p>But here's the thing: if you're consistently offering value, if you're genuinely interested, if you're not needy, time works in your favor.</p><p>Six months from now, when they need something you can help with, they'll think of you. A year from now, when they're looking for collaborators, your name will come up. Two years from now, you'll have built a real relationship.</p><p>This is how introvert networking works. It's slower. But it's deeper. And it compounds.</p>" },
+        { title: "Part V, Why The Future-Proof Creator Summit Is Built for This", body: "<p class=\"lead\"><strong>Part V, Why The Future-Proof Creator Summit Is Built for This</strong></p><p><strong>Chapter 16: Why Intentional, Curated Events Matter Now</strong></p><p>The era of mass networking is over. Conferences with thousands of people, generic panels, speed networking, these don't work anymore.</p><p>What works is density. Intentionality. Curation.</p><p><strong>The Collapse of Mass Networking Value</strong></p><p>When everyone's at the event, no one's special. When there are a thousand people, you can't have real conversations. When the event is designed for scale, it's designed against depth.</p><p>Introverts have always known this. They've always preferred intentional, curated gatherings where depth is possible. Now, the market is catching up.</p><p>Creators need density, not scale. They need to be in a room with people they actually want to know. They need time for real conversation. They need an environment that supports depth.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" },
+        { title: "Why Creators Need Density, Not Scale", body: "<p class=\"lead\"><strong>Why Creators Need Density, Not Scale</strong></p><p>A room of hundreds of creators who are genuinely aligned is more valuable than a room of five thousand random people.</p><p>In a dense, intentional event, you can actually build relationships. You can have conversations that matter. You can find collaborators, mentors, peers.</p><p>In a massive conference, you're just collecting business cards. You're just trying to stand out in a sea of noise.</p><p>Introverts understand this intuitively. They've always preferred quality over quantity. The question is: how do you create an event that honors this preference?</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" },
+        { title: "How Introvert-Friendly Environments Produce Better Outcomes", body: "<p class=\"lead\"><strong>How Introvert-Friendly Environments Produce Better Outcomes</strong></p><p>An introvert-friendly event isn't just comfortable for introverts. It produces better outcomes for everyone.</p><p>Here's why: when you remove the pressure to perform, when you create space for genuine conversation, when you curate for alignment, people actually connect. They actually collaborate. They actually build relationships that compound.</p><p>An introvert-friendly event has:</p><ul><li>Structured opportunities for real conversation (breakouts, meals, quiet spaces)</li><li>Structured conversation opportunities</li><li>Breaks and quiet spaces</li><li>Intentional curation</li><li>Focus on depth over breadth</li></ul><p>These aren't just nice-to-haves. They're what make networking actually work.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" },
+        { title: "Chapter 17: The Future-Proof Creator Summit (Vancouver)", body: "<p class=\"lead\"><strong>Chapter 17: The Future-Proof Creator Summit (Vancouver)</strong></p><p>The Future-Proof Creator Summit is built on these principles.</p><p>It's a first-time event, but not first-time thinking. The organizers have spent years understanding what creators actually need from a gathering. They've built something intentional.</p><p><strong>First-Time Event, Not First-Time Thinking</strong></p><p>This isn't a generic conference. It's a curated gathering of creators who are genuinely aligned. It's designed for depth: curated for alignment, with a format that supports real conversation.</p><p>The speakers, like Dan Koe, aren't there for hype. They're there because their thinking is relevant. They're there to contribute to real conversation.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" },
+        { title: "Speakers Like Dan Koe as Signal, Not Hype", body: "<p class=\"lead\"><strong>Speakers Like Dan Koe as Signal, Not Hype</strong></p><p>When you see a speaker lineup, you can usually tell if the event is about substance or hype.</p><p>Hype events book big names and market the names. Substance events book people whose thinking matters.</p><p>Dan Koe is on The Future-Proof Creator Summit lineup because his work on creator economics, positioning, and building sustainable creative businesses is directly relevant to what creators need to understand.</p><p>He's not there to sell you something meaningless. He's there to share ideas that matter.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" },
+        { title: "How the Event Design Supports Depth Over Noise", body: "<p class=\"lead\"><strong>How the Event Design Supports Depth Over Noise</strong></p><p>The Future-Proof Creator Summit is designed with intentionality at every level.</p><p>The format is designed so you can actually meet people: structured conversation time, breakouts, and spaces that support connection. The schedule includes structured conversation time, not just panels. The venue is designed for connection, not just content consumption.</p><p>There are breaks. There are quiet spaces. There's time to process and integrate what you're learning.</p><p>This is what an introvert-friendly event looks like. And it's also what a high-quality event looks like, period.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" },
+        { title: "What Introverts Can Expect at The Future-Proof Creator Summit", body: "<p class=\"lead\"><strong>What Introverts Can Expect, and What They'll Never Be Pressured Into</strong></p><p>If you're an introvert considering The Future-Proof Creator Summit, here's what you can expect:</p><p>You'll be in a room with creators who are genuinely interested in building real relationships. You'll have time for real conversations. You'll learn from speakers whose thinking matters. You'll leave with actual connections, not just business cards.</p><p>You won't be pressured into networking games. You won't be forced into group activities. You won't be expected to perform.</p><p>You'll be able to show up as yourself. And that's where real networking happens.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" },
+        { title: "Closing, Networking as a Skill, Not a Personality Trait", body: "<p class=\"lead\"><strong>Closing, Networking as a Skill, Not a Personality Trait</strong></p><p>You're not bad at networking. You're just playing a game designed for someone else.</p><p>Traditional networking is designed for extroverts. It rewards volume, performance, and constant outreach. It punishes depth, thoughtfulness, and selectivity.</p><p>Introverts have been told they're bad at this game. They're not. They're just playing the wrong game.</p>" },
+        { title: "When Introverts Stop Performing and Start Observing, They Win", body: "<p class=\"lead\"><strong>When Introverts Stop Performing and Start Observing, They Win</strong></p><p>The moment an introvert stops trying to be more extroverted and starts leveraging their actual strengths, that's when everything changes.</p><p>You're a high-resolution social sensor. You read subcommunication. You build deeper relationships. You're selective about where you invest. You're thoughtful about collaboration.</p><p>These aren't weaknesses. They're advantages. They're exactly what the creator economy needs.</p><p>When you stop performing and start observing, when you stop trying to impress and start genuinely connecting, when you stop networking like an extrovert and start networking like yourself, you win.</p><p>The relationships you build are deeper. The collaborations are more aligned. The opportunities are more meaningful.</p><p>This is introvert networking. And it works.</p>" },
+        { title: "Optional Bonuses / Tools Section", body: "<p class=\"lead\"><strong>Optional Bonuses / Tools Section</strong></p><p><strong>Pre-Event Intention Worksheet</strong></p><p>Before any networking event, clarify your intentions:</p><ol><li>Why am I going to this event?</li><li>What types of people do I want to meet? (Be specific: peers, mentors, multipliers, etc.)</li><li>What do I want to offer? (What value can I bring?)</li><li>What's one conversation I'd consider a win?</li><li>How will I take care of my energy during and after the event?</li></ol><p>This worksheet prevents you from walking in with vague goals. You know why you're there. You know what you're looking for. You know what success looks like.</p>" },
+        { title: "Social Energy Budgeting Framework", body: "<p class=\"lead\"><strong>Social Energy Budgeting Framework</strong></p><p>Networking drains energy. Plan for it.</p><p><strong>Before the event:</strong> How much energy do I have? What do I need to do to prepare?</p><p><strong>During the event:</strong> How much energy am I spending? When do I need a break?</p><p><strong>After the event:</strong> How much recovery time do I need? What helps me recharge?</p><p>This isn't weakness. It's self-awareness. When you budget your energy, you can sustain networking without burning out.</p>" },
+        { title: "Conversation Calibration Checklist", body: "<p class=\"lead\"><strong>Conversation Calibration Checklist</strong></p><p>During a conversation, check in with yourself:</p><ul><li>Am I present, or am I in my head?</li><li>Is this person genuinely interested, or are they being polite?</li><li>Is there mutual curiosity here?</li><li>Have I asked good questions?</li><li>Am I listening, or am I waiting to talk?</li><li>Does this conversation feel aligned?</li><li>Is it time to deepen, stay, or move on?</li></ul><p>This checklist helps you stay calibrated. You're not overthinking. You're just checking in with what's actually happening.</p>" },
+        { title: "Post-Event Follow-Up Templates (Non-Cringe, Non-Salesy)", body: "<p class=\"lead\"><strong>Post-Event Follow-Up Templates (Non-Cringe, Non-Salesy)</strong></p><p><strong>Template 1: The Insight Share</strong></p><p>\"Hey [name], great connecting at [event]. I was thinking about what you said about [specific thing]. I came across [resource/perspective] that seems relevant to what you're building. Thought you'd find it interesting: [link/resource].\"</p><p><strong>Template 2: The Collaboration Seed</strong></p><p>\"I really appreciated your perspective on [topic] at [event]. I'm working on [project], and I think your thinking on [specific area] would be valuable. Would you be open to a quick conversation about [specific thing]?\"</p><p><strong>Template 3: The Continued Conversation</strong></p><p>\"Following up from our conversation at [event]. I've been thinking more about [topic we discussed]. I'd love to continue that conversation. Are you free for a quick call next week?\"</p><p>Each template offers value before asking for anything. Each is specific. Each feels human.</p>" },
+        { title: "Final Thought", body: "<p class=\"lead\"><strong>Final Thought</strong></p><p>Networking isn't a personality trait. It's a skill. And like any skill, it can be learned and refined.</p><p>But here's what most networking advice misses: the skill isn't in the tactics. It's in the mindset.</p><p>When you shift from outcome dependence to signal awareness, when you stop performing and start observing, when you leverage your actual strengths instead of fighting your nature, everything changes.</p><p>You don't become an extrovert. You become a better introvert. And that's where real networking power comes from.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" }
+      ];
+
+      var current = 0;
+      var total = pages.length;
+      var viewer = document.getElementById('ebook-viewer');
+      var indexEl = document.getElementById('ebook-index');
+      var prevBtn = document.getElementById('ebook-prev');
+      var nextBtn = document.getElementById('ebook-next');
+      var pageNumEl = document.getElementById('ebook-page-num');
+      var sidebar = document.getElementById('ebook-sidebar');
+      var toggleBtn = document.querySelector('.ebook-toggle');
+
+      function renderPages() {
+        viewer.innerHTML = '';
+        pages.forEach(function(p, i) {
+          var page = document.createElement('div');
+          page.className = 'ebook-page' + (i === 0 ? ' active' : '');
+          page.id = 'page-' + (i + 1);
+          page.setAttribute('data-page', i + 1);
+          page.innerHTML = '<div class="ebook-page-inner">' + p.body + '</div>';
+          viewer.appendChild(page);
+        });
+      }
+
+      function buildIndex() {
+        indexEl.innerHTML = '';
+        pages.forEach(function(p, i) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#page-' + (i + 1);
+          a.textContent = (i + 1) + '. ' + p.title;
+          a.setAttribute('data-page', i + 1);
+          a.addEventListener('click', function(e) {
+            e.preventDefault();
+            goTo(parseInt(this.getAttribute('data-page'), 10) - 1);
+            if (sidebar.classList) sidebar.classList.remove('open');
+          });
+          li.appendChild(a);
+          indexEl.appendChild(li);
+        });
+      }
+
+      function goTo(idx) {
+        if (idx < 0 || idx >= total) return;
+        current = idx;
+        document.querySelectorAll('.ebook-page').forEach(function(el, i) {
+          el.classList.toggle('active', i === current);
+        });
+        document.querySelectorAll('.ebook-index a').forEach(function(el) {
+          el.classList.toggle('active', parseInt(el.getAttribute('data-page'), 10) === current + 1);
+        });
+        pageNumEl.textContent = 'Page ' + (current + 1) + ' of ' + total;
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === total - 1;
+        document.getElementById('page-' + (current + 1)).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      prevBtn.addEventListener('click', function() { goTo(current - 1); });
+      nextBtn.addEventListener('click', function() { goTo(current + 1); });
+      toggleBtn.addEventListener('click', function() { sidebar.classList.toggle('open'); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') goTo(current - 1);
+        else if (e.key === 'ArrowRight') goTo(current + 1);
+      });
+
+      window.addEventListener('hashchange', function() {
+        var m = (window.location.hash || '').match(/^#page-(\d+)$/);
+        if (m) goTo(parseInt(m[1], 10) - 1);
+      });
+      if (window.location.hash) {
+        var m = window.location.hash.match(/^#page-(\d+)$/);
+        if (m) current = parseInt(m[1], 10) - 1;
+      }
+
+      renderPages();
+      buildIndex();
+      goTo(current);
+    })();
+  </script>
+</body>
+</html>

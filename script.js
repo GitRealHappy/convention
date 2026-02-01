@@ -410,6 +410,40 @@ document.addEventListener('click', e=>{
     }
   });
 
+  // Free Guide Modal
+  const freeGuideModal = document.getElementById('free-guide-modal');
+  const freeGuideBackdrop = freeGuideModal?.querySelector('.modal-backdrop');
+  const freeGuideClose = freeGuideModal?.querySelector('.free-guide-modal-close');
+
+  function openFreeGuideModal() {
+    if (!freeGuideModal) return;
+    freeGuideModal.classList.add('open');
+    freeGuideModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFreeGuideModal() {
+    if (!freeGuideModal) return;
+    freeGuideModal.classList.remove('open');
+    freeGuideModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.free-guide-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openFreeGuideModal();
+    });
+  });
+
+  freeGuideClose?.addEventListener('click', closeFreeGuideModal);
+  freeGuideBackdrop?.addEventListener('click', closeFreeGuideModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && freeGuideModal?.classList.contains('open')) {
+      closeFreeGuideModal();
+    }
+  });
+
   // Speaker navigation arrows
   (function() {
     const speakerTrack = document.querySelector('.speaker-track');
