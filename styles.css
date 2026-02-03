@@ -1834,7 +1834,20 @@
     border: 1px solid rgba(6, 26, 20, 0.1);
     border-radius: 10px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
   }
+
+  .speaker-talk-row[data-speaker] {
+    cursor: pointer;
+  }
+
+  .speaker-talk-row[data-speaker]:hover {
+    background: rgba(6, 26, 20, 0.06);
+    border-color: rgba(6, 26, 20, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
   @media (max-width: 999px) {
     .speaker-talk-row {
       flex-direction: row;
@@ -2259,8 +2272,17 @@
     font-size: 1rem;
     color: var(--fire);
     text-align: center;
-    margin: 0 0 1.5rem 0;
+    margin: 0 0 0.5rem 0;
     font-style: italic;
+  }
+
+  .modal-talk-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.4;
   }
 
   .modal-bio {
@@ -2279,28 +2301,7 @@
   }
 
   .modal-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .modal-links a {
-    display: block;
-    padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    color: var(--text);
-    font-size: 0.9rem;
-    text-align: center;
-    transition: background 0.2s ease, border-color 0.2s ease;
-  }
-
-  .modal-links a:hover {
-    background: rgba(8, 141, 206, 0.15);
-    border-color: rgba(8, 141, 206, 0.3);
+    display: none;
   }
 
   @media (max-width: 600px) {
@@ -2325,6 +2326,11 @@
 
     .modal-tagline {
       font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-talk-title {
+      font-size: 0.95rem;
       margin-bottom: 1rem;
     }
 

@@ -200,6 +200,7 @@ document.addEventListener('click', e=>{
       name: 'Dan Koe',
       photo: 'assets/speaker-icons/speaker1.jpg',
       tagline: '"Work less. Earn More. Enjoy Life."',
+      talkTitle: 'Focusing Your Time and Attention on Your Craft In The Age of AI',
       bio: '<p>Dan Koe. The philosopher of the one-person business model, and the flow scientist behind the 4-hour workday.</p><p>Founder of Eden: One Place For All Your Creative Work.</p>',
       links: [
         { text: 'Eden', url: 'https://eden.so/' },
@@ -211,6 +212,7 @@ document.addEventListener('click', e=>{
       name: 'Kieran Drew',
       photo: 'assets/speaker-icons/speaker12.jpg',
       tagline: 'Ex-dentist building a $500k/year internet business',
+      talkTitle: 'How to Grow Your Business With Magnetic Writing',
       bio: '<p>On a mission to become a better writer, thinker, and entrepreneur • Ex-dentist, now building an internet business (at ~$500k/year).</p>',
       links: [
         { text: '230.3K Followers on X', url: 'https://x.com/ItsKieranDrew' },
@@ -222,6 +224,7 @@ document.addEventListener('click', e=>{
       name: 'Taylin Simmonds',
       photo: 'assets/speaker-icons/speaker7.jpg',
       tagline: 'AI-assisted ghostwriter • 2B impressions',
+      talkTitle: 'How To Be A Multi-Passionate Creator',
       bio: '<p>College teacher turned AI assisted ghostwriter | Helping writers & creatives earn on the internet • 2B impressions • $4M+ revenue • All in on Substack</p>',
       links: [
         { text: '97.5K Followers on X', url: 'https://x.com/TaylinSimmonds' },
@@ -232,6 +235,7 @@ document.addEventListener('click', e=>{
       name: 'Brian Maierhofer',
       photo: 'assets/speaker-icons/speaker2.jpg',
       tagline: 'Somatic therapist & carrier of stories',
+      talkTitle: 'Liminal Means ~ Entrepreneurship From A Healed Nervous System',
       bio: '<p>Associate marriage and family therapist specializing in somatic & biomechanical therapy for anxiety, sensory overload, and emotional resilience.</p><p>He is a carrier of stories who, through his online work, helps countless more people than he could through 1:1 therapy alone.</p>',
       links: [
         { text: 'Find him on X @LiminalMeans', url: 'https://x.com/LiminalMeans' },
@@ -242,6 +246,7 @@ document.addEventListener('click', e=>{
       name: 'Kimia Nora',
       photo: 'assets/speaker-icons/speaker10.jpg',
       tagline: 'Applied Neuroscience & Neuroplasticity',
+      talkTitle: 'Neuroplasticity, the Future of Success and Health',
       bio: '<p>Applied Neuroscience | Self-directed Neuroplasticity | Brain Homeostasis | MindBody Medicine for healing chronic conditions.</p><p>Building <em>The Paradigm of Wholeness.</em></p><p>"Everybody deserves to know the science of change."</p>',
       links: [
         { text: '40.5K Followers on X', url: 'https://x.com/iamkimianora' },
@@ -252,6 +257,7 @@ document.addEventListener('click', e=>{
       name: 'Dan Goldfield',
       photo: 'assets/speaker-icons/speaker3.jpg',
       tagline: 'Peace as your Default Mode',
+      talkTitle: 'Effortless Effectiveness for Solopreneurs',
       bio: '<p>"Studied with a monk for 5 years, married a hot psychologist, built a 6-figure business. Mission: help 1 billion people realize peace as their Default Mode."</p>',
       links: [
         { text: '29.1K Followers on X', url: 'https://x.com/itsdangoldfield' },
@@ -262,6 +268,7 @@ document.addEventListener('click', e=>{
       name: 'Jack Moses',
       photo: 'assets/speaker-icons/speaker11.jpg',
       tagline: 'Transformation Coach & Podcaster',
+      talkTitle: 'Energy, Frequency, Vibration: The Metaphysics of Business and Reality Creation',
       bio: '<p>Personal Transformation Coach. Writer. Creator. Quarterback. Podcaster.</p><p>Founder of Transcendence, and the Sovereign Creators Skool.</p>',
       links: [
         { text: '28K Followers on X', url: 'https://x.com/jackmoses0' }
@@ -271,6 +278,7 @@ document.addEventListener('click', e=>{
       name: 'Hussain Ibarra',
       photo: 'assets/speaker-icons/speaker4.jpg',
       tagline: 'Engineer turned writer',
+      talkTitle: 'The Key to writing high quality content and building an audience',
       bio: '<p>Engineer turned writer. Building a writing business to $120k/year. Helped 20+ clients build and monetize their audience.</p>',
       links: [
         { text: '22.6K Followers on X', url: 'https://x.com/HussainIbarra' },
@@ -281,6 +289,7 @@ document.addEventListener('click', e=>{
       name: 'Valentin Sounds',
       photo: 'assets/speaker-icons/speaker8.jpg',
       tagline: 'Artist & Brand Advisor',
+      talkTitle: 'Visionary Brand Identity: Expressing a clear feeling and message',
       bio: '<p>Artist & Brand Advisor. Helping creatives build autonomy through branding, AI, and emotional intelligence. Create work you love and explore the world.</p>',
       links: [
         { text: 'Find him on X', url: 'https://x.com/valentinmakes' }
@@ -290,6 +299,7 @@ document.addEventListener('click', e=>{
       name: 'Nathalie Agnes',
       photo: 'assets/speaker-icons/speaker6.jpg',
       tagline: 'Business, spirituality & creativity',
+      talkTitle: 'The Spiritual Dimension of Sales',
       bio: '<p>"I used to help people see more clearly through glasses. Now I write to help them see themselves and their future more clearly. Perspectives on business, spirituality & creativity."</p>',
       links: [
         { text: 'Find her on X', url: 'https://x.com/NathalieAgnesk' },
@@ -300,6 +310,7 @@ document.addEventListener('click', e=>{
       name: 'David Morin',
       photo: 'assets/speaker-icons/speaker14.jpg',
       tagline: 'Poet & Existential Guide',
+      talkTitle: 'Uncovering Your True Voice',
       bio: '<p>"Poet, Existential Guide, & Life Transition Coach. Turn existential dread into meaningful living."</p><p>David\'s work is to guide you in reclaiming your true voice.</p>',
       links: [
         { text: 'Find him on IG @mor.intune', url: 'https://www.instagram.com/mor.intune/' },
@@ -310,6 +321,7 @@ document.addEventListener('click', e=>{
       name: 'Logan Quinn',
       photo: 'assets/speaker-icons/speaker5.jpg',
       tagline: 'Holistic health practitioner',
+      talkTitle: 'Scaling A Holistic Health Coaching Business To Training Practitioners Online',
       bio: '<p>Holistic health care practitioner with a background in kinesiology and body-centered psychotherapy.</p><p>Logan runs Medicine of Mankind in Vancouver, Canada, and internationally online, where he helps clients wake up to their soul\'s calling by rehabilitating the body, mind, and soul through applied spirituality, psychotherapy, and kinesiology based principles.</p>',
       links: [
         { text: 'Medicine of Mankind', url: 'https://www.medicineofmankind.com/' }
@@ -319,6 +331,7 @@ document.addEventListener('click', e=>{
       name: 'Jesse James Carver',
       photo: 'assets/speaker-icons/speaker13-jessejames.jpg',
       tagline: 'Host of Unblocked Creators',
+      talkTitle: 'Rites of Passage, Leadership, Being Human (Live podcast with Ish Hasan)',
       bio: '<p>Host of the podcast Unblocked Creators.</p><p>"Helping creators unblock their freedom, creativity, and personal agency through depth psychology, digital skills, and community."</p><p>Creator of The Living Internet University.</p>',
       links: [
         { text: 'Unblocked Creators Podcast', url: 'https://youtube.com/playlist?list=PLdQ91meMfIHldnc6T57Y-A6AH1auy6-vE' },
@@ -329,10 +342,19 @@ document.addEventListener('click', e=>{
       name: 'Ish Hasan',
       photo: 'assets/speaker-icons/speaker15.jpg',
       tagline: 'Author & men\'s work facilitator',
+      talkTitle: 'Rites of Passage, Leadership, Being Human (Live podcast with Jesse James Carver)',
       bio: '<p>Published author, mountain guide, intimacy coach, and men\'s work facilitator.</p><p>Ish writes about shadow work, conscious relationships, and purpose.</p>',
       links: [
         { text: 'Find him on Substack: RadicalEros', url: 'https://substack.com/@radicaleros' }
       ]
+    },
+    'olivia-peers': {
+      name: 'Olivia Peers',
+      photo: 'assets/speaker-icons/speaker16.jpg',
+      tagline: 'Founder, Artist, Human potential educator',
+      talkTitle: 'Deeper Living: A life philosophy for Self-Actualization',
+      bio: '<p>Founder, Artist, Human potential educator exploring the intersection of philosophy, psychology, and living deeply.</p>',
+      links: []
     }
   };
 
@@ -343,6 +365,7 @@ document.addEventListener('click', e=>{
   const modalPhoto = speakerModal?.querySelector('.modal-photo');
   const modalName = speakerModal?.querySelector('.modal-name');
   const modalTagline = speakerModal?.querySelector('.modal-tagline');
+  const modalTalkTitle = speakerModal?.querySelector('.modal-talk-title');
   const modalBio = speakerModal?.querySelector('.modal-bio');
   const modalLinks = speakerModal?.querySelector('.modal-links');
 
@@ -355,12 +378,10 @@ document.addEventListener('click', e=>{
     modalPhoto.alt = speaker.name;
     modalName.textContent = speaker.name;
     modalTagline.textContent = speaker.tagline;
+    if (modalTalkTitle) {
+      modalTalkTitle.textContent = speaker.talkTitle || '';
+    }
     modalBio.innerHTML = speaker.bio;
-    
-    // Build links
-    modalLinks.innerHTML = speaker.links.map(link => 
-      `<a href="${link.url}" target="_blank" rel="noopener">${link.text}</a>`
-    ).join('');
 
     // Show modal
     speakerModal.classList.add('open');
@@ -396,6 +417,18 @@ document.addEventListener('click', e=>{
       icon.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
+        openSpeakerModal(speakerId);
+      });
+    }
+  });
+
+  // Click handler for speaker talk rows
+  document.querySelectorAll('.speaker-talk-row[data-speaker]').forEach(row => {
+    const speakerId = row.dataset.speaker;
+    if (speakerId && speakerData[speakerId]) {
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', (e) => {
+        e.preventDefault();
         openSpeakerModal(speakerId);
       });
     }
