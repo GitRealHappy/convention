@@ -22,6 +22,7 @@
       background-image: none;
       margin: 0;
       min-height: 100vh;
+      box-shadow: inset 0 0 0 4px #efefef;
     }
     body.ebook-root::before,
     body.ebook-root::after {
@@ -36,11 +37,41 @@
       min-width: var(--ebook-sidebar-width);
       background: rgba(6, 26, 20, 0.98);
       border-right: 1px solid rgba(255,255,255,0.08);
-      padding: 1.5rem 0;
+      padding: 0;
       position: sticky;
-      top: 0;
-      max-height: 100vh;
+      top: 4px;
+      max-height: calc(100vh - 8px);
+      overflow: hidden;
+      margin-left: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+    .ebook-index-wrapper {
+      flex: 1;
       overflow-y: auto;
+      padding: 1.5rem 0 1rem;
+    }
+    .ebook-sidebar-footer {
+      min-height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(6, 26, 20, 0.98);
+    }
+    .ebook-sidebar-footer a {
+      font-family: "Roboto", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #e8e4dc;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .ebook-sidebar-footer a:hover {
+      color: #fff;
     }
     .ebook-sidebar h2 {
       font-family: "Cormorant Garamond", serif;
@@ -162,9 +193,9 @@
     .ebook-main { padding-bottom: 5.5rem; }
     .ebook-nav {
       position: fixed;
-      bottom: 0;
-      left: var(--ebook-sidebar-width);
-      right: 0;
+      bottom: 4px;
+      left: calc(var(--ebook-sidebar-width) + 4px);
+      right: 4px;
       z-index: 50;
       display: flex;
       justify-content: space-between;
@@ -221,9 +252,9 @@
         display: flex;
         align-items: center;
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 4px;
+        left: 4px;
+        right: 4px;
         height: 48px;
         padding: 0 0 0 0.5rem;
         background: rgba(6, 26, 20, 0.98);
@@ -233,17 +264,19 @@
       .ebook-toggle { display: flex !important; position: static; }
       .ebook-sidebar {
         position: fixed;
-        left: 0;
-        top: 48px;
-        bottom: 0;
+        left: 4px;
+        top: calc(48px + 4px);
+        bottom: 4px;
         z-index: 100;
         transform: translateX(-100%);
         transition: transform 0.2s;
+        margin-left: 0;
+        max-height: none;
       }
       .ebook-sidebar.open { transform: translateX(0); }
-      .ebook-main { padding: 48px 1rem 5.5rem; }
+      .ebook-main { padding: calc(48px + 4px) 1rem 5.5rem; }
       .ebook-page-inner { padding: 1.5rem 1rem; }
-      .ebook-nav { left: 0; padding: 1rem 0.75rem; }
+      .ebook-nav { left: 4px; padding: 1rem 0.75rem; }
       .ebook-nav button {
         min-width: 44px;
         min-height: 44px;
@@ -264,8 +297,13 @@
   </header>
   <div class="ebook-layout">
     <aside class="ebook-sidebar" id="ebook-sidebar">
-      <h2>The Introvert's Guide to Networking</h2>
-      <ol class="ebook-index" id="ebook-index"></ol>
+      <div class="ebook-index-wrapper">
+        <h2>The Introvert's Guide to Networking</h2>
+        <ol class="ebook-index" id="ebook-index"></ol>
+      </div>
+      <footer class="ebook-sidebar-footer">
+        <a href="index.html" target="_blank">The Living Internet University</a>
+      </footer>
     </aside>
     <main class="ebook-main">
       <div class="ebook-viewer" id="ebook-viewer"></div>
@@ -331,7 +369,7 @@
         { title: "Social Energy Budgeting Framework", body: "<p class=\"lead\"><strong>Social Energy Budgeting Framework</strong></p><p>Networking drains energy. Plan for it.</p><p><strong>Before the event:</strong> How much energy do I have? What do I need to do to prepare?</p><p><strong>During the event:</strong> How much energy am I spending? When do I need a break?</p><p><strong>After the event:</strong> How much recovery time do I need? What helps me recharge?</p><p>This isn't weakness. It's self-awareness. When you budget your energy, you can sustain networking without burning out.</p>" },
         { title: "Conversation Calibration Checklist", body: "<p class=\"lead\"><strong>Conversation Calibration Checklist</strong></p><p>During a conversation, check in with yourself:</p><ul><li>Am I present, or am I in my head?</li><li>Is this person genuinely interested, or are they being polite?</li><li>Is there mutual curiosity here?</li><li>Have I asked good questions?</li><li>Am I listening, or am I waiting to talk?</li><li>Does this conversation feel aligned?</li><li>Is it time to deepen, stay, or move on?</li></ul><p>This checklist helps you stay calibrated. You're not overthinking. You're just checking in with what's actually happening.</p>" },
         { title: "Follow-Up Patterns That Actually Work", body: "<p class=\"lead\"><strong>Follow-Up Patterns That Actually Work</strong></p><p>Real follow-ups have a structure, but they're not scripts. Here's what they look like in practice:</p><p><strong>Sharing something relevant:</strong></p><p>\"Hey [name], great connecting at [event]. I was thinking about what you said about [specific thing]. I came across [resource/perspective] that seems relevant to what you're building. Thought you'd find it interesting: [link/resource].\"</p><p><strong>Planting a collaboration seed:</strong></p><p>\"I really appreciated your perspective on [topic] at [event]. I'm working on [project], and I think your thinking on [specific area] would be valuable. Would you be open to a quick conversation about [specific thing]?\"</p><p><strong>Continuing the conversation:</strong></p><p>\"Following up from our conversation at [event]. I've been thinking more about [topic we discussed]. I'd love to continue that conversation. Are you free for a quick call next week?\"</p><p>Notice the pattern: each one offers value before asking for anything. Each is specific to the actual conversation you had. That's what makes them feel human rather than transactional.</p>" },
-        { title: "Final Thought", body: "<p class=\"lead\"><strong>Final Thought</strong></p><p>Networking isn't a personality trait. It's a skill. And like any skill, it can be learned and refined.</p><p>But here's what most networking advice misses: the skill isn't in the tactics. It's in the mindset.</p><p>When you shift from outcome dependence to signal awareness, when you stop performing and start observing, when you leverage your actual strengths instead of fighting your nature, everything changes.</p><p>You don't become an extrovert. You become a better introvert. And that's where real networking power comes from.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" }
+        { title: "Final Thought", body: "<p class=\"lead\"><strong>Final Thought</strong></p><p>Networking isn't a personality trait. It's a skill. And like any skill, it can be learned and refined.</p><p>But here's what most networking advice misses: the skill isn't in the tactics. It's in the mindset.</p><p>When you shift from outcome dependence to signal awareness, when you stop performing and start observing, when you leverage your actual strengths instead of fighting your nature, everything changes.</p><p>You don't become an extrovert. You become a more skillful introvert. And that's where real networking power comes from.</p><p class=\"ebook-summit-cta\"><a href=\"index.html\">Get Connected At The Future-Proof Creator Summit</a></p>" }
       ];
 
       var current = 0;
