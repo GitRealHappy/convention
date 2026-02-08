@@ -1302,7 +1302,7 @@
     color: var(--text);
   }
 
-  /* Stripe buy button shell to prevent overflow on mobile */
+  /* Ticket buy button shell */
   .buy-button-shell{
     position:relative;
     display:block;
@@ -1318,9 +1318,9 @@
       padding-top: 1rem;
     }
   }
-  .buy-button-shell stripe-buy-button{
-    display:block;
-    max-width:100%;
+  .buy-button-shell .btn.cta{
+    display: inline-block;
+    max-width: 100%;
   }
   @media (max-width: 480px) {
     .buy-button-shell{
@@ -1344,10 +1344,8 @@
     }
   }
 
-  /* STRIPE BUY BUTTON */
-  .stripe-buy-button
-  {
-    margin-top:1rem;
+  .buy-button-shell .btn.cta {
+    margin-top: 1rem;
   }
 
   #buzzsprout-large-player{

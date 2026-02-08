@@ -31,32 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Stripe Buy Button Script -->
-  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
   <script async src="https://cdn.promotekit.com/promotekit.js" data-promotekit="c7ab9378-94b8-44a9-9bc6-680c2d861a2c"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-setTimeout(function () {
-document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(function (link) {
-const oldBuyUrl = link.getAttribute("href");
-const referralId = window.promotekit_referral;
-if (!oldBuyUrl.includes("client_reference_id")) {
-const newBuyUrl = oldBuyUrl + "?client_reference_id=" + referralId;
-link.setAttribute("href", newBuyUrl);
-}
-});
-
-document.querySelectorAll("[pricing-table-id]").forEach(function (element) {
-element.setAttribute("client-reference-id", window.promotekit_referral);
-});
-
-document.querySelectorAll("[buy-button-id]").forEach(function (element) {
-element.setAttribute("client-reference-id", window.promotekit_referral);
-});
-}, 1500);
-});
-</script>
 </head>
 <body>
 
@@ -392,11 +367,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
           </div>
           
           <div class="buy-button-shell">
-            <stripe-buy-button
-              buy-button-id="buy_btn_1SIl7a4zBgvudDjiGNOT665y"
-              publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"
-            >
-            </stripe-buy-button>
+            <a class="btn cta" href="https://www.tickettailor.com/events/thelivinginternetalliance/2057263" target="_blank" rel="noopener noreferrer">Buy Tickets</a>
           </div>
         </article>
 
@@ -428,11 +399,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
           </div>
           
           <div class="buy-button-shell">
-            <stripe-buy-button
-              buy-button-id="buy_btn_1SIkpr4zBgvudDjixL33F98G"
-              publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"
-            >
-            </stripe-buy-button>
+            <a class="btn cta" href="https://www.tickettailor.com/events/thelivinginternetalliance/2057263" target="_blank" rel="noopener noreferrer">Buy Tickets</a>
           </div>
         </article>
 
@@ -463,11 +430,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
           </div>
                     
           <div class="buy-button-shell">
-            <stripe-buy-button
-              buy-button-id="buy_btn_1SYF9G4zBgvudDjiJEvhG6Zo"
-              publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"
-            >
-            </stripe-buy-button>
+            <a class="btn cta" href="https://www.tickettailor.com/events/thelivinginternetalliance/2057263" target="_blank" rel="noopener noreferrer">Buy Tickets</a>
           </div>
         </article>
       </div>
@@ -593,11 +556,7 @@ element.setAttribute("client-reference-id", window.promotekit_referral);
       <h2 id="cta-title">Become A Future-Proof Creator.</h2>
       <p class="lead">Make this weekend a key checkpoint in your success story, the origin of thriving tribes of lifelong friendships, and businesses that change the world.</p>
       <div class="buy-button-shell">
-        <stripe-buy-button
-          buy-button-id="buy_btn_1SIkpr4zBgvudDjixL33F98G"
-          publishable-key="pk_live_51Rw6gO4zBgvudDjiihpZ55ED8u101W9LtCc2ED4QhxSergenfWJUC73eOzsYqz58esTSn0sFMBFGB2mn11ZiKzQA00G9wl2sew"
-        >
-        </stripe-buy-button>
+        <a class="btn cta" href="https://www.tickettailor.com/events/thelivinginternetalliance/2057263" target="_blank" rel="noopener noreferrer">Buy Tickets</a>
       </div>
     </section>
 
