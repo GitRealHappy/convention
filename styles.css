@@ -429,6 +429,23 @@
   .small{font-size:var(--text-sm);color:var(--muted)}
   .bullets{list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem}
   .bullets li{background:rgba(239, 239, 239, 0.98);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1rem 1.25rem;line-height:1.6}
+
+  /* Sales copy section: minimal accent list styling */
+  #who-youll-meet .bullets li {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    border-left: 3px solid var(--fire);
+    padding: 1rem 1.5rem;
+    color: #1a1a1a;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  #who-youll-meet .bullets li:hover {
+    box-shadow: 0 4px 12px rgba(8, 141, 206, 0.15);
+    transform: translateX(2px);
+  }
+
   .quote{border-left:3px solid var(--fire);padding-left:1rem;margin:1rem 0;color:#dde1e7}
   
   /* Intro Problems Section */

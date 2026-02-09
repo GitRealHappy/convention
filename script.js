@@ -352,7 +352,7 @@ document.addEventListener('click', e=>{
       name: 'Olivia Peers',
       photo: 'assets/speaker-icons/speaker16.jpg',
       tagline: 'Founder, Artist, Human potential educator',
-      talkTitle: 'Deeper Living: A life philosophy for Self-Actualization',
+      talkTitle: 'How I used The Creator Economy to transform my life philosophy “Deeper Living OS” into a sold-out human potential course (with 100% close rate & life-changing results).',
       bio: '<p>Founder, Artist, Human potential educator exploring the intersection of philosophy, psychology, and living deeply.</p>',
       links: []
     }
