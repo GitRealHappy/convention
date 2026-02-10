@@ -257,7 +257,7 @@ document.addEventListener('click', e=>{
       name: 'Dan Goldfield',
       photo: 'assets/speaker-icons/speaker3.jpg',
       tagline: 'Peace as your Default Mode',
-      talkTitle: 'Effortless Effectiveness for Solopreneurs',
+      talkTitle: 'Talk 1: Effortless Effectiveness for Solopreneurs<br>Talk 2: Letting Go is Not Giving Up',
       bio: '<p>"Studied with a monk for 5 years, married a hot psychologist, built a 6-figure business. Mission: help 1 billion people realize peace as their Default Mode."</p>',
       links: [
         { text: '29.1K Followers on X', url: 'https://x.com/itsdangoldfield' },
@@ -379,7 +379,7 @@ document.addEventListener('click', e=>{
     modalName.textContent = speaker.name;
     modalTagline.textContent = speaker.tagline;
     if (modalTalkTitle) {
-      modalTalkTitle.textContent = speaker.talkTitle || '';
+      modalTalkTitle.innerHTML = speaker.talkTitle || '';
     }
     modalBio.innerHTML = speaker.bio;
 
