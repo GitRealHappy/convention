@@ -57,6 +57,50 @@
     .contest-accordion .accordion-body th { font-weight: 700; }
     .contest-accordion h3 { margin: 1rem 0 0.5rem; font-size: 1.05rem; }
     .contest-accordion h3:first-child { margin-top: 0; }
+
+    /* Workshop schedule: mobile two-row card layout */
+    @media (max-width: 768px) {
+      .contest-accordion .accordion-body table.workshop-schedule {
+        font-size: 0.85rem;
+        max-width: 100%;
+        display: block;
+      }
+      .contest-accordion .accordion-body table.workshop-schedule thead { display: none; }
+      .contest-accordion .accordion-body table.workshop-schedule tbody { display: block; }
+      .contest-accordion .accordion-body table.workshop-schedule th,
+      .contest-accordion .accordion-body table.workshop-schedule td { padding: 0.35rem 0.5rem; }
+      .contest-accordion .accordion-body table.workshop-schedule tbody tr {
+        display: block;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+      }
+      .contest-accordion .accordion-body table.workshop-schedule tbody tr:last-child { border-bottom: none; }
+      /* Row 1: Week + Date on one line */
+      .contest-accordion .accordion-body table.workshop-schedule td:nth-child(1) {
+        display: inline-block;
+        font-weight: 700;
+        padding: 0 0.25rem 0 0;
+        vertical-align: top;
+      }
+      .contest-accordion .accordion-body table.workshop-schedule td:nth-child(2) {
+        display: inline-block;
+        vertical-align: top;
+      }
+      /* Row 2: Speaker · Topic · Layer on next line */
+      .contest-accordion .accordion-body table.workshop-schedule td:nth-child(3) {
+        display: block;
+        padding-top: 0.25rem;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .contest-accordion .accordion-body table.workshop-schedule td:nth-child(4),
+      .contest-accordion .accordion-body table.workshop-schedule td:nth-child(5) {
+        display: inline;
+        padding: 0;
+      }
+      .contest-accordion .accordion-body table.workshop-schedule td:nth-child(4)::before { content: " · "; }
+      .contest-accordion .accordion-body table.workshop-schedule td:nth-child(5)::before { content: " · "; }
+    }
   </style>
 </head>
 <body>
@@ -103,7 +147,7 @@
           <summary>The Workshop Series</summary>
           <div class="accordion-body">
             <p>Live Saturday morning workshops at 11:00am PST, 60–90 minutes each (45–60 min teaching + 15–30 min Q&A). <strong>Anyone can participate in the series for free</strong> and attend any call live; recorded replays are available for summit ticket holders. A couple of speakers have confirmed their slot — this schedule is a place for others to confirm or adjust.</p>
-            <table>
+            <table class="workshop-schedule">
               <thead>
                 <tr><th>Week</th><th>Date</th><th>Speaker</th><th>Topic</th><th>Layer</th></tr>
               </thead>
