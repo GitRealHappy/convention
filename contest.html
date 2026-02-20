@@ -58,6 +58,25 @@
     .contest-accordion h3 { margin: 1rem 0 0.5rem; font-size: 1.05rem; }
     .contest-accordion h3:first-child { margin-top: 0; }
 
+    /* Mobile accordion adjustments */
+    @media (max-width: 768px) {
+      .contest-accordion summary {
+        padding: 0.75rem 2rem 0.75rem 0.75rem;
+      }
+      .contest-accordion summary::after {
+        right: 0.75rem;
+      }
+      .contest-accordion .accordion-body {
+        padding: 0 0.75rem 0.75rem;
+      }
+      .contest-accordion .accordion-body li code {
+        display: block;
+        margin-top: 0.25rem;
+        margin-left: -1.25rem;
+        word-break: break-all;
+      }
+    }
+
     /* Workshop schedule: mobile two-row card layout */
     @media (max-width: 768px) {
       .contest-accordion .accordion-body table.workshop-schedule {
@@ -158,8 +177,8 @@
                 <tr><td>4</td><td>Sat, Mar 28, 2026 · 11:00am PST</td><td>Kimia Nora</td><td>Rewire Your Brain</td><td>Brain Science</td></tr>
                 <tr><td>5</td><td>Sat, Apr 4, 2026 · 11:00am PST</td><td>Hussain Ibarra</td><td>Build Your Audience</td><td>Execution</td></tr>
                 <tr><td>6</td><td>Sat, Apr 11, 2026 · 11:00am PST</td><td>Logan Quinn</td><td>Film School for Creators</td><td>Craft</td></tr>
-                <tr><td>7</td><td>Sat, Apr 18, 2026 · 11:00am PST</td><td>Jack Moses</td><td>The River of Money</td><td>Levelling Up</td></tr>
-                <tr><td>8</td><td>Sat, Apr 25, 2026 · 11:00am PST</td><td>Dan Goldfield</td><td>Effortless Effectiveness</td><td>Ease</td></tr>
+                <tr><td>7</td><td>Sat, Apr 18, 2026 · 11:00am PST <em>(confirmed)</em></td><td>Jack Moses</td><td>The River of Money</td><td>Levelling Up</td></tr>
+                <tr><td>8</td><td>Sat, Apr 25, 2026 · 11:00am PST <em>(confirmed)</em></td><td>Dan Goldfield</td><td>Effortless Effectiveness</td><td>Ease</td></tr>
               </tbody>
             </table>
             <p>The sequence follows: Vision → Business Architecture → Existential guidance → Brain Science → Execution → Craft → ? (Week 7 TBC) → Ease. Each workshop builds on the previous one. Speakers: please confirm or send your preferred time for your date so I can update this.</p>
@@ -212,7 +231,7 @@
         <details>
           <summary>How the Winner Is Selected</summary>
           <div class="accordion-body">
-            <p>At the end of the 8-week series, the workshop speakers would review the eligible entries and vote on <strong>one winner</strong> based on a single criterion:</p>
+            <p>At the end of the 8-week series, whichever speakers and organizers volunteer to be judges would review the eligible entries and vote on <strong>one winner</strong> based on a single criterion:</p>
             <blockquote style="margin: 1rem 0; padding: 1rem; background: rgba(8,141,206,0.08); border-left: 4px solid var(--fire); font-style: italic;">Most visible transformation across the 8 weeks.</blockquote>
             <p>I'd be looking for:</p>
             <ul>
@@ -221,7 +240,7 @@
               <li>Evidence of growth, breakthroughs, and honest struggle</li>
               <li>A story arc that shows who they were in week 1 vs. who they are in week 8</li>
             </ul>
-            <p><strong>Tie-breaking:</strong> If speakers are split, the series host casts the deciding vote.</p>
+            <p><strong>Tie-breaking:</strong> If judges are split, the series host casts the deciding vote.</p>
             <p>The winner is announced on <strong>May 2nd</strong>, one week after the final workshop (not on stage at the convention).</p>
           </div>
         </details>
@@ -229,10 +248,9 @@
         <details open>
           <summary>What I'm Asking of You</summary>
           <div class="accordion-body">
-            <p>At the end of the 8-week series (Week 9), I'd send you the eligible entries — likely a shortlist with links to each participant's 8 posts. One idea is that you'd review them and cast a single vote for the participant who, in your view, showed the <strong>most visible transformation</strong> across the 8 weeks.</p>
-            <p>I'm not looking for the most polished content — I'm looking for the most honest journey: real application of what was taught, evidence of growth, and a clear story arc from week 1 to week 8.</p>
-            <p>I might also give 2nd and 3rd place a shout-out at the summit (with runner-up prize) to reward effort; your votes would help identify those finalists.</p>
-            <p>I'd welcome your feedback on whether this structure works or if it's too much to ask.</p>
+            <p><strong>The only commitment is your workshop.</strong> If you simply want to run your session and leave it at that, that's completely fine.</p>
+            <p>If you'd like to volunteer as a judge, I'd send you the eligible entries at the end of the 8-week series — likely a shortlist with links to each participant's 8 posts. You'd review them and cast a single vote for the participant who showed the <strong>most visible transformation</strong> across the 8 weeks. But this is entirely optional.</p>
+            <p>I'd welcome your feedback on whether this structure works or if you'd suggest doing it differently.</p>
           </div>
         </details>
 
