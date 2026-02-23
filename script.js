@@ -639,3 +639,38 @@ document.addEventListener('click', e=>{
     startAutoAdvance();
   })();
 
+  // Workshop Series Pop-up (shows after 15 seconds)
+  (function() {
+    const popup = document.getElementById('workshop-popup');
+    if (!popup) return;
+
+    const closeBtn = popup.querySelector('.workshop-popup-close');
+    const STORAGE_KEY = 'workshop-popup-dismissed';
+
+    // Check if user has already dismissed the popup
+    if (sessionStorage.getItem(STORAGE_KEY)) return;
+
+    // Show popup after 15 seconds
+    const showTimeout = setTimeout(() => {
+      popup.classList.add('visible');
+      popup.setAttribute('aria-hidden', 'false');
+    }, 15000);
+
+    // Close popup handler
+    function closePopup() {
+      popup.classList.remove('visible');
+      popup.setAttribute('aria-hidden', 'true');
+      sessionStorage.setItem(STORAGE_KEY, 'true');
+      clearTimeout(showTimeout);
+    }
+
+    closeBtn?.addEventListener('click', closePopup);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.classList.contains('visible')) {
+        closePopup();
+      }
+    });
+  })();
+
