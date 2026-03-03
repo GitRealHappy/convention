@@ -1197,6 +1197,67 @@
     }
   }
 
+  /* EARLY BIRD BANNER */
+  .early-bird-banner {
+    text-align: center;
+    margin: 0.75rem 0 1.25rem;
+    padding: 0.9rem 1.5rem;
+    background: linear-gradient(135deg, rgba(8, 141, 206, 0.12) 0%, rgba(8, 141, 206, 0.06) 100%);
+    border: 1px solid rgba(8, 141, 206, 0.35);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .early-bird-banner::before {
+    content: "π";
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: rgba(8, 141, 206, 0.12);
+    line-height: 1;
+    pointer-events: none;
+    font-family: "Inter", sans-serif;
+  }
+
+  .early-bird-headline {
+    margin: 0 0 0.3rem;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.4rem, 1.2rem + 1.5vw, 2rem);
+    font-weight: 800;
+    color: var(--fire);
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
+    line-height: 1.1;
+  }
+
+  .early-bird-sub {
+    margin: 0;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .still-early-bird-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fire);
+    background: rgba(8, 141, 206, 0.1);
+    border: 1px solid rgba(8, 141, 206, 0.3);
+    border-radius: 4px;
+    padding: 0.15rem 0.45rem;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+    white-space: nowrap;
+  }
+
   /* TICKET TIERS */
   .tiers {
     display: flex;
