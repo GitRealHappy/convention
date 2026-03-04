@@ -2833,6 +2833,19 @@
   text-align: left;
 }
 
+.contest-prize ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contest-prize li {
+  color: var(--text);
+  line-height: 1.5;
+}
+
 .contest-steps ol {
   margin: 0;
   padding-left: 1.25rem;
