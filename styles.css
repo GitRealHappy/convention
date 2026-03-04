@@ -2294,8 +2294,49 @@
     display: flex;
     gap: 6rem;
     width: max-content;
-    animation: scroll 35s linear infinite;
+    animation: scroll 22s linear infinite;
     padding-left: 2rem;
+  }
+
+  /* Compact sponsor conveyor (under venue) */
+  .sponsor-conveyor-compact {
+    margin: 1rem auto;
+    padding: 1rem 0;
+  }
+
+  .sponsor-header-compact {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sponsor-conveyor-compact .conveyor-track {
+    gap: 2rem;
+    padding-left: 1rem;
+  }
+
+  .sponsor-conveyor-compact .sponsor-logo img[alt="Oakmoss"] {
+    height: 56px;
+  }
+
+  .sponsor-conveyor-compact .sponsor-logo img[alt="Medicine"] {
+    height: 45px;
+  }
+
+  .sponsor-conveyor-compact .sponsor-logo img[alt="Eden"] {
+    max-width: 28px;
+  }
+
+  .sponsor-conveyor-compact .eden-text-img {
+    height: 25px;
+  }
+
+  .sponsor-conveyor-compact .sponsor-logo img[alt="Flying Sage"],
+  .sponsor-conveyor-compact .sponsor-logo img[alt="Reclaimer"] {
+    height: 60px;
+  }
+
+  .sponsor-conveyor-compact .sponsor-logo {
+    gap: 0.4rem;
   }
 
   .sponsor-logo {
@@ -2303,6 +2344,7 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    cursor: pointer;
   }
 
   /* Increase Oakmoss by 50% */
@@ -2310,6 +2352,14 @@
     height: 112px; /* 75px * 1.5 = 112.5px */
     width: auto;
     border-radius: 4px;
+  }
+
+  /* Flying Sage & Reclaimer: slightly larger than Oakmoss */
+  .sponsor-logo img[alt="Flying Sage"],
+  .sponsor-logo img[alt="Reclaimer"] {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
   }
 
   /* Decrease Medicine of Mankind by 30% */
@@ -2341,7 +2391,7 @@
   }
 
   .sponsor-logo img {
-    opacity: 0.9;
+    opacity: 0.7;
     transition: opacity 0.3s ease, filter 0.3s ease;
     filter: grayscale(0%);
   }
@@ -2349,6 +2399,90 @@
   .sponsor-logo:hover img {
     opacity: 1;
     filter: grayscale(0%);
+  }
+
+  /* Sponsor Popup */
+  .sponsor-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .sponsor-popup.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sponsor-popup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+  }
+
+  .sponsor-popup-content {
+    position: relative;
+    background: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+    max-width: 380px;
+    width: 90%;
+    padding: 2rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+  }
+
+  .sponsor-popup.open .sponsor-popup-content {
+    transform: translateY(0);
+  }
+
+  .sponsor-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #f0f0f0;
+    font-size: 1.5rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .sponsor-popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .sponsor-popup-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin: 0 0 1rem 0;
+    padding-right: 2rem;
+  }
+
+  .sponsor-popup-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    margin: 0 0 1.5rem 0;
+  }
+
+  .sponsor-popup-link {
+    display: inline-block;
+    text-decoration: none;
   }
 
   @keyframes scroll {
@@ -2371,6 +2505,12 @@
       height: 75px;
       border-radius: 4px;
     }
+
+    /* Flying Sage & Reclaimer: slightly larger than Oakmoss on mobile */
+    .sponsor-logo img[alt="Flying Sage"],
+    .sponsor-logo img[alt="Reclaimer"] {
+      height: 80px;
+    }
     
     /* Medicine: 50px * 0.7 = 35px */
     .sponsor-logo img[alt="Medicine"] {
@@ -2390,6 +2530,27 @@
 
     .conveyor-track {
       gap: 4rem;
+    }
+
+    /* Compact conveyor mobile */
+    .sponsor-conveyor-compact .sponsor-logo img[alt="Oakmoss"] {
+      height: 38px;
+    }
+    .sponsor-conveyor-compact .sponsor-logo img[alt="Medicine"] {
+      height: 26px;
+    }
+    .sponsor-conveyor-compact .sponsor-logo img[alt="Eden"] {
+      max-width: 20px;
+    }
+    .sponsor-conveyor-compact .eden-text-img {
+      height: 18px;
+    }
+    .sponsor-conveyor-compact .sponsor-logo img[alt="Flying Sage"],
+    .sponsor-conveyor-compact .sponsor-logo img[alt="Reclaimer"] {
+      height: 40px;
+    }
+    .sponsor-conveyor-compact .conveyor-track {
+      gap: 1.5rem;
     }
   }
 

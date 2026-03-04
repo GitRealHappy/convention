@@ -477,6 +477,47 @@ document.addEventListener('click', e=>{
     }
   });
 
+  // Sponsor Popup
+  const sponsorPopup = document.getElementById('sponsor-popup');
+  const sponsorPopupBackdrop = sponsorPopup?.querySelector('.sponsor-popup-backdrop');
+  const sponsorPopupClose = sponsorPopup?.querySelector('.sponsor-popup-close');
+  const sponsorPopupTitle = sponsorPopup?.querySelector('.sponsor-popup-title');
+  const sponsorPopupDesc = sponsorPopup?.querySelector('.sponsor-popup-desc');
+  const sponsorPopupLink = sponsorPopup?.querySelector('.sponsor-popup-link');
+
+  function openSponsorPopup(name, desc, url) {
+    if (!sponsorPopup || !sponsorPopupTitle || !sponsorPopupDesc || !sponsorPopupLink) return;
+    sponsorPopupTitle.textContent = name;
+    sponsorPopupDesc.textContent = desc;
+    sponsorPopupLink.href = url;
+    sponsorPopup.classList.add('open');
+    sponsorPopup.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeSponsorPopup() {
+    if (!sponsorPopup) return;
+    sponsorPopup.classList.remove('open');
+    sponsorPopup.setAttribute('aria-hidden', 'true');
+  }
+
+  document.querySelectorAll('.sponsor-logo[data-sponsor-name]').forEach(logo => {
+    logo.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = logo.getAttribute('data-sponsor-name');
+      const desc = logo.getAttribute('data-sponsor-desc');
+      const url = logo.getAttribute('data-sponsor-url');
+      if (name && desc && url) openSponsorPopup(name, desc, url);
+    });
+  });
+
+  sponsorPopupClose?.addEventListener('click', closeSponsorPopup);
+  sponsorPopupBackdrop?.addEventListener('click', closeSponsorPopup);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sponsorPopup?.classList.contains('open')) {
+      closeSponsorPopup();
+    }
+  });
+
   // Free Stuff Dropdown
   document.querySelectorAll('.free-stuff-dropdown').forEach(dropdown => {
     const toggle = dropdown.querySelector('.free-stuff-toggle');
