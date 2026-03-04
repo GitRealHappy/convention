@@ -477,6 +477,43 @@ document.addEventListener('click', e=>{
     }
   });
 
+  // Free Stuff Dropdown
+  document.querySelectorAll('.free-stuff-dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.free-stuff-toggle');
+    const menu = dropdown.querySelector('.free-stuff-menu');
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = menu.classList.contains('open');
+      // Close all other dropdowns first
+      document.querySelectorAll('.free-stuff-menu.open').forEach(m => {
+        m.classList.remove('open');
+        m.setAttribute('aria-hidden', 'true');
+        m.closest('.free-stuff-dropdown').querySelector('.free-stuff-toggle').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        menu.classList.add('open');
+        menu.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.free-stuff-menu.open').forEach(menu => {
+      menu.classList.remove('open');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.closest('.free-stuff-dropdown').querySelector('.free-stuff-toggle').setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Prevent dropdown close when clicking inside the menu
+  document.querySelectorAll('.free-stuff-menu').forEach(menu => {
+    menu.addEventListener('click', (e) => e.stopPropagation());
+  });
+
   // Speaker navigation arrows
   (function() {
     const speakerTrack = document.querySelector('.speaker-track');
