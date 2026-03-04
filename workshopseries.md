@@ -207,7 +207,7 @@ Speakers are looking for:
 - Real-world application of what they learned — not just summaries
 - Evidence of growth, breakthroughs, and honest struggle
 - A story arc that shows who they were in week 1 vs. who they are in week 8
-The winner is announced at the summit — ideally on stage — making their story part of the event itself.
+The winner is announced on May 2nd, a week after the final workshop, and just over a month before the in-person event — making their story part of the event itself.
 ---
 ### Why This Contest Works
 **For participants:**
@@ -231,8 +231,8 @@ The winner is announced at the summit — ideally on stage — making their stor
 | Contest announced | Week 1 launch |
 | Weekly posts due | Within 48 hours of each workshop |
 | Final entries close | 48 hours after Week 8 workshop |
-| Speakers review & vote | Week 9 (1 week before summit) |
-| Winner announced | At the summit, June 5–7 |
+| Organizers review & vote | Week 8 (following the final workshop) |
+| Winner announced | May 2nd |
 ---
 ### Suggested Announcement Copy (for Week 1)
 > "We're running a contest across all 8 workshops. Post a reel or YouTube video after each session showing how you're applying what you learned. Tag #livinginternetuniversity and @living.internet.alliance. Do it for all 8 workshops and you're eligible. At the end, our 8 speakers will vote on the participant who showed the most visible transformation. The winner gets a free VIP upgrade — or if you're already VIP, a free ticket to bring a friend. This isn't about the most polished content. It's about the most honest journey."
