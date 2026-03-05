@@ -492,22 +492,25 @@ document.addEventListener('click', e=>{
     sponsorPopupLink.href = url;
     sponsorPopup.classList.add('open');
     sponsorPopup.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeSponsorPopup() {
     if (!sponsorPopup) return;
     sponsorPopup.classList.remove('open');
     sponsorPopup.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.sponsor-logo[data-sponsor-name]').forEach(logo => {
-    logo.addEventListener('click', (e) => {
-      e.preventDefault();
-      const name = logo.getAttribute('data-sponsor-name');
-      const desc = logo.getAttribute('data-sponsor-desc');
-      const url = logo.getAttribute('data-sponsor-url');
-      if (name && desc && url) openSponsorPopup(name, desc, url);
-    });
+  document.addEventListener('click', (e) => {
+    const logo = e.target.closest('.sponsor-logo[data-sponsor-name]');
+    if (!logo) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const name = logo.getAttribute('data-sponsor-name');
+    const desc = logo.getAttribute('data-sponsor-desc');
+    const url = logo.getAttribute('data-sponsor-url');
+    if (name && desc && url) openSponsorPopup(name, desc, url);
   });
 
   sponsorPopupClose?.addEventListener('click', closeSponsorPopup);
