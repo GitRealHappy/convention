@@ -526,18 +526,24 @@
   /* Hide dropdown when header is scrolled (collapsed) */
   .site-header.scrolled .free-stuff-dropdown { display: none; }
 
-  /* Mobile free stuff dropdown — inline stacked layout */
+  /* Mobile free stuff dropdown — aligned with nav links */
   .mobile-free-stuff {
     margin: 0;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .mobile-free-stuff .free-stuff-toggle {
     width: 100%;
-    margin-top: 0.5rem;
+    max-width: 100%;
+    margin: 0.5rem 0 0;
+    margin-left: 0;
+    margin-right: 0;
     line-height: 1.2;
     display: block;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .mobile-free-stuff .free-stuff-menu {
@@ -1312,14 +1318,14 @@
     }
   }
 
-  /* EARLY BIRD BANNER */
+  /* EARLY BIRD BANNER — compact, futuristic */
   .early-bird-banner {
     text-align: center;
-    margin: 0.75rem 0 1.25rem;
-    padding: 0.9rem 1.5rem;
-    background: linear-gradient(135deg, rgba(8, 141, 206, 0.12) 0%, rgba(8, 141, 206, 0.06) 100%);
-    border: 1px solid rgba(8, 141, 206, 0.35);
-    border-radius: 10px;
+    margin: 0.5rem 0 0.75rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(8, 141, 206, 0.08) 0%, rgba(8, 141, 206, 0.02) 100%);
+    border-left: 3px solid var(--fire);
+    border-radius: 0;
     position: relative;
     overflow: hidden;
   }
@@ -1327,21 +1333,21 @@
   .early-bird-banner::before {
     content: "π";
     position: absolute;
-    right: 1.25rem;
+    right: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 800;
-    color: rgba(8, 141, 206, 0.12);
+    color: rgba(8, 141, 206, 0.08);
     line-height: 1;
     pointer-events: none;
     font-family: "Inter", sans-serif;
   }
 
   .early-bird-headline {
-    margin: 0 0 0.3rem;
+    margin: 0 0 0.15rem;
     font-family: "Inter", sans-serif;
-    font-size: clamp(1.4rem, 1.2rem + 1.5vw, 2rem);
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
     font-weight: 800;
     color: var(--fire);
     letter-spacing: 0.04em;
@@ -1351,10 +1357,10 @@
 
   .early-bird-sub {
     margin: 0;
-    font-size: var(--text-sm);
+    font-size: 0.8rem;
     font-weight: 500;
     color: var(--text);
-    line-height: 1.5;
+    line-height: 1.4;
   }
 
   .still-early-bird-tag {
@@ -2266,7 +2272,7 @@
     width: 100%;
     margin: 2rem auto;
     padding: 2rem 0;
-    background: rgba(18, 18, 18, 0.95);
+    background: rgba(18, 18, 18, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
@@ -2277,7 +2283,7 @@
     text-align: center;
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 1.5rem;
     letter-spacing: 0.05em;
   }
