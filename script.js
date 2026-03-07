@@ -755,3 +755,18 @@ document.addEventListener('click', e=>{
     });
   })();
 
+  // Lazy-load Unblocked Creators iframes only when expanded
+  (function() {
+    const detailsEl = document.querySelector('.unblocked-creators-expand');
+    if (!detailsEl) return;
+    detailsEl.addEventListener('toggle', function() {
+      if (detailsEl.open) {
+        detailsEl.querySelectorAll('iframe[data-src]').forEach(iframe => {
+          if (iframe.dataset.src && !iframe.src) {
+            iframe.src = iframe.dataset.src;
+          }
+        });
+      }
+    });
+  })();
+
