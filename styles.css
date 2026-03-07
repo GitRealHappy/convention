@@ -304,7 +304,7 @@
   /* Hero full-bleed with centered content */
   .section-hero.card-wrap-top {
     max-width: none !important;
-    padding: 2rem calc(max(2.5rem, (100vw - 900px) / 2)) !important;
+    padding: 2rem calc(max(1.5rem, (100vw - 1100px) / 2)) !important;
     border-radius: 0 !important;
     margin-top: 140px;
   }
@@ -3052,7 +3052,8 @@
 }
 @media (min-width: 900px) {
   .hero-split {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
   }
 }
 .hero-left {
