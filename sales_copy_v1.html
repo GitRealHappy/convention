@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17956074303"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17956074303'); </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The Future-Proof Creator Summit — The Living Internet University (June 5–7, 2026)</title>
+  <meta name="description" content="Build a Business That Survives the AI Revolution. June 5–7, 2026 in Vancouver." />
+  
+  <link rel="icon" href="assets/favicon.png" />
+  <meta name="theme-color" content="#040105" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <script async src="https://cdn.promotekit.com/promotekit.js" data-promotekit="c7ab9378-94b8-44a9-9bc6-680c2d861a2c"></script>
+  
+  <style>
+    /* Custom styles for sales copy v1 */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+      text-align: left;
+    }
+    @media (min-width: 900px) {
+      .hero-split {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+    .hero-left {
+      text-align: left;
+    }
+    .hero-right {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .hero-pre-headline {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--fire);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      font-family: "Inter", sans-serif;
+    }
+    .hero-main-title-split {
+      font-family: "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      text-align: left;
+      color: #1a1a1a;
+      font-weight: 800;
+    }
+    .hero-subtitle-split {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      text-align: left;
+      color: #1a1a1a;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .hero-cta-group .btn {
+      margin: 0;
+    }
+    .hero-trust-bar {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    
+    /* Problem Section */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .problem-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .problem-box {
+      background: rgba(255,255,255,0.8);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .problem-emoji {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .problem-text {
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    .stat-item {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .stat-icon {
+      font-size: 2rem;
+    }
+    .stat-text {
+      font-weight: 700;
+      color: var(--text);
+    }
+    
+    /* Checklist */
+    .checklist-grid {
+      display: grid;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .checklist-item {
+      display: flex;
+      gap: 1rem;
+      align-items: start;
+      text-align: left;
+      padding: 0.5rem;
+      background: rgba(255,255,255,0.5);
+      border-radius: 6px;
+    }
+    .checklist-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+    
+    /* Agenda */
+    .agenda-day {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .agenda-day h3 {
+      text-align: left;
+      margin-top: 0;
+      color: var(--fire);
+      font-weight: 800;
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+    .agenda-day h4 {
+      text-align: left;
+      font-style: italic;
+      margin: 0 0 1rem 0;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .agenda-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .agenda-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .agenda-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--fire);
+      font-weight: bold;
+    }
+    
+    /* Video Placeholder */
+    .video-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      font-weight: 700;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Section Labels */
+    .section-label {
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--fire);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* Value Stack */
+    .value-stack-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    .value-stack-list li {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .value-stack-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .value-total {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px dashed rgba(0,0,0,0.1);
+    }
+    
+    /* Urgency Block */
+    .urgency-block {
+      background: rgba(255, 0, 0, 0.05);
+      border: 1px solid rgba(255, 0, 0, 0.2);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .urgency-item {
+      color: #c00;
+      font-weight: 600;
+      margin: 0.5rem 0;
+      display: block;
+    }
+
+    /* Testimonial Video Placeholders */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .testimonial-video {
+      aspect-ratio: 9/16;
+      background: #222;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.8rem;
+    }
+    .testimonial-caption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Speaker Grid Override */
+    .speaker-grid-new {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .speaker-card-new {
+      background: rgba(255,255,255,0.9);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+    }
+    .speaker-card-new h3 {
+      text-align: left;
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .speaker-card-new .role {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .speaker-card-new .talk-title {
+      font-weight: 600;
+      color: var(--fire);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .speaker-card-new .quote {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text);
+      border-left: 3px solid var(--fire);
+      padding-left: 0.75rem;
+      margin: 0.5rem 0 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="brand" href="#top" aria-label="The Living Internet University">
+        <img src="assets/logo-white.png" alt="" class="brand-mark" />
+        <span class="brand-text">FPCS2026</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#speakers">Speakers</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn cta" href="#offer">Get Tickets</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- SECTION 1: HERO -->
+    <section class="section-hero card-wrap-top" id="top">
+      <div class="hero-split">
+        <div class="hero-left">
+          <div class="hero-pre-headline">JUNE 5–7, 2026 · LIVING INTERNET ALLIANCE</div>
+          <h1 class="hero-main-title-split">Build a Business That Survives the AI Revolution</h1>
+          <p class="hero-subtitle-split">The Future-Proof Creator Summit is the only 3-day live event where serious creators, educators, and digital entrepreneurs learn the timeless principles behind building a sustainable, high-income creative business — without selling out, burning out, or starting over.</p>
+          <div class="hero-cta-group">
+            <a class="btn cta btn-lg" href="#offer">→ CLAIM YOUR SEAT NOW</a>
+            <a class="btn cta-secondary" href="#problem">↓ See What's Inside</a>
+          </div>
+          <div class="hero-trust-bar">
+            🔒 Limited Seats Available · ⭐ 500+ Creators Attending · 📍 June 5–7, 2026
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="video-placeholder">
+            MINI VIDEO SALES LETTER<br>[placeholder for now]
+          </div>
+        </div>
+      </div>
+
+      <!-- Sponsor Bar -->
+      <section class="sponsor-conveyor sponsor-conveyor-compact fadein" style="background: transparent; border: none; box-shadow: none; margin-top: 2rem;">
+        <div class="conveyor-track-wrapper">
+          <div class="conveyor-track">
+            <div class="sponsor-logo"><img src="assets/sponsors/eden.png" alt="Eden" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/medicine.png" alt="Medicine" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/oakmoss.png" alt="Oakmoss" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/flyingsage.png" alt="Flying Sage" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/reclaimer.png" alt="Reclaimer" /></div>
+            <!-- Duplicate for loop -->
+            <div class="sponsor-logo"><img src="assets/sponsors/eden.png" alt="Eden" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/medicine.png" alt="Medicine" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/oakmoss.png" alt="Oakmoss" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/flyingsage.png" alt="Flying Sage" /></div>
+            <div class="sponsor-logo"><img src="assets/sponsors/reclaimer.png" alt="Reclaimer" /></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- SECTION 2: THE PROBLEM (AGITATE) -->
+    <section class="section card-wrap fadein" id="problem">
+      <span class="section-label">WHY MOST CREATORS STAY STUCK</span>
+      <h2>You're Not Failing Because You're Not Working Hard Enough.</h2>
+      <p class="lead" style="text-align: center;">You're failing because you've been handed a broken map.</p>
+      
+      <div style="max-width: 700px; margin: 0 auto;">
+        <p>You've watched the YouTube tutorials. You've bought the courses. You've tried the content calendars, the posting schedules, the "viral hooks," the AI prompts, the niche-down advice — and still, nothing sticks for more than a few weeks.</p>
+        <p>The algorithm changes. The strategy stops working. You start over. Again.</p>
+        <p>Here's the truth nobody in the creator economy wants to say out loud:</p>
+        <p style="text-align: center; font-weight: 800; font-size: 1.2rem;">Tactics without principles are just expensive experiments.</p>
+        <p>The creators who build lasting businesses — the ones with real audiences, real revenue, and real freedom — aren't smarter than you. They're not luckier. They just understand something you haven't been taught yet.</p>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-box">
+          <span class="problem-emoji">😤</span>
+          <div class="problem-text">"I know I have something valuable to share, but I can't break through the noise."</div>
+        </div>
+        <div class="problem-box">
+          <span class="problem-emoji">🔁</span>
+          <div class="problem-text">"I've tried every content strategy out there. Nothing sticks for more than a few weeks."</div>
+        </div>
+        <div class="problem-box">
+          <span class="problem-emoji">😔</span>
+          <div class="problem-text">"I feel like I'm shouting into the void. No engagement, no growth, no feedback."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE SOLUTION -->
+    <section class="section card-wrap fadein" id="solution">
+      <span class="section-label">INTRODUCING</span>
+      <h2>The Future-Proof Creator Summit</h2>
+      <p class="lead" style="text-align: center;">3 Days. Timeless Principles. Community That Actually Gets It.</p>
+
+      <div style="max-width: 700px; margin: 0 auto;">
+        <p>This isn't another marketing conference where you sit in the back of a ballroom and take notes you'll never use.</p>
+        <p>The Future-Proof Creator Summit is a curated, high-intensity 3-day experience designed for creators who are done with surface-level advice and ready to build something that actually lasts.</p>
+        <p>We go deep on the <em>why</em> behind every strategy — the foundational principles that work regardless of what the algorithm does next week, next year, or next decade.</p>
+        <p>You'll leave with a clear framework, a real community, and the confidence to build a creative business on your own terms.</p>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-icon">📅</span>
+          <span class="stat-text">3 Days<br><span style="font-weight:400; font-size:0.9rem">of immersive learning</span></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🎤</span>
+          <span class="stat-text">World-Class<br><span style="font-weight:400; font-size:0.9rem">Speakers</span></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🤝</span>
+          <span class="stat-text">500+<br><span style="font-weight:400; font-size:0.9rem">Creators</span></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🧠</span>
+          <span class="stat-text">Timeless<br><span style="font-weight:400; font-size:0.9rem">Frameworks</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHO THIS IS FOR -->
+    <section class="section card-wrap fadein" id="who-for">
+      <span class="section-label">IS THIS FOR YOU?</span>
+      <h2>This Summit Was Built for the Creator Who Refuses to Settle.</h2>
+      
+      <div style="max-width: 700px; margin: 0 auto;">
+        <p>You're in the right place if you are:</p>
+        <div class="checklist-grid">
+          <div class="checklist-item">
+            <span class="checklist-icon">✅</span>
+            <span>A content creator, educator, coach, or consultant who wants to build a real business — not just a following</span>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon">✅</span>
+            <span>A solopreneur or freelancer who's tired of trading time for money and wants scalable income streams</span>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon">✅</span>
+            <span>A "modern polymath" who has multiple interests and refuses to be boxed into one niche</span>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon">✅</span>
+            <span>Someone who's tried the tactics and wants to finally understand the <em>principles</em> behind sustainable growth</span>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon">✅</span>
+            <span>A creator who values depth, authenticity, and long-term impact over viral moments and vanity metrics</span>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon">✅</span>
+            <span>Anyone who's ever thought: <em>"I see others doing what I want to do — if they can figure it out, so can I."</em></span>
+          </div>
+        </div>
+
+        <div style="background: rgba(0,0,0,0.05); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+          <h3 style="font-size: 1.1rem; margin-top: 0;">WHO THIS IS NOT FOR</h3>
+          <div class="checklist-grid" style="margin: 1rem 0 0;">
+            <div class="checklist-item" style="background: transparent;">
+              <span class="checklist-icon">❌</span>
+              <span>You're looking for overnight success hacks or "get rich quick" shortcuts</span>
+            </div>
+            <div class="checklist-item" style="background: transparent;">
+              <span class="checklist-icon">❌</span>
+              <span>You want someone to hand you a template and call it a strategy</span>
+            </div>
+            <div class="checklist-item" style="background: transparent;">
+              <span class="checklist-icon">❌</span>
+              <span>You're not willing to do the deep work required to build something lasting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: WHAT YOU'LL LEARN -->
+    <section class="section card-wrap fadein" id="curriculum">
+      <span class="section-label">WHAT YOU'LL EXPERIENCE</span>
+      <h2>Three Days That Will Change How You Build. Forever.</h2>
+      <p class="lead" style="text-align: center;">Each day is designed to take you from confusion to clarity, from isolation to community, from tactics to timeless strategy.</p>
+
+      <div class="agenda-day">
+        <h3>DAY 1 — FOUNDATION</h3>
+        <h4>"Build on Bedrock, Not Sand"</h4>
+        <p>The day most creators skip — and why that's exactly why they stay stuck. We strip away the noise and install the foundational principles that every sustainable creator business is built on.</p>
+        <ul class="agenda-list">
+          <li><strong>The Creator Economy Decoded:</strong> What's actually working in 2026 and why</li>
+          <li><strong>The Principle Stack:</strong> The 5 timeless laws of audience building that predate the internet</li>
+          <li><strong>Your Unique Intellectual Property:</strong> How to identify and monetize what only <em>you</em> can offer</li>
+          <li><strong>The Anti-Niche Framework:</strong> How to build a multi-interest brand without confusing your audience</li>
+        </ul>
+      </div>
+
+      <div class="agenda-day">
+        <h3>DAY 2 — SYSTEMS</h3>
+        <h4>"Work Less. Earn More. Create Better."</h4>
+        <p>The day we build your machine. You'll leave with a complete content and revenue system that runs without burning you out.</p>
+        <ul class="agenda-list">
+          <li><strong>The Sustainable Content Engine:</strong> Create once, distribute everywhere, without losing your mind</li>
+          <li><strong>Revenue Architecture:</strong> Building 3+ income streams that compound over time</li>
+          <li><strong>The AI Leverage Stack:</strong> How to use AI as a force multiplier — not a replacement for your voice</li>
+          <li><strong>Community as a Moat:</strong> Why your audience is your most defensible business asset</li>
+        </ul>
+      </div>
+
+      <div class="agenda-day">
+        <h3>DAY 3 — LEGACY</h3>
+        <h4>"Build Something That Outlasts the Algorithm"</h4>
+        <p>The day we zoom out. You'll define your 10-year vision, your legacy framework, and leave with a 90-day action plan you'll actually execute.</p>
+        <ul class="agenda-list">
+          <li><strong>The Long Game:</strong> How the most successful creators think about time differently</li>
+          <li><strong>The Modern Polymath Playbook:</strong> Building a brand that grows with you as you evolve</li>
+          <li><strong>Your 90-Day Creator Sprint:</strong> A concrete, personalized action plan</li>
+          <li><strong>The Living Internet:</strong> What the next era of the creator economy looks like — and how to position yourself now</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SPEAKERS -->
+    <section class="section card-wrap fadein" id="speakers">
+      <span class="section-label">LEARN FROM THE BEST</span>
+      <h2>Meet the Minds Behind the Movement.</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">Every speaker at the Future-Proof Creator Summit has built something real. No theorists. No gurus. Just people who've done the work — and they're here to show you exactly how.</p>
+
+      <div class="speaker-grid-new">
+        <div class="speaker-card-new speaker-talk-row" data-speaker="dan-koe">
+          <h3>Dan Koe</h3>
+          <span class="role">Work Less. Earn More. Enjoy Life.</span>
+          <div class="talk-title">Talk: Focusing Your Time and Attention on Your Craft</div>
+          <p class="quote">"The missing piece was a vessel. A vessel that would allow me to channel all of my interests into meaningful work that I could earn a decent income from."</p>
+        </div>
+        
+        <div class="speaker-card-new speaker-talk-row" data-speaker="kieran-drew">
+          <h3>Kieran Drew</h3>
+          <span class="role">Ex-dentist building a $500K/year internet business.</span>
+          <div class="talk-title">Talk: How to Grow Your Business in the Age of AI With Magnetic Writing</div>
+          <p class="quote">"I've used this principle to attract over a quarter million followers and make over $1.4 million through storytelling."</p>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="taylin-simmonds">
+          <h3>Taylin John Simmonds</h3>
+          <span class="role">AI-assisted ghostwriter · 2 billion impressions.</span>
+          <div class="talk-title">Talk: How To Be A Multi-Passionate Creator</div>
+          <p class="quote">"Once you've walked down this path for a while, before you know it, you'll be the one living life on your terms."</p>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="brian-maierhofer">
+          <h3>Brian Maierhofer</h3>
+          <span class="role">Somatic Therapist & Carrier of Stories</span>
+          <div class="talk-title">Talk: Effortless Effectiveness for Solopreneurs</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="dan-goldfield">
+          <h3>Dan Goldfield</h3>
+          <span class="role">Peace as Your Default Mode Engineer Turned Writer</span>
+          <div class="talk-title">Talk: The Key to Writing High-Quality Content</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="hussain-ibarra">
+          <h3>Hussain Ibarra</h3>
+          <span class="role">Engineer Turned Writer</span>
+          <div class="talk-title">Talk: Liminal Means</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="jack-moses">
+          <h3>Jack Moses</h3>
+          <span class="role">Transformation Coach & Podcaster</span>
+          <div class="talk-title">Talk: Energy, Frequency, Vibration</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="valentin-sounds">
+          <h3>Valentin Sounds</h3>
+          <span class="role">Artist & Brand Advisor</span>
+          <div class="talk-title">Talk: Visionary Brand Identity</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="kimia-nora">
+          <h3>Kimia Nora</h3>
+          <span class="role">Applied Neuroscience & Neuroplasticity</span>
+          <div class="talk-title">Talk: Neuroplasticity, the Future of Success and Health</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="logan-quinn">
+          <h3>Logan Quinn</h3>
+          <span class="role">Holistic Health Practitioner</span>
+          <div class="talk-title">Talk: Scaling A Holistic Health Coaching Business</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="nathalie-agnes">
+          <h3>Nathalie Agnes</h3>
+          <span class="role">Business, Spirituality & Creativity</span>
+          <div class="talk-title">Talk: The Spiritual Dimension of Sales</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="ish-hasan">
+          <h3>Ish Hasan</h3>
+          <span class="role">Author & Men's Work Facilitator</span>
+          <div class="talk-title">Talk: Rites of Passage, Leadership, and Being Human</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="david-morin">
+          <h3>David Morin</h3>
+          <span class="role">Poet & Existential Guide</span>
+          <div class="talk-title">Talk: Uncovering Your True Voice</div>
+        </div>
+
+        <div class="speaker-card-new speaker-talk-row" data-speaker="olivia-peers">
+          <h3>Olivia Peers</h3>
+          <span class="role">Founder, Artist, Human Potential Educator</span>
+          <div class="talk-title">Talk: Deeper Living</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6B: VENUE -->
+    <section class="venue-section fadein" id="venue">
+      <span class="section-label">THE SETTING</span>
+      <h2>The Venue</h2>
+      <p class="venue-subtitle">Sheraton Vancouver Airport Hotel</p>
+      <div class="venue-gallery">
+        <div class="venue-gallery-view">
+          <div class="venue-gallery-slide active"><img src="assets/richmond-con.jpeg" alt="Sheraton Vancouver Airport Hotel" /></div>
+          <div class="venue-gallery-slide"><img src="assets/richmond-con1.jpeg" alt="Sheraton Vancouver Airport Hotel" /></div>
+          <div class="venue-gallery-slide"><img src="assets/richmond-con2.jpeg" alt="Sheraton Vancouver Airport Hotel" /></div>
+        </div>
+      </div>
+      <h2>Three Days in One of the World's Most Livable Cities.</h2>
+      <p>The Future-Proof Creator Summit takes place at the <strong>Sheraton Vancouver Airport Hotel</strong> — a world-class venue with everything you need to show up fully present.</p>
+      <ul class="venue-highlights">
+        <li>🏋️ 24-hour gym</li>
+        <li>🏊 Heated pool open until 10pm</li>
+        <li>✈️ Free airport shuttle</li>
+        <li>🚇 7-minute walk to SkyTrain to downtown Vancouver</li>
+        <li>🏨 Special rates on hotel rooms for attendees</li>
+      </ul>
+      <p style="margin-top: 1.5rem; font-style: italic;">Vancouver isn't just a backdrop. It's an invitation to step outside your normal environment, think bigger, and meet people who will change your life.</p>
+    </section>
+
+    <!-- SECTION 7: SOCIAL PROOF -->
+    <section class="section card-wrap fadein" id="testimonials">
+      <span class="section-label">WHAT CREATORS ARE SAYING</span>
+      <h2>"This Is the Event I Wish Had Existed When I Started."</h2>
+      
+      <div class="testimonial-grid">
+        <div>
+          <div class="testimonial-video">[VIDEO PLACEHOLDER 1]</div>
+          <div class="testimonial-caption">— [Name], [Title/Platform]</div>
+        </div>
+        <div>
+          <div class="testimonial-video">[VIDEO PLACEHOLDER 2]</div>
+          <div class="testimonial-caption">— [Name], [Creator/Educator]</div>
+        </div>
+        <div>
+          <div class="testimonial-video">[VIDEO PLACEHOLDER 3]</div>
+          <div class="testimonial-caption">— [Name], [Creator/Consultant]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: WHAT'S INCLUDED -->
+    <section class="section card-wrap fadein" id="included">
+      <span class="section-label">EVERYTHING YOU GET</span>
+      <h2>Your Summit Experience Includes:</h2>
+      
+      <ul class="value-stack-list">
+        <li>
+          <span class="value-stack-icon">✅</span>
+          <div>
+            <strong>3 Full Days of Live Programming</strong><br>
+            Keynotes, workshops, and deep-dive sessions with world-class speakers
+          </div>
+        </li>
+        <li>
+          <span class="value-stack-icon">✅</span>
+          <div>
+            <strong>Networking Dinners & Curated Connections</strong><br>
+            We don't do awkward mixers. We engineer meaningful relationships.
+          </div>
+        </li>
+        <li>
+          <span class="value-stack-icon">✅</span>
+          <div>
+            <strong>The Creator Vault</strong><br>
+            Access to all session recordings for 12 months post-event (valued at $497)
+          </div>
+        </li>
+        <li>
+          <span class="value-stack-icon">✅</span>
+          <div>
+            <strong>The Living Internet Community</strong><br>
+            One year access to our private creator community (valued at $240/year)
+          </div>
+        </li>
+        <li>
+          <span class="value-stack-icon">✅</span>
+          <div>
+            <strong>The 90-Day Creator Sprint</strong><br>
+            A structured post-event accountability program to ensure you actually implement (valued at $197)
+          </div>
+        </li>
+      </ul>
+      
+      <div class="value-total">
+        Total Value: $1,088+<br>
+        <span style="font-size: 1rem; font-weight: 500; color: var(--fire);">Your Investment: See Ticket Options Below</span>
+      </div>
+    </section>
+
+    <!-- SECTION 9: PRICING -->
+    <section class="section card-wrap offer-section fadein" id="offer">
+      <span class="section-label">SECURE YOUR SEAT</span>
+      <h2 id="offer-title">Choose Your Experience</h2>
+      <p class="lead" style="text-align: center;">Every ticket includes full access to all 3 days. Upgrade for a more intimate, high-touch experience.</p>
+      
+      <div class="tiers" style="margin-top:2rem">
+        <!-- VIP -->
+        <article class="tier tier-vip">
+          <h3 class="tier-name">VIP PASS</h3>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem;">$999 USD</div>
+          <p style="font-size: 0.9rem; color: var(--fire); font-weight: 600;">28 spots remaining. The inner circle experience.</p>
+          
+          <ul class="tier-highlights">
+            <li>Everything in Creator Pass, PLUS:</li>
+            <li>Exclusive Saturday dinner with speakers</li>
+            <li>Front-row seating + after-party ticket included</li>
+            <li>2 years of premium membership + all recordings</li>
+          </ul>
+          
+          <div class="buy-button-shell">
+            <a class="btn cta" href="https://www.tickettailor.com/events/thelivinginternetalliance/2057263" target="_blank">SECURE YOUR VIP SPOT →</a>
+          </div>
+        </article>
+
+        <!-- CREATOR -->
+        <article class="tier tier-general">
+          <h3 class="tier-name">CREATOR PASS <span style="font-size: 0.7rem; background: var(--fire); color: #fff; padding: 2px 6px; border-radius: 4px; vertical-align: middle;">⭐ MOST SELECTED</span></h3>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem;">$299 USD</div>
+          <p style="font-size: 0.9rem; color: var(--muted);">The full in-person experience.</p>
+          
+          <ul class="tier-highlights">
+            <li>Access to all talks, workshops, and live podcasts</li>
+            <li>3 meals included over the weekend</li>
+            <li>1-year premium community membership</li>
+            <li>Networking games + 90-day action plan</li>
+            <li>Recordings available for a full year</li>
+          </ul>
+          
+          <div class="buy-button-shell">
+            <a class="btn cta" href="https://www.tickettailor.com/events/thelivinginternetalliance/2057263" target="_blank">CLAIM YOUR TICKET →</a>
+          </div>
+        </article>
+
+        <!-- VIRTUAL -->
+        <article class="tier tier-virtual">
+          <h3 class="tier-name">VIRTUAL PASS</h3>
+          <div style="font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem;">$150 USD</div>
+          <p style="font-size: 0.9rem; color: var(--muted);">Can't make it to Vancouver? Join us online.</p>
+          
+          <ul class="tier-highlights">
+            <li>Livestream access to all three days</li>
+            <li>1-year premium community membership</li>
+            <li>Virtual networking section</li>
+            <li>Recordings available for a full year</li>
+          </ul>
+          
+          <div class="buy-button-shell">
+            <a class="btn cta" href="https://www.tickettailor.com/events/thelivinginternetalliance/2057263" target="_blank">GET VIRTUAL ACCESS →</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="small" style="margin-top: 1.5rem; text-align: center;">
+        Tickets are non-refundable. They are transferable until May 1st, 2026. This is a 19+ event unless accompanied by a chaperone.<br>
+        For sponsorship opportunities, speaking engagements, or group inquiries: <a href="mailto:jesse@thelivinginternet.com">jesse@thelivinginternet.com</a>
+      </p>
+
+      <div class="urgency-block">
+        <span class="urgency-item">🔴 Early Bird Pricing Ends [DATE] — Save $[Amount] when you register before [Date]</span>
+        <span class="urgency-item">🔴 Only [X] Seats Remaining at This Price</span>
+      </div>
+    </section>
+
+    <!-- SECTION 10: ABOUT -->
+    <section class="section card-wrap fadein" id="about">
+      <span class="section-label">WHO'S BEHIND THIS</span>
+      <h2>Built by Creators, for Creators.</h2>
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <p>The Living Internet University exists for one reason: to give serious creators the foundational education the creator economy never gave them.</p>
+        <p>We believe the internet is the greatest learning and earning opportunity in human history — and that most people are only scratching the surface of what's possible.</p>
+        <p>The Future-Proof Creator Summit is our flagship live event. It's where our community comes together, where ideas become businesses, and where creators stop feeling alone in the work.</p>
+        <p>We're not a media company. We're not a marketing agency. We're a university for the modern creator — and we're just getting started.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 11: FAQ -->
+    <section class="section card-wrap fadein" id="faq">
+      <span class="section-label">FREQUENTLY ASKED QUESTIONS</span>
+      <h2>FAQ</h2>
+      <section class="faq-container">
+        <details class="faq-item">
+          <summary class="faq-q">Who is this for?</summary>
+          <div class="faq-a"><p>Creators of all kinds — writers, artists, podcasters, YouTubers, coaches, freelancers, entrepreneurs. Anyone building online and ready to level up.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Where is it?</summary>
+          <div class="faq-a"><p>Sheraton Vancouver Airport Hotel, Vancouver, BC, Canada.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">When is it and what's the format?</summary>
+          <div class="faq-a"><p>June 5–7, 2026 (Friday–Sunday). Full schedule shared with registered attendees.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is it in-person only?</summary>
+          <div class="faq-a"><p>Yes — but all sessions are recorded and available to ticket holders for 12 months post-event.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is this for beginners?</summary>
+          <div class="faq-a"><p>Absolutely. Whether you're pre-revenue or doing $50K/month, the principles apply at every stage.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is the after-party included?</summary>
+          <div class="faq-a"><p>Included with VIP. General Admission attendees can add it on.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">What if I can't make it after buying?</summary>
+          <div class="faq-a"><p>Tickets are non-refundable but transferable until May 1st, 2026.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Can I meet the speakers?</summary>
+          <div class="faq-a"><p>Yes. Speaker access is built into the event. VIP holders get an exclusive Saturday dinner with speakers.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-q">Is there a payment plan?</summary>
+          <div class="faq-a"><p>Yes — payment plans available at checkout.</p></div>
+        </details>
+      </section>
+    </section>
+
+    <!-- SECTION 12: FINAL CTA -->
+    <section class="section card-wrap fadein center" id="final-cta">
+      <h2>The Window Is Open. But It Won't Stay Open Forever.</h2>
+      <p class="lead">Every creator who's ever built something meaningful had a moment where they decided to stop waiting and start building.</p>
+      <p>This is yours.</p>
+      <p>The Future-Proof Creator Summit — June 5–7, 2026.</p>
+      <p>Three days that will change how you think, how you create, and how you build.</p>
+      <p>The only question is: will you be in the room?</p>
+      
+      <div class="buy-button-shell">
+        <a class="btn cta btn-lg" href="#offer">→ YES, I WANT TO BE IN THE ROOM</a>
+      </div>
+      
+      <div style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--muted);">
+        📍 June 5–7, 2026 · Sheraton Vancouver Airport Hotel · 🔒 Secure Checkout · 💳 Payment Plans Available · 🔁 Tickets Transferable Until May 1st
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-wrap">
+      <p>&copy; 2026 The Living Internet University</p>
+    </div>
+  </footer>
+
+  <!-- Sticky bottom CTA -->
+  <div class="sticky-cta" role="region" aria-label="Quick action">
+    <a class="btn cta btn-wide" href="#offer">Get Tickets</a>
+  </div>
+
+  <!-- Speaker Modal -->
+  <div class="speaker-modal" id="speaker-modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-labelledby="modal-name">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <img class="modal-photo" src="" alt="" />
+      <h3 class="modal-name" id="modal-name"></h3>
+      <p class="modal-tagline"></p>
+      <p class="modal-talk-title"></p>
+      <div class="modal-bio"></div>
+      <div class="modal-links"></div>
+    </div>
+  </div>
+
+  <!-- Sponsor Popup -->
+  <div class="sponsor-popup" id="sponsor-popup" aria-hidden="true" role="dialog" aria-labelledby="sponsor-popup-title">
+    <div class="sponsor-popup-backdrop"></div>
+    <div class="sponsor-popup-content">
+      <button type="button" class="sponsor-popup-close" aria-label="Close">&times;</button>
+      <h3 class="sponsor-popup-title" id="sponsor-popup-title"></h3>
+      <p class="sponsor-popup-desc"></p>
+      <a class="sponsor-popup-link btn cta" href="#" target="_blank" rel="noopener noreferrer">Visit Website →</a>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

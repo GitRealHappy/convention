@@ -3041,3 +3041,86 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* New Hero Layout Styles */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  text-align: left;
+}
+@media (min-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+.hero-left {
+  text-align: left;
+}
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+/* Ensure hero video has defined dimensions (aspect-ratio box needs width) */
+.hero-right .video-wrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 200px;
+}
+.hero-right .video-container {
+  width: 100%;
+}
+.hero-pre-headline {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--fire);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+}
+.hero-main-title-split {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: #1a1a1a;
+  font-weight: 800;
+}
+.hero-subtitle-split {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  text-align: left;
+  color: #1a1a1a;
+}
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hero-cta-group .btn {
+  margin: 0;
+}
+.hero-trust-bar {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Fix for Hero Secondary Button Contrast */
+.section-hero .btn.cta-secondary {
+  color: #1a1a1a;
+  border-color: rgba(26, 26, 26, 0.6);
+}
+.section-hero .btn.cta-secondary:hover {
+  background: rgba(26, 26, 26, 0.05);
+  border-color: #1a1a1a;
+}
