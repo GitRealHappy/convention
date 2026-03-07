@@ -3415,11 +3415,7 @@
 @media (min-width: 600px) {
   .unblocked-videos-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 900px) {
-  .unblocked-videos-grid {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
 .unblocked-video-wrap {
