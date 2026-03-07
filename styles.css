@@ -298,7 +298,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 0;
-    background-color: #efefef;
+    background-color: #faf8f5;
   }
   
   /* Hero full-bleed with centered content */
@@ -311,7 +311,7 @@
   .card-wrap-top{
     margin-top: 140px;
     padding: 32px 18px !important;
-    background:rgba(239, 239, 239, 0.98);
+    background:rgba(250, 248, 245, 0.98);
     border:1px solid rgba(255,255,255,.08);
     border-radius:12px;
     box-shadow:0 4px 20px rgba(0, 0, 0, 0.25);
@@ -2113,24 +2113,24 @@
   .speaker-talks-list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.75rem; /* Reduced vertical gap */
+    gap: 0.6rem;
     margin: 0 auto;
   }
   @media (min-width: 1000px) {
     .speaker-talks-list {
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem; /* Reduced vertical gap */
+      gap: 0.75rem;
     }
   }
 
   .speaker-talk-row {
     display: flow-root;
     gap: 0.5rem;
-    padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 0.6rem;
+    background: rgba(6, 26, 20, 0.95);
+    border: 2px solid rgba(184, 134, 11, 0.7);
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
   }
 
@@ -2139,10 +2139,10 @@
   }
 
   .speaker-talk-row[data-speaker]:hover {
-    background: #fff;
-    border-color: rgba(8, 141, 206, 0.4);
+    background: rgba(10, 35, 28, 0.98);
+    border-color: rgba(218, 165, 32, 0.95);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   }
 
   @media (max-width: 999px) {
@@ -2157,21 +2157,21 @@
   .speaker-talk-meta {
     float: left;
     flex-shrink: 0;
-    padding: 0.5rem;
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
-    background: rgba(6, 26, 20, 0.06);
-    border: 1px solid rgba(6, 26, 20, 0.12);
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    padding: 0.35rem;
+    margin-right: 0.75rem;
+    margin-bottom: 0.35rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   .speaker-talk-icon {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
   }
 
   .speaker-talk-content {
@@ -2187,28 +2187,31 @@
 
   .speaker-talk-name {
     display: block;
-    font-size: var(--text-base);
+    font-size: 0.95rem;
     font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.25;
+    color: #fff;
+    line-height: 1.2;
     letter-spacing: 0.02em;
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
   }
 
   .speaker-talk-tagline {
-    margin: 0 0 0.35rem 0;
-    font-size: var(--text-sm);
+    margin: 0;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: rgba(6, 26, 20, 0.7);
-    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.25;
   }
 
   .speaker-talk-title {
-    margin: 0;
-    font-size: var(--text-sm);
+    clear: left;
+    margin: 0.4rem 0 0;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(184, 134, 11, 0.5);
+    font-size: 0.8rem;
     font-weight: 500;
-    line-height: 1.45;
-    color: var(--text);
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   /* Hero Quote Styles */
