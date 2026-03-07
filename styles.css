@@ -3191,3 +3191,162 @@
   background: rgba(26, 26, 26, 0.05);
   border-color: #1a1a1a;
 }
+
+/* New Sales Copy Sections */
+.section-label {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fire);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Problem Section */
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .problem-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.problem-box {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.problem-text {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.stat-text {
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Checklist */
+.checklist-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.checklist-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+}
+.checklist-icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: var(--fire);
+}
+.checklist-icon-no {
+  color: var(--muted);
+}
+
+/* Agenda / Curriculum (collapsible) */
+.agenda-day {
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.agenda-day-summary {
+  display: block;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 2.5rem;
+}
+.agenda-day-summary::-webkit-details-marker {
+  display: none;
+}
+.agenda-day-summary::after {
+  content: "+";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fire);
+}
+.agenda-day[open] .agenda-day-summary::after {
+  content: "–";
+}
+.agenda-day-title {
+  display: block;
+  color: var(--fire);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+.agenda-day-subtitle {
+  display: block;
+  font-style: italic;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.agenda-day-content {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+.agenda-day-content p {
+  margin: 1rem 0 0.75rem;
+  line-height: 1.6;
+}
+.agenda-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+.agenda-day-content .agenda-list {
+  margin-top: 0.5rem;
+}
+.agenda-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+.agenda-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--fire);
+  font-weight: bold;
+}
