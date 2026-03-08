@@ -3855,6 +3855,10 @@
   display: block;
 }
 
+.agenda-panel[open] .agenda-mobile-headers {
+  display: none;
+}
+
 .agenda-mobile-header {
   padding: 0.75rem 0;
   text-align: center;
