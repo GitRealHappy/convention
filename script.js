@@ -317,6 +317,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker14.jpg',
       tagline: 'Poet & Existential Guide',
       talkTitle: 'Uncovering Your True Voice',
+      videoId: 'c3f9a7or_s0',
       bio: '<p>"Poet, Existential Guide, & Life Transition Coach. Turn existential dread into meaningful living."</p><p>David\'s work is to guide you in reclaiming your true voice.</p>',
       links: [
         { text: 'Find him on IG @mor.intune', url: 'https://www.instagram.com/mor.intune/' },
