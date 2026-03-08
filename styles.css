@@ -1382,6 +1382,10 @@
     max-width: none;
     width: calc(100% - 2rem);
     box-sizing: border-box;
+    text-align: center;
+  }
+  .offer-section .lead {
+    text-align: center;
   }
   @media (max-width: 768px) {
     .offer-section {
