@@ -1392,46 +1392,35 @@
   /* EARLY BIRD BANNER — compact, futuristic */
   .early-bird-banner {
     text-align: center;
-    margin: 0.5rem 0 0.75rem;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, rgba(8, 141, 206, 0.08) 0%, rgba(8, 141, 206, 0.02) 100%);
-    border-left: 3px solid var(--fire);
-    border-radius: 0;
+    margin: 0 0 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, rgba(6, 26, 20, 0.98) 0%, rgba(20, 35, 25, 0.95) 100%);
+    border: 2px solid #4ade80;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(74, 222, 128, 0.15);
     position: relative;
     overflow: hidden;
   }
 
-  .early-bird-banner::before {
-    content: "π";
-    position: absolute;
-    right: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    font-weight: 800;
-    color: rgba(8, 141, 206, 0.08);
-    line-height: 1;
-    pointer-events: none;
-    font-family: "Inter", sans-serif;
-  }
-
   .early-bird-headline {
-    margin: 0 0 0.15rem;
+    margin: 0 0 0.35rem;
     font-family: "Inter", sans-serif;
-    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 1.5rem);
     font-weight: 800;
-    color: var(--fire);
-    letter-spacing: 0.04em;
-    text-transform: lowercase;
-    line-height: 1.1;
+    color: #4ade80;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.2;
   }
 
   .early-bird-sub {
     margin: 0 0 1rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
   }
 
   /* Countdown Timer */
@@ -1439,49 +1428,52 @@
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
   }
   .countdown-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 50px;
-    padding: 0.5rem 0.75rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    min-width: 56px;
+    padding: 0.6rem 0.75rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(74, 222, 128, 0.3);
   }
   .countdown-number {
     font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 800;
-    color: var(--fire);
+    color: #fff;
     line-height: 1;
   }
   .countdown-label {
     font-size: 0.65rem;
     font-weight: 600;
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-top: 0.25rem;
+    margin-top: 0.3rem;
   }
   .countdown-expired {
     font-size: 1rem;
     font-weight: 700;
-    color: var(--fire);
+    color: #4ade80;
     padding: 0.5rem 1rem;
   }
   @media (max-width: 480px) {
+    .early-bird-banner {
+      padding: 1rem;
+    }
     .countdown {
       gap: 0.5rem;
     }
     .countdown-item {
-      min-width: 40px;
-      padding: 0.4rem 0.5rem;
+      min-width: 46px;
+      padding: 0.5rem 0.5rem;
     }
     .countdown-number {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     .countdown-label {
       font-size: 0.55rem;
