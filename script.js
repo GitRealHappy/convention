@@ -866,3 +866,89 @@ document.addEventListener('click', e=>{
     setInterval(updateCountdown, 1000);
   })();
 
+  // Agenda panel: reorder content on mobile so each day's content follows its header
+  (function() {
+    const agendaPanel = document.querySelector('.agenda-panel');
+    if (!agendaPanel) return;
+
+    const isMobile = () => window.innerWidth < 900;
+    let isReordered = false;
+
+    function reorderForMobile() {
+      if (!isMobile() || isReordered) return;
+      
+      const headers = agendaPanel.querySelectorAll('.agenda-days-headers .agenda-day-header');
+      const days = agendaPanel.querySelectorAll('.agenda-days-grid .agenda-day');
+      
+      if (headers.length !== days.length) return;
+
+      // Create mobile headers container (always visible, inside summary)
+      const mobileHeaders = document.createElement('div');
+      mobileHeaders.className = 'agenda-mobile-headers';
+      
+      // Create mobile content container (collapsible, outside summary)
+      const mobileContent = document.createElement('div');
+      mobileContent.className = 'agenda-mobile-content';
+      
+      headers.forEach((header, i) => {
+        // Clone header for the always-visible summary
+        const headerForSummary = header.cloneNode(true);
+        headerForSummary.classList.add('agenda-mobile-header');
+        mobileHeaders.appendChild(headerForSummary);
+        
+        // Create a wrapper with header + content for the expandable area
+        const dayWrapper = document.createElement('div');
+        dayWrapper.className = 'agenda-mobile-day-wrapper';
+        
+        const headerClone = header.cloneNode(true);
+        headerClone.classList.add('agenda-mobile-day-header');
+        dayWrapper.appendChild(headerClone);
+        
+        if (days[i]) {
+          const dayClone = days[i].cloneNode(true);
+          dayClone.classList.add('agenda-mobile-day');
+          dayWrapper.appendChild(dayClone);
+        }
+        
+        mobileContent.appendChild(dayWrapper);
+      });
+
+      // Hide desktop elements
+      agendaPanel.querySelector('.agenda-days-headers').style.display = 'none';
+      agendaPanel.querySelector('.agenda-days-grid').style.display = 'none';
+      
+      // Add mobile headers to summary, content after summary
+      const toggle = agendaPanel.querySelector('.agenda-panel-toggle');
+      toggle.appendChild(mobileHeaders);
+      toggle.after(mobileContent);
+      
+      isReordered = true;
+    }
+
+    function reorderForDesktop() {
+      if (isMobile() || !isReordered) return;
+      
+      const mobileHeaders = agendaPanel.querySelector('.agenda-mobile-headers');
+      const mobileContent = agendaPanel.querySelector('.agenda-mobile-content');
+      if (mobileHeaders) mobileHeaders.remove();
+      if (mobileContent) mobileContent.remove();
+      
+      agendaPanel.querySelector('.agenda-days-headers').style.display = '';
+      agendaPanel.querySelector('.agenda-days-grid').style.display = '';
+      
+      isReordered = false;
+    }
+
+    function handleResize() {
+      if (isMobile()) {
+        reorderForMobile();
+      } else {
+        reorderForDesktop();
+      }
+    }
+
+    // Initial setup
+    handleResize();
+    window.addEventListener('resize', handleResize);
+  })();
+

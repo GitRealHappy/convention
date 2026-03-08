@@ -1367,10 +1367,53 @@
   #organizers{max-width:880px;margin:2rem auto}
   .topic.open .topic-controls{order:2;margin-top:.25rem}
   
-  /* FAQ */
-  .faq-item{margin:1rem 0;background:#061a14;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
-  .faq-q{padding:1rem;cursor:pointer;font-weight:700;font-size:var(--text-base);position:relative;color:#efefef}
-  .faq-a{padding:0 1rem 1rem;border-top:1px solid rgba(255,255,255,.1);color:#efefef;font-weight:500}
+  /* FAQ Section - Dark mode like speakers */
+  .faq-section {
+    padding: 48px calc(max(2.5rem, (100vw - 1100px) / 2));
+    margin: 0 1rem 0.5rem;
+    width: calc(100% - 2rem);
+    border-radius: 12px;
+    background: 
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.9) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 25% 45%, rgba(255,255,255,0.7) 50%, transparent 100%),
+      radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.8) 50%, transparent 100%),
+      radial-gradient(2px 2px at 55% 70%, rgba(200,220,255,0.9) 50%, transparent 100%),
+      radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 85% 55%, rgba(255,255,255,0.7) 50%, transparent 100%),
+      radial-gradient(1px 1px at 15% 80%, rgba(200,220,255,0.8) 50%, transparent 100%),
+      radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.5) 50%, transparent 100%),
+      radial-gradient(2px 2px at 60% 20%, rgba(255,255,255,0.9) 50%, transparent 100%),
+      radial-gradient(1px 1px at 75% 85%, rgba(200,220,255,0.6) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 90% 40%, rgba(255,255,255,0.7) 50%, transparent 100%),
+      radial-gradient(1px 1px at 5% 50%, rgba(255,255,255,0.8) 50%, transparent 100%),
+      radial-gradient(1px 1px at 45% 90%, rgba(255,255,255,0.5) 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 65% 5%, rgba(200,220,255,0.9) 50%, transparent 100%),
+      radial-gradient(1px 1px at 80% 75%, rgba(255,255,255,0.6) 50%, transparent 100%),
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.7) 50%, transparent 100%),
+      radial-gradient(2px 2px at 50% 50%, rgba(200,220,255,0.8) 50%, transparent 100%),
+      radial-gradient(1px 1px at 95% 15%, rgba(255,255,255,0.5) 50%, transparent 100%),
+      radial-gradient(ellipse 80% 50% at 50% 100%, rgba(8, 141, 206, 0.15) 0%, transparent 60%),
+      linear-gradient(to bottom, #030510 0%, #050815 50%, #030510 100%);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: none;
+    width: calc(100% - 1rem);
+    margin: 0 0.5rem 0.5rem;
+  }
+
+  .faq-section h2 {
+    color: #fff;
+  }
+
+  .faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-item{margin:1rem 0;background:#061a14;border-radius:12px;border:2px solid rgba(184,134,11,0.7)}
+  .faq-q{padding:0.75rem;cursor:pointer;font-weight:700;font-size:var(--text-base);position:relative;color:#efefef}
+  .faq-a{padding:0 0.75rem 0.75rem;border-top:1px solid rgba(255,255,255,.1);color:#efefef;font-weight:500}
   .faq-a p{color:#efefef;font-size:var(--text-base)}
   .faq-q::after{content:"+";position:absolute;right:1rem;color:#efefef}
   .faq-item[open] .faq-q::after{content:"–";color:var(--fire)}
@@ -3711,58 +3754,200 @@
 }
 
 /* Agenda / Curriculum (collapsible) */
-.agenda-day {
-  margin-bottom: 1rem;
+/* Curriculum section styling */
+#curriculum .lead {
+  text-align: center;
+  margin: 1rem auto 0.5rem;
+  max-width: 800px;
+}
+
+.curriculum-dates {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 auto 2rem;
+}
+
+.agenda-days-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .agenda-days-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.agenda-panel {
+  margin-top: 2rem;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
-.agenda-day-summary {
+
+.agenda-panel-toggle {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   cursor: pointer;
   list-style: none;
   position: relative;
-  padding-right: 2.5rem;
 }
-.agenda-day-summary::-webkit-details-marker {
+
+.agenda-panel-toggle::-webkit-details-marker {
   display: none;
 }
-.agenda-day-summary::after {
+
+.agenda-panel-toggle::after {
   content: "+";
   position: absolute;
   right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
+  top: 0.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--fire);
+  color: var(--text);
 }
-.agenda-day[open] .agenda-day-summary::after {
+
+.agenda-panel[open] .agenda-panel-toggle::after {
   content: "–";
 }
+
+.agenda-days-headers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+@media (min-width: 900px) {
+  .agenda-days-headers {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+
+.agenda-days-headers .agenda-day-header {
+  padding: 0 1rem;
+  position: relative;
+}
+
+.agenda-days-headers .agenda-day-header:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+@media (max-width: 899px) {
+  .agenda-days-headers .agenda-day-header {
+    padding: 0.75rem 0;
+  }
+  
+  .agenda-days-headers .agenda-day-header:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Mobile agenda reordering */
+.agenda-mobile-headers {
+  display: block;
+}
+
+.agenda-mobile-header {
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+.agenda-mobile-header:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.agenda-mobile-content {
+  display: block;
+  padding: 0 1rem 1rem;
+}
+
+.agenda-mobile-day-wrapper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 0;
+}
+
+.agenda-mobile-day-wrapper:last-child {
+  border-bottom: none;
+}
+
+.agenda-mobile-day-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.agenda-mobile-day {
+  padding: 0;
+}
+
+.agenda-day-header {
+  text-align: center;
+}
+
+.agenda-days-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 900px) {
+  .agenda-days-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+}
+
+.agenda-day {
+  padding: 0 1rem;
+  position: relative;
+}
+
+.agenda-day:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 899px) {
+  .agenda-day {
+    padding: 1rem;
+  }
+  
+  .agenda-day:not(:last-child) {
+    border-right: none;
+  }
+}
+
 .agenda-day-title {
   display: block;
   color: var(--fire);
   font-weight: 800;
-  font-size: 1.2rem;
-  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
 }
+
 .agenda-day-subtitle {
   display: block;
   font-style: italic;
   color: var(--text);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
+
 .agenda-day-content {
-  padding: 0 1.5rem 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0;
 }
 .agenda-day-content p {
-  margin: 1rem 0 0.75rem;
-  line-height: 1.6;
+  margin: 0.5rem 0 0.5rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 .agenda-list {
   list-style: none;
@@ -3771,13 +3956,14 @@
   text-align: left;
 }
 .agenda-day-content .agenda-list {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 .agenda-list li {
   position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-size: 0.9rem;
 }
 .agenda-list li::before {
   content: "•";
