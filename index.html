@@ -389,19 +389,19 @@
         <div class="section-split-left">
           <div class="problem-grid">
             <div class="problem-box">
-              <span class="problem-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+              <span class="problem-box-icon" aria-hidden="true"><i data-lucide="megaphone"></i></span>
               <div class="problem-text">"I know I have something valuable to share, but I can't break through the noise."</div>
             </div>
             <div class="problem-box">
-              <span class="problem-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span>
+              <span class="problem-box-icon" aria-hidden="true"><i data-lucide="shuffle"></i></span>
               <div class="problem-text">"I've tried every content strategy out there, but can't stick with any long enough to find out what works."</div>
             </div>
             <div class="problem-box">
-              <span class="problem-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+              <span class="problem-box-icon" aria-hidden="true"><i data-lucide="message-circle"></i></span>
               <div class="problem-text">"I feel like I'm shouting into the void. No engagement, no growth, no feedback."</div>
             </div>
             <div class="problem-box">
-              <span class="problem-box-icon" aria-hidden="true"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c4-4 8-6.5 8-11.5A5.5 5.5 0 0 0 12 2v20z"/></svg></span>
+              <span class="problem-box-icon" aria-hidden="true"><i data-lucide="flame"></i></span>
               <div class="problem-text">"I'm burnt out from chasing trends. I don't know what I actually stand for anymore."</div>
             </div>
           </div>
@@ -570,15 +570,14 @@
 
     <!-- SECTION: WHAT'S INCLUDED -->
     <section class="section card-wrap fadein" id="included" aria-labelledby="included-title">
-      <span class="section-label">EVERYTHING YOU GET</span>
-      <h2 id="included-title">Your Summit Experience Includes:</h2>
+      <h2 id="included-title">The Summit Experience Includes:</h2>
       <div class="section-split">
         <div class="section-split-left">
           <ul class="value-stack-list">
             <li>
               <span class="value-stack-icon">✓</span>
               <div>
-                <strong>3 Full Days of Live Programming</strong><br>
+                <strong>3 Full Days of Live Activity</strong><br>
                 Keynotes, workshops, and deep-dive sessions with world-class speakers
               </div>
             </li>
@@ -618,7 +617,7 @@
               <span class="value-stack-icon">✓</span>
               <div>
                 <strong>3 Meals Included</strong><br>
-                Friday dinner, Saturday lunch, Sunday lunch — no need to leave the venue
+                Friday dinner, Saturday lunch, Sunday lunch. (+ A Saturday night dinner with the speakers for VIPs)
               </div>
             </li>
           </ul>
@@ -999,6 +998,10 @@
       </div>
       <div class="modal-bio"></div>
       <div class="modal-links"></div>
+      <div class="modal-nav">
+        <button type="button" class="modal-nav-btn modal-nav-prev" aria-label="Previous speaker">&lsaquo;</button>
+        <button type="button" class="modal-nav-btn modal-nav-next" aria-label="Next speaker">&rsaquo;</button>
+      </div>
     </div>
   </div>
 
@@ -1016,10 +1019,12 @@
 
   <div class="workshop-popup" id="workshop-popup" aria-hidden="true">
     <button type="button" class="workshop-popup-close" aria-label="Close">&times;</button>
-    <p class="workshop-popup-text">What if the summit wasn't the beginning of your journey, but a culmination? Join 8 free Saturday workshops with Dan Koe, Taylin Simmonds, and 6 more speakers. Build your brand. Launch your offer. Document your transformation for a chance to win a VIP upgrade, announced on May 2nd. <strong>Series begins March 7th at 11am PST.</strong></p>
+    <p class="workshop-popup-text">What if the summit wasn't the beginning of your journey, but a culmination? Join 8 free Saturday workshops with Dan Koe, Taylin Simmonds, and 6 more speakers. Build your brand. Launch your offer. Document your transformation for a chance to win a VIP upgrade, announced on May 2nd. <strong>Next workshop is with Taylin Simmonds on March 14th at 11am PST.</strong></p>
     <a class="btn cta workshop-popup-btn" href="https://living-internet-alliance.circle.so/join?invitation_token=226e75d9ce467200f26b8d69c30cc6fce33321b1-4df96578-ddf5-46b9-bd0c-81882743ba7d" target="_blank" rel="noopener noreferrer">RSVP Free →</a>
   </div>
 
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>if (typeof lucide !== 'undefined') lucide.createIcons();</script>
   <script src="script.js" defer></script>
 </body>
 </html>

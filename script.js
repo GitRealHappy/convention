@@ -238,6 +238,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker2.jpg',
       tagline: 'Somatic therapist & carrier of stories',
       talkTitle: 'Liminal Means ~ Entrepreneurship From A Healed Nervous System',
+      videoId: 'SoWKdakrz9w',
       bio: '<p>Associate marriage and family therapist specializing in somatic & biomechanical therapy for anxiety, sensory overload, and emotional resilience.</p><p>He is a carrier of stories who, through his online work, helps countless more people than he could through 1:1 therapy alone.</p>',
       links: [
         { text: 'Find him on X @LiminalMeans', url: 'https://x.com/LiminalMeans' },
@@ -261,6 +262,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker3.jpg',
       tagline: 'Peace as your Default Mode',
       talkTitle: 'Talk 1: Effortless Effectiveness for Solopreneurs<br>Talk 2: Letting Go is Not Giving Up',
+      videoId: 'M-fpcdYx23o',
       bio: '<p>"Studied with a monk for 5 years, married a hot psychologist, built a 6-figure business. Mission: help 1 billion people realize peace as their Default Mode."</p>',
       links: [
         { text: '29.1K Followers on X', url: 'https://x.com/itsdangoldfield' },
@@ -326,6 +328,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker5.jpg',
       tagline: 'Holistic health practitioner',
       talkTitle: 'Scaling A Holistic Health Coaching Business To Training Practitioners Online',
+      videoId: 'KUEKB2xhP5s',
       bio: '<p>Holistic health care practitioner with a background in kinesiology and body-centered psychotherapy.</p><p>Logan runs Medicine of Mankind in Vancouver, Canada, and internationally online, where he helps clients wake up to their soul\'s calling by rehabilitating the body, mind, and soul through applied spirituality, psychotherapy, and kinesiology based principles.</p>',
       links: [
         { text: 'Medicine of Mankind', url: 'https://www.medicineofmankind.com/' }
@@ -363,6 +366,9 @@ document.addEventListener('click', e=>{
   };
 
   // Speaker Modal Functionality
+  const speakerOrder = ['dan-koe', 'kieran-drew', 'taylin-simmonds', 'brian-maierhofer', 'dan-goldfield', 'hussain-ibarra', 'jack-moses', 'valentin-sounds', 'kimia-nora', 'logan-quinn', 'nathalie-agnes', 'ish-hasan', 'david-morin', 'olivia-peers'];
+  let currentSpeakerId = null;
+
   const speakerModal = document.getElementById('speaker-modal');
   const modalBackdrop = speakerModal?.querySelector('.modal-backdrop');
   const modalClose = speakerModal?.querySelector('.modal-close');
@@ -374,10 +380,14 @@ document.addEventListener('click', e=>{
   const modalVideoIframe = speakerModal?.querySelector('.modal-video-iframe');
   const modalBio = speakerModal?.querySelector('.modal-bio');
   const modalLinks = speakerModal?.querySelector('.modal-links');
+  const modalNavPrev = speakerModal?.querySelector('.modal-nav-prev');
+  const modalNavNext = speakerModal?.querySelector('.modal-nav-next');
 
-  function openSpeakerModal(speakerId) {
+  function populateSpeakerModal(speakerId) {
     const speaker = speakerData[speakerId];
     if (!speaker || !speakerModal) return;
+
+    currentSpeakerId = speakerId;
 
     // Populate modal
     modalPhoto.src = speaker.photo;
@@ -404,9 +414,28 @@ document.addEventListener('click', e=>{
     document.body.style.overflow = 'hidden';
   }
 
+  function openSpeakerModal(speakerId) {
+    populateSpeakerModal(speakerId);
+  }
+
+  function goToPrevSpeaker() {
+    if (!currentSpeakerId) return;
+    const idx = speakerOrder.indexOf(currentSpeakerId);
+    const prevIdx = idx <= 0 ? speakerOrder.length - 1 : idx - 1;
+    populateSpeakerModal(speakerOrder[prevIdx]);
+  }
+
+  function goToNextSpeaker() {
+    if (!currentSpeakerId) return;
+    const idx = speakerOrder.indexOf(currentSpeakerId);
+    const nextIdx = idx >= speakerOrder.length - 1 ? 0 : idx + 1;
+    populateSpeakerModal(speakerOrder[nextIdx]);
+  }
+
   function closeSpeakerModal() {
     if (!speakerModal) return;
     if (modalVideoIframe) modalVideoIframe.src = '';
+    currentSpeakerId = null;
     speakerModal.classList.remove('open');
     speakerModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
@@ -453,9 +482,25 @@ document.addEventListener('click', e=>{
   // Close modal handlers
   modalClose?.addEventListener('click', closeSpeakerModal);
   modalBackdrop?.addEventListener('click', closeSpeakerModal);
+
+  // Nav arrow handlers
+  modalNavPrev?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    goToPrevSpeaker();
+  });
+  modalNavNext?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    goToNextSpeaker();
+  });
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && speakerModal?.classList.contains('open')) {
+    if (!speakerModal?.classList.contains('open')) return;
+    if (e.key === 'Escape') {
       closeSpeakerModal();
+    } else if (e.key === 'ArrowLeft') {
+      goToPrevSpeaker();
+    } else if (e.key === 'ArrowRight') {
+      goToNextSpeaker();
     }
   });
 
@@ -751,7 +796,7 @@ document.addEventListener('click', e=>{
     const showTimeout = setTimeout(() => {
       popup.classList.add('visible');
       popup.setAttribute('aria-hidden', 'false');
-    }, 15000);
+    }, 35000);
 
     // Close popup handler
     function closePopup() {
