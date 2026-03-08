@@ -1380,7 +1380,13 @@
   /* Offer section: wider for side-by-side tiers on desktop */
   .offer-section {
     max-width: none;
-    width: 100%;
+    width: calc(100% - 2rem);
+    box-sizing: border-box;
+  }
+  @media (max-width: 768px) {
+    .offer-section {
+      width: calc(100% - 1rem);
+    }
   }
 
   /* EARLY BIRD BANNER — compact, futuristic */
