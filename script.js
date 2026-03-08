@@ -770,3 +770,38 @@ document.addEventListener('click', e=>{
     });
   })();
 
+  // Early Bird Countdown Timer
+  (function() {
+    const countdownEl = document.getElementById('early-bird-countdown');
+    if (!countdownEl) return;
+
+    const deadline = new Date(countdownEl.dataset.deadline).getTime();
+    const daysEl = document.getElementById('countdown-days');
+    const hoursEl = document.getElementById('countdown-hours');
+    const minutesEl = document.getElementById('countdown-minutes');
+    const secondsEl = document.getElementById('countdown-seconds');
+
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = deadline - now;
+
+      if (diff <= 0) {
+        countdownEl.innerHTML = '<span class="countdown-expired">Early Bird Has Ended!</span>';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      daysEl.textContent = days.toString().padStart(2, '0');
+      hoursEl.textContent = hours.toString().padStart(2, '0');
+      minutesEl.textContent = minutes.toString().padStart(2, '0');
+      secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  })();
+
