@@ -201,6 +201,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker1.jpg',
       tagline: '"Work less. Earn More. Enjoy Life."',
       talkTitle: 'Focusing Your Time and Attention on Your Craft In The Age of AI',
+      videoId: 'x3KW3_tlZoM',
       bio: '<p>Dan Koe. The philosopher of the one-person business model, and the flow scientist behind the 4-hour workday.</p><p>Founder of Eden: One Place For All Your Creative Work.</p>',
       links: [
         { text: 'Eden', url: 'https://eden.so/' },
@@ -225,6 +226,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker7.jpg',
       tagline: 'AI-assisted ghostwriter • 2B impressions',
       talkTitle: 'How To Be A Multi-Passionate Creator',
+      videoId: 'wfK0uFMAdPw',
       bio: '<p>College teacher turned AI assisted ghostwriter | Helping writers & creatives earn on the internet • 2B impressions • $4M+ revenue • All in on Substack</p>',
       links: [
         { text: '97.5K Followers on X', url: 'https://x.com/TaylinSimmonds' },
@@ -247,6 +249,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker10.jpg',
       tagline: 'Applied Neuroscience & Neuroplasticity',
       talkTitle: 'Neuroplasticity, the Future of Success and Health',
+      videoId: '-mZDcZEqd9g',
       bio: '<p>Applied Neuroscience | Self-directed Neuroplasticity | Brain Homeostasis | MindBody Medicine for healing chronic conditions.</p><p>Building <em>The Paradigm of Wholeness.</em></p><p>"Everybody deserves to know the science of change."</p>',
       links: [
         { text: '40.5K Followers on X', url: 'https://x.com/iamkimianora' },
@@ -279,6 +282,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker4.jpg',
       tagline: 'Engineer turned writer',
       talkTitle: 'The Key to writing high quality content and building an audience',
+      videoId: 'l8gzNdc09To',
       bio: '<p>Engineer turned writer. Building a writing business to $120k/year. Helped 20+ clients build and monetize their audience.</p>',
       links: [
         { text: '22.6K Followers on X', url: 'https://x.com/HussainIbarra' },
@@ -366,6 +370,8 @@ document.addEventListener('click', e=>{
   const modalName = speakerModal?.querySelector('.modal-name');
   const modalTagline = speakerModal?.querySelector('.modal-tagline');
   const modalTalkTitle = speakerModal?.querySelector('.modal-talk-title');
+  const modalVideoWrap = speakerModal?.querySelector('.modal-video-wrap');
+  const modalVideoIframe = speakerModal?.querySelector('.modal-video-iframe');
   const modalBio = speakerModal?.querySelector('.modal-bio');
   const modalLinks = speakerModal?.querySelector('.modal-links');
 
@@ -383,6 +389,15 @@ document.addEventListener('click', e=>{
     }
     modalBio.innerHTML = speaker.bio;
 
+    // Show/hide video based on speaker
+    if (speaker.videoId && modalVideoWrap && modalVideoIframe) {
+      modalVideoIframe.src = `https://www.youtube.com/embed/${speaker.videoId}`;
+      modalVideoWrap.style.display = 'block';
+    } else if (modalVideoWrap && modalVideoIframe) {
+      modalVideoIframe.src = '';
+      modalVideoWrap.style.display = 'none';
+    }
+
     // Show modal
     speakerModal.classList.add('open');
     speakerModal.setAttribute('aria-hidden', 'false');
@@ -391,6 +406,7 @@ document.addEventListener('click', e=>{
 
   function closeSpeakerModal() {
     if (!speakerModal) return;
+    if (modalVideoIframe) modalVideoIframe.src = '';
     speakerModal.classList.remove('open');
     speakerModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
