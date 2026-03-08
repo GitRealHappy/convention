@@ -3,7 +3,7 @@
     --violet-black:#061a14;
     --indigo:#1a3d32;
     --earth:#2a3f38;
-    --fire:#407dbe;
+    --fire:#0478f3ef;
     --text:#1a1a1a;
     --muted:#4a4a4a;
     --section-bg:#efefef;
@@ -477,8 +477,8 @@
     border:1px solid rgba(255,255,255,.15);transition:.25s ease;
   }
   .btn.cta{
-    background:linear-gradient(180deg,rgba(107,143,163,0.92),rgba(90,125,145,0.92));
-    color:#efefef;font-weight:800;box-shadow:0 8px 22px rgba(90,125,145,.25);
+    background:linear-gradient(180deg,rgba(4,120,243,0.95),rgba(4,100,200,0.92));
+    color:#efefef;font-weight:800;box-shadow:0 8px 22px rgba(4,120,243,.25);
     margin: 1rem auto;
   }
   .btn.cta:hover{filter:brightness(.95)}
