@@ -3885,6 +3885,20 @@
 .agenda-mobile-day-header {
   text-align: center;
   margin-bottom: 0.5rem;
+  position: relative;
+  padding-right: 2rem;
+}
+
+.agenda-mobile-day-header::after {
+  content: "–";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
 }
 
 .agenda-mobile-day {

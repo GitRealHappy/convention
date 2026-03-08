@@ -922,6 +922,14 @@ document.addEventListener('click', e=>{
       toggle.appendChild(mobileHeaders);
       toggle.after(mobileContent);
       
+      // Make day headers clickable to collapse the panel
+      mobileContent.querySelectorAll('.agenda-mobile-day-header').forEach(header => {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', () => {
+          agendaPanel.removeAttribute('open');
+        });
+      });
+      
       isReordered = true;
     }
 
