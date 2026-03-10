@@ -273,7 +273,7 @@ document.addEventListener('click', e=>{
       name: 'Jack Moses',
       photo: 'assets/speaker-icons/speaker11.jpg',
       tagline: 'Transformation Coach & Podcaster',
-      talkTitle: 'Energy, Frequency, Vibration: The Metaphysics of Business and Reality Creation',
+      talkTitle: 'How To Magnetize Your Dream Fans and Customers with Aura and Authenticity',
       bio: '<p>Personal Transformation Coach. Writer. Creator. Quarterback. Podcaster.</p><p>Founder of Transcendence, and the Sovereign Creators Skool.</p>',
       links: [
         { text: '28K Followers on X', url: 'https://x.com/jackmoses0' }
