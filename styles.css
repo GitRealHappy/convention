@@ -6,7 +6,7 @@
     --fire:#0478f3ef;
     --text:#1a1a1a;
     --muted:#4a4a4a;
-    --section-bg:#efefef;
+    --section-bg:#eb0404;
     /* Type scale */
     --text-xs: 0.8rem;
     --text-sm: 0.9rem;
@@ -374,6 +374,11 @@
     border-radius: 0 !important;
     margin-top: 140px;
     background: linear-gradient(to right, #faf8f5 50%, #000 50%) !important;
+  }
+
+  /* Community page: hero should be fully light, no split black background */
+  body.community-page .section-hero.card-wrap-top {
+    background: #faf8f5 !important;
   }
   /* Mobile: stacked layout - cream for hero-left (incl. trust bar), black only for hero-right (video) */
   @media (max-width: 899px) {

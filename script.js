@@ -214,6 +214,7 @@ document.addEventListener('click', e=>{
       photo: 'assets/speaker-icons/speaker12.jpg',
       tagline: 'Ex-dentist building a $500k/year internet business',
       talkTitle: 'How to Grow Your Business With Magnetic Writing',
+      videoId: '7cNp7_BflD0',
       bio: '<p>On a mission to become a better writer, thinker, and entrepreneur • Ex-dentist, now building an internet business (at ~$500k/year).</p>',
       links: [
         { text: '230.3K Followers on X', url: 'https://x.com/ItsKieranDrew' },
@@ -377,7 +378,7 @@ document.addEventListener('click', e=>{
   };
 
   // Speaker Modal Functionality
-  const speakerOrder = ['dan-koe', 'kieran-drew', 'taylin-simmonds', 'brian-maierhofer', 'dan-goldfield', 'hussain-ibarra', 'jack-moses', 'valentin-sounds', 'kimia-nora', 'logan-quinn', 'nathalie-agnes', 'ish-hasan', 'david-morin', 'olivia-peers', 'michael-oliver'];
+  const speakerOrder = ['dan-koe', 'kieran-drew', 'taylin-simmonds', 'brian-maierhofer', 'dan-goldfield', 'hussain-ibarra', 'kimia-nora', 'jack-moses', 'valentin-sounds', 'logan-quinn', 'nathalie-agnes', 'ish-hasan', 'david-morin', 'olivia-peers', 'michael-oliver'];
   let currentSpeakerId = null;
 
   const speakerModal = document.getElementById('speaker-modal');
@@ -412,7 +413,7 @@ document.addEventListener('click', e=>{
 
     // Show/hide video based on speaker
     if (speaker.videoId && modalVideoWrap && modalVideoIframe) {
-      modalVideoIframe.src = `https://www.youtube.com/embed/${speaker.videoId}`;
+      modalVideoIframe.src = `https://www.youtube.com/embed/${speaker.videoId}?start=20`;
       modalVideoWrap.style.display = 'block';
     } else if (modalVideoWrap && modalVideoIframe) {
       modalVideoIframe.src = '';
