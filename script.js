@@ -363,11 +363,21 @@ document.addEventListener('click', e=>{
       talkTitle: 'How I used The Creator Economy to transform my life philosophy “Deeper Living OS” into a sold-out human potential course (with 100% close rate & life-changing results).',
       bio: '<p>Founder, Artist, Human potential educator exploring the intersection of philosophy, psychology, and living deeply.</p>',
       links: []
+    },
+    'michael-oliver': {
+      name: 'Michael Oliver',
+      photo: 'assets/speaker-icons/speaker17.jpg',
+      tagline: 'Transformative Healing & Community Driven Business',
+      talkTitle: 'Democratizing Transcendence',
+      bio: '<p>Michael is founder of The Flying Sage, a community on a mission to democratize transcendence, and Legacy Journeys, a guiding practice that offers transformative psychedelic experiences towards embodiment and lasting change. Michael also supports creators and entrepreneurs optimize their businesses and work through Reclaimer, which offers deep work sprints and Notion systems for businesses.</p>',
+      links: [
+        { text: 'michaeloliver.ca', url: 'https://www.michaeloliver.ca' }
+      ]
     }
   };
 
   // Speaker Modal Functionality
-  const speakerOrder = ['dan-koe', 'kieran-drew', 'taylin-simmonds', 'brian-maierhofer', 'dan-goldfield', 'hussain-ibarra', 'jack-moses', 'valentin-sounds', 'kimia-nora', 'logan-quinn', 'nathalie-agnes', 'ish-hasan', 'david-morin', 'olivia-peers'];
+  const speakerOrder = ['dan-koe', 'kieran-drew', 'taylin-simmonds', 'brian-maierhofer', 'dan-goldfield', 'hussain-ibarra', 'jack-moses', 'valentin-sounds', 'kimia-nora', 'logan-quinn', 'nathalie-agnes', 'ish-hasan', 'david-morin', 'olivia-peers', 'michael-oliver'];
   let currentSpeakerId = null;
 
   const speakerModal = document.getElementById('speaker-modal');
@@ -797,7 +807,7 @@ document.addEventListener('click', e=>{
     const showTimeout = setTimeout(() => {
       popup.classList.add('visible');
       popup.setAttribute('aria-hidden', 'false');
-    }, 35000);
+    }, 45000);
 
     // Close popup handler
     function closePopup() {
