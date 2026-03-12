@@ -367,12 +367,25 @@
     background-color: #faf8f5;
   }
   
-  /* Hero full-bleed with centered content */
+  /* Hero full-bleed with centered content - split background: left cream, right black */
   .section-hero.card-wrap-top {
     max-width: none !important;
     padding: 2rem calc(max(1.5rem, (100vw - 1100px) / 2)) !important;
     border-radius: 0 !important;
     margin-top: 140px;
+    background: linear-gradient(to right, #faf8f5 50%, #000 50%) !important;
+  }
+  /* Mobile: stacked layout - cream for hero-left (incl. trust bar), black only for hero-right (video) */
+  @media (max-width: 899px) {
+    .section-hero.card-wrap-top {
+      background: #faf8f5 !important;
+    }
+    .section-hero .hero-right {
+      background: #000;
+      margin-top: 0.5rem;
+      padding: 1rem 0;
+      border-radius: 8px;
+    }
   }
   .card-wrap-top{
     margin-top: 140px;
@@ -3139,7 +3152,7 @@
   background: rgba(6, 26, 20, 0.98);
   border: 2px solid rgba(184, 134, 11, 0.7);
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: 0;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(212, 168, 75, 0.2);
   z-index: 9999;
   opacity: 0;
@@ -3158,10 +3171,25 @@
   pointer-events: auto;
 }
 
+.workshop-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+  gap: 0.5rem;
+}
+
+.workshop-popup-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(212, 168, 75, 0.95);
+  letter-spacing: 0.05em;
+}
+
 .workshop-popup-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(184, 134, 11, 0.4);
   border-radius: 6px;
@@ -3184,6 +3212,7 @@
   font-size: 0.9rem;
   line-height: 1.5;
   margin: 0 0 1rem 0;
+  padding: 1rem 1.25rem 0;
 }
 
 .workshop-popup-text strong {
@@ -3196,6 +3225,7 @@
   text-align: center;
   font-size: 0.95rem;
   padding: 0.75rem 1rem;
+  margin: 0 1.25rem 1.25rem;
 }
 
 @media (max-width: 480px) {
@@ -3204,17 +3234,22 @@
     right: 1rem;
     left: 1rem;
     max-width: none;
-    padding: 1rem;
+  }
+  
+  .workshop-popup-header {
+    padding: 0.65rem 1rem;
   }
   
   .workshop-popup-text {
     font-size: 0.8rem;
     line-height: 1.4;
+    padding: 0.85rem 1rem 0;
   }
   
   .workshop-popup-btn {
     font-size: 0.85rem;
     padding: 0.65rem 0.85rem;
+    margin: 0 1rem 1rem;
   }
 }
 
