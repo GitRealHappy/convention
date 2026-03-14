@@ -6,7 +6,7 @@
     --fire:#0478f3ef;
     --text:#1a1a1a;
     --muted:#4a4a4a;
-    --section-bg:#eb0404;
+    --section-bg:#efefef;
     /* Type scale */
     --text-xs: 0.8rem;
     --text-sm: 0.9rem;
@@ -1965,27 +1965,51 @@
   #convention-cta {
     text-align: center;
   }
-  #free-book-cta .btn,
   #convention-cta .btn {
     display: inline-block;
     margin: 1rem auto 0;
   }
+  #free-book-cta .btn {
+    display: inline-block;
+    margin: 0.5rem auto 0;
+  }
   .free-book-wrap {
     border-top: 3px solid rgba(8, 141, 206, 0.4);
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+  @media (min-width: 900px) {
+    .free-book-wrap {
+      margin-left: 8vw;
+      margin-right: 8vw;
+      max-width: 520px;
+      padding: 1.25rem 2rem 1.5rem;
+    }
+  }
+  .free-book-wrap h2 {
+    font-size: clamp(1.35rem, 1.1rem + 1.5vw, 1.6rem);
+    margin-bottom: 0.5rem;
+  }
+  .free-book-wrap .lead {
+    font-size: var(--text-sm);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
   }
   .free-book-highlights {
     list-style: none;
     padding: 0;
-    margin: 1rem auto 1.25rem;
-    max-width: 520px;
+    margin: 0.75rem auto 1rem;
+    max-width: 100%;
     text-align: left;
     font-size: var(--text-sm);
-    line-height: 1.6;
+    line-height: 1.5;
   }
   .free-book-highlights li {
     position: relative;
     padding-left: 1.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
   }
   .free-book-highlights li::before {
     content: "✓";
