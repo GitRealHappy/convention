@@ -23,10 +23,13 @@ A three-day in-person event bringing together creators, coaches, and educators t
 index.html        # Main landing page
 styles.css        # All styles
 script.js         # Interactivity (accordion, modals, scroll behavior)
-party.html        # After-party page
-community.html    # Community info page
-locked.html       # Gated content page
-777.html          # Special page
+community/        # Clean route for the community page
+contest/          # Clean route for the contest page
+networking-guide/ # Clean route for the networking guide
+party/            # Clean route for the after-party page
+locked/           # Clean route for gated content
+university/       # Clean route for university redirect page
+777/              # Clean route for the special page
 404.html          # Custom 404 page
 assets/           # Images, video, icons
   speaker-icons/  # Speaker headshots
@@ -37,7 +40,7 @@ assets/           # Images, video, icons
 
 ## Local Development
 
-Open `index.html` in a browser. No server required for basic viewing.
+Open `index.html` in a browser for the homepage. For testing clean URLs, use a local server.
 
 For live reload during development:
 ```bash
