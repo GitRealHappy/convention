@@ -11,14 +11,17 @@
     const path = window.location.pathname;
     const cleanPath = path.replace(/\/$/, ''); // Remove trailing slash
     
-    // Map of clean URLs to actual HTML files
+    // Map of clean URLs to folder-based routes
     const routes = {
-      '/community': '/community.html',
-      '/party': '/party.html',
-      '/locked': '/locked.html',
-      '/777': '/777.html',
-      '': '/index.html',
-      '/': '/index.html'
+      '/community': '/community/',
+      '/contest': '/contest/',
+      '/networking-guide': '/networking-guide/',
+      '/party': '/party/',
+      '/locked': '/locked/',
+      '/university': '/university/',
+      '/777': '/777/',
+      '': '/',
+      '/': '/'
     };
     
     // Check if we have a route for this path
@@ -26,10 +29,10 @@
       window.location.replace(routes[cleanPath]);
     } else if (cleanPath && !cleanPath.includes('.')) {
       // Try appending .html if no extension exists
-      window.location.replace(cleanPath + '.html');
+      window.location.replace(cleanPath + '/');
     } else {
       // If no route found, redirect to home
-      window.location.replace('/index.html');
+      window.location.replace('/');
     }
   </script>
 <script type="text/javascript">
