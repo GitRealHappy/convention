@@ -67,7 +67,7 @@
 ### Who This Is For
 
 - Narrow the audience language slightly. Right now it tries to include almost everyone in the creator economy.
-- Organize the bullets by buyer identity: creator, coach, consultant, educator, community builder.
+- Organize the bullets by buyer identity: creator, coach, consultant, educator, community builder, practioner.
 - Add one line for current business stage so the reader can self-qualify faster.
 - Make the `not for you` box firmer and more polarizing. That usually improves serious-buyer conversion.
 
@@ -179,3 +179,18 @@
 2. Rewrite the hero subheadline and ticket section for clarity and scannability.
 3. Strengthen proof with speaker credibility, organizer authority, and attendee or community evidence.
 4. Remove or reduce competing CTAs that distract from ticket purchase.
+
+## Deferred items and questions
+
+Resolved in latest pass:
+
+1. **Speaker proof points (partial):** added for Dan Koe (3.6M+ followers), Taylin ($500k/year ghostwriting business), and Kieran (quarter-million followers on X).
+2. **Ticket strategy:** GA urgency set to `45 Early-Bird Left`; VIP and Virtual no longer use early-bird pricing language.
+3. **Payment plans:** explicitly set to not available.
+4. **Partner visibility:** sponsor conveyors reduced.
+
+Still pending your input:
+
+1. **Organizer authority proof (resolved for now):** messaging now centers on Jesse as host of *Unblocked Creators* and The Living Internet Community (`160+` free members). Add partnership-based authority later.
+2. **Social proof asset placement (resolved):** add workshop-comment screenshots after the itinerary section (`#curriculum`) when assets are provided.
+3. **Additional speaker proof points:** deferred for later. Expand proof lines for remaining speakers once approved metrics are supplied.

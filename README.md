@@ -29,7 +29,6 @@ networking-guide/ # Clean route for the networking guide
 party/            # Clean route for the after-party page
 locked/           # Clean route for gated content
 university/       # Clean route for university redirect page
-777/              # Clean route for the special page
 404.html          # Custom 404 page
 assets/           # Images, video, icons
   speaker-icons/  # Speaker headshots
