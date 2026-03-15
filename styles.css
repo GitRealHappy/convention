@@ -330,9 +330,9 @@
 
   .section{
     padding: 48px calc(max(2.5rem, (100vw - 1100px) / 2));
-    margin: 0 1rem 0.5rem;
+    margin: 0 3rem 1.5rem;
     max-width: none;
-    width: calc(100% - 2rem);
+    width: calc(100% - 6rem);
     border-radius: 12px;
   }
   @media (max-width: 768px) {
@@ -1144,10 +1144,14 @@
   }
 
   /* VENUE SECTION */
+  .venue-section .lead {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
   .venue-section {
     max-width: none;
-    width: calc(100% - 2rem);
-    margin: 0 1rem 0.5rem;
+    width: calc(100% - 6rem);
+    margin: 0 3rem 1.5rem;
     padding: 48px calc(max(2.5rem, (100vw - 1100px) / 2));
     text-align: center;
     border-radius: 12px;
@@ -1667,6 +1671,10 @@
   }
   .tier-general .tier-highlights li::before {
     color: #4ade80;
+  }
+
+  .tier-virtual .tier-intro {
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .tier-virtual {
@@ -4234,4 +4242,385 @@
   height: 100%;
   border: none;
   border-radius: 8px;
+}
+/* Dark mode for Solution section */
+#solution {
+  background: 
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.9) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 25% 45%, rgba(255,255,255,0.7) 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.8) 50%, transparent 100%),
+    radial-gradient(2px 2px at 55% 70%, rgba(200,220,255,0.9) 50%, transparent 100%),
+    radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 55%, rgba(255,255,255,0.7) 50%, transparent 100%),
+    radial-gradient(1px 1px at 15% 80%, rgba(200,220,255,0.8) 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(2px 2px at 60% 20%, rgba(255,255,255,0.9) 50%, transparent 100%),
+    radial-gradient(1px 1px at 75% 85%, rgba(200,220,255,0.6) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 90% 40%, rgba(255,255,255,0.7) 50%, transparent 100%),
+    radial-gradient(1px 1px at 5% 50%, rgba(255,255,255,0.8) 50%, transparent 100%),
+    radial-gradient(1px 1px at 45% 90%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 65% 5%, rgba(200,220,255,0.9) 50%, transparent 100%),
+    radial-gradient(1px 1px at 80% 75%, rgba(255,255,255,0.6) 50%, transparent 100%),
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.7) 50%, transparent 100%),
+    radial-gradient(2px 2px at 50% 50%, rgba(200,220,255,0.8) 50%, transparent 100%),
+    radial-gradient(1px 1px at 95% 15%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(8, 141, 206, 0.15) 0%, transparent 60%),
+    linear-gradient(to bottom, #030510 0%, #050815 50%, #030510 100%);
+  
+  color: rgba(255, 255, 255, 0.9);
+  padding: 32px 1.5rem;
+  border: none;
+  box-shadow: none;
+}
+
+#solution h2 {
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+#solution .lead {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+#solution p, 
+#solution li {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+#solution strong {
+  color: #fff;
+}
+
+#solution .stat-number {
+  color: #fb923c;
+}
+
+#solution .stat-label {
+  color: #1a1a1a;
+}
+
+#solution .section-label {
+  color: #fb923c;
+}
+
+/* Itinerary Styles */
+.itinerary-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.itinerary-day-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+  color: var(--text);
+}
+
+.itinerary-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: background 0.2s ease;
+  align-items: baseline;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.itinerary-row:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+.itinerary-time {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  padding-top: 0.2rem;
+  opacity: 0.8;
+}
+
+.itinerary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.itinerary-title {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.itinerary-speaker {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.itinerary-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.1rem;
+}
+
+/* Row Types */
+.itinerary-row.keynote {
+  background: #fff;
+  border-left: 3px solid transparent;
+}
+.itinerary-row.keynote:hover {
+  background: #fcfcfc;
+  border-left-color: rgba(0,0,0,0.1);
+}
+
+.itinerary-row.break {
+  background: rgba(0,0,0,0.03);
+  color: var(--muted);
+}
+.itinerary-row.break .itinerary-title {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.itinerary-row.networking {
+  background: rgba(26, 61, 50, 0.05); /* Tint of indigo/green */
+  border-left: 3px solid var(--indigo);
+  padding-left: calc(1.5rem - 3px);
+}
+
+.itinerary-row.experience {
+  background: rgba(42, 63, 56, 0.05); /* Tint of earth */
+  border-left: 3px solid var(--earth);
+  padding-left: calc(1.5rem - 3px);
+}
+
+.itinerary-row.ceremony {
+  background: #fff;
+  border-left: 4px solid var(--fire);
+  padding-left: calc(1.5rem - 4px);
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .itinerary-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 1rem;
+  }
+  .itinerary-time {
+    font-size: 0.8rem;
+    color: var(--fire);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Curriculum Section Dark Mode */
+.curriculum-section {
+  background: transparent;
+  padding: 48px calc(max(2.5rem, (100vw - 1100px) / 2));
+  margin: 0 1rem 0.5rem;
+  max-width: none;
+  width: calc(100% - 2rem);
+  border-radius: 12px;
+}
+
+.curriculum-section h2 {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.curriculum-section .lead {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.curriculum-section p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.curriculum-section .section-label {
+  color: #fb923c;
+}
+
+/* Collapsible Itinerary Styles */
+.itinerary-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.itinerary-day {
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(6, 26, 20, 0.4);
+  transition: all 0.3s ease;
+}
+
+.itinerary-day[open] {
+  background: rgba(6, 26, 20, 0.6);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.itinerary-day-header {
+  list-style: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease;
+}
+
+.itinerary-day-header:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom toggle icon */
+.itinerary-day-header::-webkit-details-marker {
+  display: none;
+}
+
+.itinerary-day-toggle-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
+
+.itinerary-day[open] .itinerary-day-toggle-icon {
+  transform: rotate(225deg);
+  border-color: #fb923c;
+}
+
+.itinerary-day-content {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Compact Dark Rows */
+.itinerary-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease;
+  align-items: baseline;
+  margin-bottom: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.itinerary-row:last-child {
+  border-bottom: none;
+}
+
+.itinerary-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.itinerary-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.02em;
+  padding-top: 0.2rem;
+  text-align: right;
+}
+
+.itinerary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.itinerary-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+.itinerary-speaker {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.itinerary-meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0;
+}
+
+/* Row Types - Dark Mode */
+.itinerary-row.keynote {
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid transparent;
+}
+.itinerary-row.keynote:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.itinerary-row.break {
+  background: transparent;
+  padding: 0.5rem 1.25rem;
+}
+.itinerary-row.break .itinerary-time,
+.itinerary-row.break .itinerary-title {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+}
+
+.itinerary-row.networking {
+  background: rgba(251, 146, 60, 0.03); /* Subtle orange tint */
+  border-left: 2px solid rgba(251, 146, 60, 0.4);
+  padding-left: calc(1.25rem - 2px);
+}
+
+.itinerary-row.experience {
+  background: rgba(42, 63, 56, 0.3); /* Tint of earth */
+  border-left: 2px solid var(--earth);
+  padding-left: calc(1.25rem - 2px);
+}
+
+.itinerary-row.ceremony {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 2px solid #fff;
+  padding-left: calc(1.25rem - 2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  .itinerary-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+  }
+  .itinerary-time {
+    text-align: left;
+    font-size: 0.75rem;
+    color: #fb923c;
+    margin-bottom: 0.1rem;
+  }
+}
+
+/* Fix overrides for itinerary header */
+.itinerary-day-header {
+  margin: 0;
+  border-bottom: none;
 }

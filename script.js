@@ -491,6 +491,19 @@ document.addEventListener('click', e=>{
     }
   });
 
+  // Click handler for itinerary keynote/ceremony rows
+  document.querySelectorAll('.itinerary-row[data-speaker]').forEach(row => {
+    const speakerId = row.dataset.speaker;
+    if (speakerId && speakerData[speakerId]) {
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openSpeakerModal(speakerId);
+      });
+    }
+  });
+
   // Close modal handlers
   modalClose?.addEventListener('click', closeSpeakerModal);
   modalBackdrop?.addEventListener('click', closeSpeakerModal);
