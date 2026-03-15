@@ -274,7 +274,7 @@ document.addEventListener('click', e=>{
       name: 'Jack Moses',
       photo: 'assets/speaker-icons/speaker11.jpg',
       tagline: 'Transformation Coach & Podcaster',
-      talkTitle: 'How To Magnetize Your Dream Fans and Customers with Aura and Authenticity',
+      talkTitle: 'How to magnetize your dream fans and customers with aura and authenticity',
       bio: '<p>Personal Transformation Coach. Writer. Creator. Quarterback. Podcaster.</p><p>Founder of Transcendence, and the Sovereign Creators Skool.</p>',
       links: [
         { text: '28K Followers on X', url: 'https://x.com/jackmoses0' }
@@ -316,8 +316,8 @@ document.addEventListener('click', e=>{
     'david-morin': {
       name: 'David Morin',
       photo: 'assets/speaker-icons/speaker14.jpg',
-      tagline: 'Poet & Existential Guide',
-      talkTitle: 'Uncovering Your True Voice',
+      tagline: 'Poet, Existential Guide, & Life Transition Coach.',
+      talkTitle: 'Writing to Awaken the Full Spectrum of Your Humanity',
       videoId: 'c3f9a7or_s0',
       bio: '<p>"Poet, Existential Guide, & Life Transition Coach. Turn existential dread into meaningful living."</p><p>David\'s work is to guide you in reclaiming your true voice.</p>',
       links: [
