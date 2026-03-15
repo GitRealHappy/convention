@@ -2030,21 +2030,20 @@
   /* Footer + sticky CTA */
   .site-footer{text-align:center;padding:1.5rem 0;color:var(--muted)}
   .sticky-cta{
-    position:fixed;bottom:16px;left:0;right:0;text-align:center;
+    position:fixed;bottom:0;left:0;right:0;text-align:center;
     transition:opacity .4s ease;opacity:0;pointer-events:none;
     z-index: 999; /* Ensure it's above other content */
   }
   .sticky-cta .btn{
-    background: #6b8fa3;
+    background: linear-gradient(180deg,rgba(4,120,243,0.95),rgba(4,100,200,0.92));
     color: #efefef;
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
     padding: 0.6rem 1.2rem;
     border: 1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 22px rgba(4,120,243,.25);
   }
   .sticky-cta .btn:hover{
-    filter: brightness(1.2); /* Slight lift on hover */
-    background: #061a14;
+    filter: brightness(.95);
   }
   .sticky-cta.show{opacity:1;pointer-events:auto}
   
@@ -3522,6 +3521,11 @@
   max-width: 100%;
   min-width: 200px;
 }
+.hero-right .video-wrapper .small {
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.75rem 1.25rem 0 1.25rem;
+  margin: 0;
+}
 .hero-right .video-container {
   width: 100%;
 }
@@ -4457,16 +4461,18 @@
 
 .itinerary-day {
   margin-bottom: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border: 2px solid rgba(184, 134, 11, 0.7);
+  border-radius: 10px;
   overflow: hidden;
   background: rgba(6, 26, 20, 0.4);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .itinerary-day[open] {
   background: rgba(6, 26, 20, 0.6);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(218, 165, 32, 0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .itinerary-day-header {
